@@ -1,5 +1,7 @@
 /* Code used to translate Breakbar's txt file into wikitext.
-* WORK IN PROGRESS */
+ * Note that April 28’s daily challenge was changed, so I'll have to make an exception in the code for that.
+ * WORK IN PROGRESS
+ */
 
 import java.io.*;
 
@@ -8,8 +10,11 @@ public class EntryPointDailyChallenges {
 		try {
 			FileReader fr = new FileReader(new File("EP Daily Challenges.txt"));
 			BufferedReader readFile = new BufferedReader(fr);
+			String line, date;
 			
-			
+			do {
+				
+			} while (!date.equals("2025-09-16"));
 			
 			readFile.close();
 			fr.close();
@@ -19,6 +24,9 @@ public class EntryPointDailyChallenges {
 		} catch (IOException e) {
 			System.out.println("The file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
+		} catch (NullPointerException e) {
+			System.out.println("The do-while loop iterated too many times.");
+			System.err.println("NullPointerException: " + e.getMessage());
 		}
 	}
 }
