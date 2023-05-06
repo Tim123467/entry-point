@@ -20,7 +20,7 @@ public class EntryPointDailyChallenges {
 				line = readFile.readLine();
 				date = line.substring(0, line.indexOf(','));
 				
-				if (date.substring(0, 4).equals(year)) { //checks if the year is correct
+				if (date.substring(0, 4).equals(year)) { //checks if the year matches
 					line = line.substring(line.indexOf(',')+1);
 					mission = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
