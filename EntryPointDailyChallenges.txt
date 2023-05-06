@@ -1,6 +1,4 @@
-/* Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
- * WORK IN PROGRESS: I'm not done with this program yet.
- */
+//Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
 
 import java.io.*;
 
@@ -9,31 +7,105 @@ public class EntryPointDailyChallenges {
 		try {
 			FileReader fr = new FileReader(new File("EP Daily Challenges.txt"));
 			BufferedReader readFile = new BufferedReader(fr);
-			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //I know using an array would make my code look nicer but I don't feel like doing so. It's only 10 Strings.
+			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //Using an array instead would make my code take up less lines,
+			                                                                              //but it would also make my code harder to understand.
+			String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
+			String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+			                      //currently, Breakbar's txt file covers the end of 2022 to most of 2025
 			
 			do {
 				line = readFile.readLine();
 				date = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				mission = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				tactic = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				color1 = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				mod1 = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				color2 = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				mod2 = line.substring(0, line.indexOf(','));
-				line = line.substring(line.indexOf(',')+1);
-				color3 = line.substring(0, line.indexOf(','));
-				mod3 = line.substring(line.indexOf(',')+1);
 				
-				
-				
-				if (date.equals("2023-04-28")) { //April 28's daily challenge was changed
+				if (date.substring(0, 4).equals(year)) { //checks if the year is correct
+					line = line.substring(line.indexOf(',')+1);
+					mission = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					tactic = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					color1 = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					mod1 = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					color2 = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					mod2 = line.substring(0, line.indexOf(','));
+					line = line.substring(line.indexOf(',')+1);
+					color3 = line.substring(0, line.indexOf(','));
+					mod3 = line.substring(line.indexOf(',')+1);
 					
+					if (date.substring(8, 10).equals("01")) { //first day of the month
+						if (date.substring(5, 7).equals("01")) { //first month of the year
+							System.out.print("===January");
+						} else {
+							System.out.print("|}\n===");
+							switch (date.substring(5, 7)) {
+							case "02": System.out.print("February"); break;
+							case "03": System.out.print("March"); break;
+							case "04": System.out.print("April"); break;
+							case "05": System.out.print("May"); break;
+							case "06": System.out.print("June"); break;
+							case "07": System.out.print("July"); break;
+							case "08": System.out.print("August"); break;
+							case "09": System.out.print("September"); break;
+							case "10": System.out.print("October"); break;
+							case "11": System.out.print("November"); break;
+							case "12": System.out.print("December"); break;
+							default:
+								System.out.println("The part corresponding with the month was invalid.");
+								System.exit(0);
+							}
+						}
+						
+						System.out.print(" " + date.substring(0, 4) + "===\n{| class=\\\"fandom-table article-table mw-collapsible mw-collapsed\\\" ");
+						if (date.substring(0, 7).equals(currentYearAndMonth)) {
+							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
+						} else {
+							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
+						}
+						System.out.println("!Date\n!Mission\n!Tactic\n!Modifiers");
+					}
+					
+					System.out.print("|-\n!" + date + "\n|" + mission + "\n|" + tactic + "\n|<span class=challenge-");
+					switch (color1) {
+					case "G": System.out.print("green"); break;
+					case "B": System.out.print("blue"); break;
+					case "P": System.out.print("purple"); break;
+					case "R": System.out.print("red"); break;
+					default:
+						System.out.println("The part corresponding with the first modifier's color was invalid.");
+						System.exit(0);
+					}
+					System.out.print(">" + mod1 + "</span>, <span class=challenge-");
+					switch (color2) {
+					case "G": System.out.print("green"); break;
+					case "B": System.out.print("blue"); break;
+					case "P": System.out.print("purple"); break;
+					case "R": System.out.print("red"); break;
+					default:
+						System.out.println("The part corresponding with the second modifier's color was invalid.");
+						System.exit(0);
+					}
+					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
+					
+					if (date.equals("2023-04-28")) { //April 28's daily challenge was changed
+						System.out.println("purple>Hidden UI</span>");
+					} else {
+						switch (color3) {
+						case "G": System.out.print("green"); break;
+						case "B": System.out.print("blue"); break;
+						case "P": System.out.print("purple"); break;
+						case "R": System.out.print("red"); break;
+						default:
+							System.out.println("The part corresponding with the third modifier's color was invalid.");
+							System.exit(0);
+						}
+						System.out.println(">" + mod3 + "</span>");
+						
+						if (date.substring(5, 10).equals("12-31")) { //last day of the year
+							System.out.println("|}");
+						}
+					}
 				}
 			} while (!date.equals("2025-09-16"));
 			
