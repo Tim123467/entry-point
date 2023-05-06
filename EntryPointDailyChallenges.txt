@@ -10,8 +10,8 @@ public class EntryPointDailyChallenges {
 			BufferedReader readFile = new BufferedReader(fr);
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
-			String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
-			String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
+			final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 			                      //currently, Breakbar's txt file covers the end of 2022 to most of 2025
 			
 			do {
