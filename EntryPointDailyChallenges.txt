@@ -1,4 +1,5 @@
 //Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
+//Don't forget to update the currentYearAndMonth String along with the last day that Breakbar's txt file has a daily challenge for.
 
 import java.io.*;
 
