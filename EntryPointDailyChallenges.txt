@@ -1,6 +1,5 @@
-/* Code used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
- * Note that April 28’s daily challenge was changed, so I'll have to make an exception in the code for that.
- * WORK IN PROGRESS
+/* Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
+ * WORK IN PROGRESS: I'm not done with this program yet.
  */
 
 import java.io.*;
@@ -16,8 +15,12 @@ public class EntryPointDailyChallenges {
 				line = readFile.readLine();
 				date = line.substring(0, line.indexOf(','));
 				mission = line.substring(line.indexOf(',')+1, line.indexOf(',', line.indexOf(',')+1));
-				System.out.println(date);
-				System.out.println(mission);
+				
+				
+				
+				if (date.equals("2023-04-28")) { //April 28's daily challenge was changed
+					
+				}
 			} while (!date.equals("2025-09-16"));
 			
 			readFile.close();
