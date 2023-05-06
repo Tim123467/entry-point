@@ -9,12 +9,26 @@ public class EntryPointDailyChallenges {
 		try {
 			FileReader fr = new FileReader(new File("EP Daily Challenges.txt"));
 			BufferedReader readFile = new BufferedReader(fr);
-			String line, date, mission;
+			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //I know using an array would make my code look nicer but I don't feel like doing so. It's only 10 Strings.
 			
 			do {
 				line = readFile.readLine();
 				date = line.substring(0, line.indexOf(','));
-				mission = line.substring(line.indexOf(',')+1, line.indexOf(',', line.indexOf(',')+1));
+				line = line.substring(line.indexOf(',')+1);
+				mission = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				tactic = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				color1 = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				mod1 = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				color2 = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				mod2 = line.substring(0, line.indexOf(','));
+				line = line.substring(line.indexOf(',')+1);
+				color3 = line.substring(0, line.indexOf(','));
+				mod3 = line.substring(line.indexOf(',')+1);
 				
 				
 				
