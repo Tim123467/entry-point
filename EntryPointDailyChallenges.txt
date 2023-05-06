@@ -1,5 +1,5 @@
 //Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
-//Don't forget to update the currentYearAndMonth String along with the last day that Breakbar's txt file has a daily challenge for.
+//Don't forget to update both currentYearAndMonth and lastDayWithDailyChallenges.
 
 import java.io.*;
 
@@ -12,7 +12,9 @@ public class EntryPointDailyChallenges {
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
 			final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
-			                      //currently, Breakbar's txt file covers the end of 2022 to most of 2025
+			                            //currently, Breakbar's txt file covers the end of 2022 to most of 2025
+			final String lastDayWithDailyChallenges = "2025-09-16"; //last day that Breakbar's txt file has a daily challenge for;
+			                                                        //change this whenever that txt file gets updated
 			
 			do {
 				line = readFile.readLine();
@@ -108,7 +110,7 @@ public class EntryPointDailyChallenges {
 						}
 					}
 				}
-			} while (!date.equals("2025-09-16")); //last day that Breakbar's txt file has a daily challenge for; change this whenever that txt file gets updated
+			} while (!date.equals(lastDayWithDailyChallenges));
 			
 			readFile.close();
 			fr.close();
