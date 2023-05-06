@@ -135,7 +135,7 @@ public class EntryPointDailyChallenges {
 						}
 						System.out.println(">" + mod3 + "</span>");
 						
-						if (date.substring(5, 10).equals("12-31") || date.equals(lastDayWithDailyChallenges)) { //last day of the year
+						if (date.substring(5, 10).equals("12-31") || date.equals(lastDayWithDailyChallenges)) {
 							System.out.println("|}");
 						}
 					}
