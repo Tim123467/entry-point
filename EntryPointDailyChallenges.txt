@@ -11,7 +11,7 @@ public class EntryPointDailyChallenges {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
-			final String year = "2022"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+			final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 			                            //currently, Breakbar's txt file covers the end of 2022 to most of 2025
 			final String lastDayWithDailyChallenges = "2025-09-16"; //last day that Breakbar's txt file has a daily challenge for;
 			                                                        //change this whenever that txt file gets updated
@@ -37,6 +37,25 @@ public class EntryPointDailyChallenges {
 					color3 = line.substring(0, line.indexOf(','));
 					mod3 = line.substring(line.indexOf(',')+1);
 					
+					if (mod1.equals("Takedown Limit")) {
+						mod1 = "Takedown Limit (4)";
+					}
+					if (mod1.equals("Takedown Limit 6")) {
+						mod1 = "Takedown Limit (6)";
+					}
+					if (mod2.equals("Takedown Limit")) {
+						mod2 = "Takedown Limit (4)";
+					}
+					if (mod2.equals("Takedown Limit 6")) {
+						mod2 = "Takedown Limit (6)";
+					}
+					if (mod3.equals("Takedown Limit")) {
+						mod3 = "Takedown Limit (4)";
+					}
+					if (mod3.equals("Takedown Limit 6")) {
+						mod3 = "Takedown Limit (6)";
+					}
+					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
 						if (date.substring(5, 7).equals("01")) { //first month of the year
 							System.out.print("===January");
@@ -60,11 +79,13 @@ public class EntryPointDailyChallenges {
 							}
 						}
 						
-						System.out.print(" " + date.substring(0, 4) + "===\n{| class=\\\"fandom-table article-table mw-collapsible mw-collapsed\\\" ");
+						System.out.print(" " + date.substring(0, 4) + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
 						if (date.substring(0, 7).equals(currentYearAndMonth)) {
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
-						} else {
+						} else if (Short.parseShort(date.substring(0, 4)) < Short.parseShort(currentYearAndMonth.substring(0, 4)) || Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7))) {
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
+						} else {
+							System.out.println("data-expandtext=\"Show Upcoming Challenges\" data-collapsetext=\"Hide Upcoming Challenges\"");
 						}
 						System.out.println("!Date\n!Mission\n!Tactic\n!Modifiers");
 					}
@@ -132,9 +153,15 @@ public class EntryPointDailyChallenges {
 		} catch (NullPointerException e) {
 			System.out.println("The do-while loop iterated too many times.");
 			System.err.println("NullPointerException: " + e.getMessage());
+			System.exit(0);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("A substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
+			System.exit(0);
+		} catch (NumberFormatException e) {
+			System.out.println("The Short.parseShort(string) method returned an error.");
+			System.err.println("NumberFormatException: " + e.getMessage());
+			System.exit(0);
 		}
 	}
 }
