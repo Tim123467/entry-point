@@ -11,7 +11,7 @@ public class EntryPointDailyChallenges {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
-			final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+			final String year = "2022"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 			                            //currently, Breakbar's txt file covers the end of 2022 to most of 2025
 			final String lastDayWithDailyChallenges = "2025-09-16"; //last day that Breakbar's txt file has a daily challenge for;
 			                                                        //change this whenever that txt file gets updated
@@ -69,7 +69,16 @@ public class EntryPointDailyChallenges {
 						System.out.println("!Date\n!Mission\n!Tactic\n!Modifiers");
 					}
 					
-					System.out.print("|-\n!" + date + "\n|" + mission + "\n|" + tactic + "\n|<span class=challenge-");
+					System.out.print("|-\n!" + date + "\n|");
+					switch (mission) {
+					case "The Auction":
+					case "The Gala":
+					case "The Cache":
+					case "The Setup":
+					case "The Lockup":
+					case "The Score": System.out.print("{{Robux}} "); break;
+					}
+					System.out.print(mission + "\n|" + tactic + "\n|<span class=challenge-");
 					switch (color1) {
 					case "G": System.out.print("green"); break;
 					case "B": System.out.print("blue"); break;
