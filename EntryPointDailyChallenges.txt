@@ -1,1 +1,21 @@
+import java.io.*;
 
+public class EntryPointDailyChallenges {
+	public static void main(String[] args) {
+		try {
+			FileReader fr = new FileReader(new File("EP Daily Challenges.txt"));
+			BufferedReader readFile = new BufferedReader(fr);
+			
+			
+			
+			readFile.close();
+			fr.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("The file does not exist or could not be found.");
+			System.err.println("FileNotFoundException: " + e.getMessage());
+		} catch (IOException e) {
+			System.out.println("The file could not be read or closed.");
+			System.err.println("IOException: " + e.getMessage());
+		}
+	}
+}
