@@ -84,7 +84,8 @@ public class EntryPointDailyChallenges {
 						
 						if (date.substring(0, 7).equals(currentYearAndMonth)) {
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
-						} else if (Short.parseShort(date.substring(0, 4)) < Short.parseShort(currentYearAndMonth.substring(0, 4)) || Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7))) {
+						} else if (Short.parseShort(date.substring(0, 4)) < Short.parseShort(currentYearAndMonth.substring(0, 4)) ||
+								  (Short.parseShort(date.substring(0, 4)) == Short.parseShort(currentYearAndMonth.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7)))) {
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
 						} else {
 							System.out.println("data-expandtext=\"Show Upcoming Challenges\" data-collapsetext=\"Hide Upcoming Challenges\"");
