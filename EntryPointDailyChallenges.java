@@ -4,7 +4,7 @@
 
 import java.io.*;
 
-public class EntryPointDailyChallenges {	
+public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
 		RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search the message to see where the error occurred.");
 		BufferedReader readFile = null;
