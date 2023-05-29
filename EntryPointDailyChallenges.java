@@ -169,7 +169,7 @@ public class EntryPointDailyChallenges {
 				if (readFile != null) {
 					readFile.close();
 				}
-			} catch (IOException e) {
+			} catch (IOException e) { //This catch block exists because Eclipse was being dumb and giving me a made-up syntax error if I didn't include it.
 				System.out.println("The file could not be closed.");
 				System.err.println("IOException: " + e.getMessage());
 			}
