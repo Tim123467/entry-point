@@ -145,8 +145,6 @@ public class EntryPointDailyChallenges {
 			} while (!date.equals(lastDayWithDailyChallenges));
 			
 			System.out.println("|}");
-			
-			readFile.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("The file does not exist or could not be found.");
 			System.err.println("FileNotFoundException: " + e.getMessage());
