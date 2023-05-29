@@ -146,19 +146,19 @@ public class EntryPointDailyChallenges {
 			
 			System.out.println("|}");
 		} catch (FileNotFoundException e) {
-			System.out.println("The file does not exist or could not be found.");
+			System.out.println("\nThe file does not exist or could not be found.");
 			System.err.println("FileNotFoundException: " + e.getMessage());
 		} catch (IOException e) {
-			System.out.println("The file could not be read or closed.");
+			System.out.println("\nThe file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (NullPointerException e) {
-			System.out.println("The do-while loop iterated too many times.");
+			System.out.println("\nThe do-while loop iterated too many times.");
 			System.err.println("NullPointerException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("A substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
+			System.out.println("\nA substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
 		} catch (NumberFormatException e) {
-			System.out.println("The Short.parseShort(string) method returned an error.");
+			System.out.println("\nThe Short.parseShort(string) method returned an error.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
@@ -168,7 +168,7 @@ public class EntryPointDailyChallenges {
 					readFile.close();
 				}
 			} catch (IOException e) { //This catch block exists because Eclipse was being dumb and giving me a made-up syntax error if I didn't include it.
-				System.out.println("The file could not be closed.");
+				System.out.println("\nThe file could not be closed.");
 				System.err.println("IOException: " + e.getMessage());
 			}
 		}
