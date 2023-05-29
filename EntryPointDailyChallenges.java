@@ -4,11 +4,13 @@
 
 import java.io.*;
 
-public class EntryPointDailyChallenges {
+public class EntryPointDailyChallenges {	
 	public static void main(String[] args) {
+		RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search the message to see where the error occurred.");
+		BufferedReader readFile = null;
+		
 		try {
-			FileReader fr = new FileReader(new File("EP Daily Challenges.txt"));
-			BufferedReader readFile = new BufferedReader(fr);
+			readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges.txt")));
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
@@ -75,8 +77,8 @@ public class EntryPointDailyChallenges {
 							case "11": System.out.print("November"); break;
 							case "12": System.out.print("December"); break;
 							default:
-								System.out.println("The part corresponding with the month was invalid.");
-								System.exit(0);
+								System.out.println("\nThe part corresponding with the month was invalid.");
+								throw re;
 							}
 						}
 						
@@ -110,8 +112,8 @@ public class EntryPointDailyChallenges {
 					case "P": System.out.print("purple"); break;
 					case "R": System.out.print("red"); break;
 					default:
-						System.out.println("The part corresponding with the first modifier's color was invalid.");
-						System.exit(0);
+						System.out.println("\nThe part corresponding with the first modifier's color was invalid.");
+						throw re;
 					}
 					System.out.print(">" + mod1 + "</span>, <span class=challenge-");
 					switch (color2) {
@@ -120,8 +122,8 @@ public class EntryPointDailyChallenges {
 					case "P": System.out.print("purple"); break;
 					case "R": System.out.print("red"); break;
 					default:
-						System.out.println("The part corresponding with the second modifier's color was invalid.");
-						System.exit(0);
+						System.out.println("\nThe part corresponding with the second modifier's color was invalid.");
+						throw re;
 					}
 					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
 					
@@ -134,8 +136,8 @@ public class EntryPointDailyChallenges {
 						case "P": System.out.print("purple"); break;
 						case "R": System.out.print("red"); break;
 						default:
-							System.out.println("The part corresponding with the third modifier's color was invalid.");
-							System.exit(0);
+							System.out.println("\nThe part corresponding with the third modifier's color was invalid.");
+							throw re;
 						}
 						System.out.println(">" + mod3 + "</span>");
 					}
@@ -145,7 +147,6 @@ public class EntryPointDailyChallenges {
 			System.out.println("|}");
 			
 			readFile.close();
-			fr.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("The file does not exist or could not be found.");
 			System.err.println("FileNotFoundException: " + e.getMessage());
@@ -155,15 +156,23 @@ public class EntryPointDailyChallenges {
 		} catch (NullPointerException e) {
 			System.out.println("The do-while loop iterated too many times.");
 			System.err.println("NullPointerException: " + e.getMessage());
-			System.exit(0);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("A substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
-			System.exit(0);
 		} catch (NumberFormatException e) {
 			System.out.println("The Short.parseShort(string) method returned an error.");
 			System.err.println("NumberFormatException: " + e.getMessage());
-			System.exit(0);
+		} catch (RuntimeException e) {
+			System.err.println("RuntimeException: " + e.getMessage());
+		} finally {
+			try {
+				if (readFile != null) {
+					readFile.close();
+				}
+			} catch (IOException e) {
+				System.out.println("The file could not be closed.");
+				System.err.println("IOException: " + e.getMessage());
+			}
 		}
 	}
 }
