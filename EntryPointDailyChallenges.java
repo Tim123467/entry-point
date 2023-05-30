@@ -6,11 +6,11 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
-		RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search for the message in the code to see where the error occurred.");
 		BufferedReader readFile = null;
 		
 		try {
 			readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges.txt")));
+			RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search for the message in the code to see where the error occurred.");
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
