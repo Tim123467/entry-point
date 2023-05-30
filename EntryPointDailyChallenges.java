@@ -6,10 +6,7 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
-		BufferedReader readFile = null;
-		
-		try {
-			readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges.txt")));
+		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges.txt")));) {
 			RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search for the message in the code to see where the error occurred.");
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
@@ -32,32 +29,19 @@ public class EntryPointDailyChallenges {
 					color1 = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
 					mod1 = line.substring(0, line.indexOf(','));
+					mod1 = mod1.equals("Takedown Limit") ? "Takedown Limit (4)" : mod1;
+					mod1 = mod1.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod1;
 					line = line.substring(line.indexOf(',')+1);
 					color2 = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
 					mod2 = line.substring(0, line.indexOf(','));
+					mod2 = mod2.equals("Takedown Limit") ? "Takedown Limit (4)" : mod2;
+					mod2 = mod2.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod2;
 					line = line.substring(line.indexOf(',')+1);
 					color3 = line.substring(0, line.indexOf(','));
 					mod3 = line.substring(line.indexOf(',')+1);
-					
-					if (mod1.equals("Takedown Limit")) {
-						mod1 = "Takedown Limit (4)";
-					}
-					if (mod1.equals("Takedown Limit 6")) {
-						mod1 = "Takedown Limit (6)";
-					}
-					if (mod2.equals("Takedown Limit")) {
-						mod2 = "Takedown Limit (4)";
-					}
-					if (mod2.equals("Takedown Limit 6")) {
-						mod2 = "Takedown Limit (6)";
-					}
-					if (mod3.equals("Takedown Limit")) {
-						mod3 = "Takedown Limit (4)";
-					}
-					if (mod3.equals("Takedown Limit 6")) {
-						mod3 = "Takedown Limit (6)";
-					}
+					mod3 = mod3.equals("Takedown Limit") ? "Takedown Limit (4)" : mod3;
+					mod3 = mod3.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod3;
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
 						if (date.substring(5, 7).equals("01")) { //first month of the year
@@ -152,7 +136,7 @@ public class EntryPointDailyChallenges {
 			System.out.println("\nThe file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (NullPointerException e) {
-			System.out.println("\nThe do-while loop iterated too many times.");
+			System.out.println("\nThe value of lastDayWithDailyChallenges is invalid.");
 			System.err.println("NullPointerException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("\nA substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
@@ -162,15 +146,6 @@ public class EntryPointDailyChallenges {
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
-		} finally {
-			try {
-				if (readFile != null) {
-					readFile.close();
-				}
-			} catch (IOException e) { //This catch block exists because Eclipse was being dumb and giving me a made-up syntax error if I didn't include it.
-				System.out.println("\nThe file could not be closed.");
-				System.err.println("IOException: " + e.getMessage());
-			}
 		}
 	}
 }
