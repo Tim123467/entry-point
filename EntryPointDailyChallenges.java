@@ -7,21 +7,18 @@ import java.io.*;
 public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges.txt")));) {
-			RuntimeException re = new RuntimeException("Read the message in the previous line. Use ctrl+F or cmd+F and search for the message in the code to see where the error occurred.");
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
 			final String year = "2025"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 			                            //currently, Breakbar's txt file covers the end of 2022 to most of 2025
 			
-			do {
+			while (true) {
 				line = readFile.readLine();
-				if (line == null) {
-					break;
-				}
+				if (line == null) {break;} //stops the loop when there's no more lines to read
 				date = line.substring(0, line.indexOf(','));
 				
-				if (date.substring(0, 4).equals(year)) { //checks if the year matches
+				if (date.substring(0, 4).equals(year)) { //checks if the year matches the specified year
 					line = line.substring(line.indexOf(',')+1);
 					mission = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
@@ -46,7 +43,7 @@ public class EntryPointDailyChallenges {
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
 						if (date.substring(5, 7).equals("01")) { //first month of the year
-							System.out.print("===January");
+							System.out.print("'''Daily Challenges''' from 2025 will be displayed here.\n\n===January");
 						} else {
 							System.out.print("|}\n===");
 							switch (date.substring(5, 7)) {
@@ -62,19 +59,20 @@ public class EntryPointDailyChallenges {
 							case "11": System.out.print("November"); break;
 							case "12": System.out.print("December"); break;
 							default:
-								System.out.println("\nThe part corresponding with the month was invalid.");
-								throw re;
+								System.out.println("\nThe part in the txt file corresponding with the month was invalid.");
+								throw new RuntimeException();
 							}
 						}
 						
 						System.out.print(" " + date.substring(0, 4) + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
 						
-						if (date.substring(0, 7).equals(currentYearAndMonth)) {
+						if (date.substring(0, 7).equals(currentYearAndMonth)) { //current year and current month
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
 						} else if (Short.parseShort(date.substring(0, 4)) < Short.parseShort(currentYearAndMonth.substring(0, 4)) ||
 								  (Short.parseShort(date.substring(0, 4)) == Short.parseShort(currentYearAndMonth.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7)))) {
+							//earlier year OR same year but earlier month
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
-						} else {
+						} else { //current year and later month OR later year
 							System.out.println("data-expandtext=\"Show Upcoming Challenges\" data-collapsetext=\"Hide Upcoming Challenges\"");
 						}
 						
@@ -88,7 +86,7 @@ public class EntryPointDailyChallenges {
 					case "The Cache":
 					case "The Setup":
 					case "The Lockup":
-					case "The Score": System.out.print("{{Robux}} "); break;
+					case "The Score": System.out.print("{{Robux}} ");
 					}
 					System.out.print(mission + "\n|" + tactic + "\n|<span class=challenge-");
 					switch (color1) {
@@ -97,8 +95,8 @@ public class EntryPointDailyChallenges {
 					case "P": System.out.print("purple"); break;
 					case "R": System.out.print("red"); break;
 					default:
-						System.out.println("\nThe part corresponding with the first modifier's color was invalid.");
-						throw re;
+						System.out.println("\nThe part in the txt file corresponding with the first modifier's color was invalid.");
+						throw new RuntimeException();
 					}
 					System.out.print(">" + mod1 + "</span>, <span class=challenge-");
 					switch (color2) {
@@ -107,12 +105,12 @@ public class EntryPointDailyChallenges {
 					case "P": System.out.print("purple"); break;
 					case "R": System.out.print("red"); break;
 					default:
-						System.out.println("\nThe part corresponding with the second modifier's color was invalid.");
-						throw re;
+						System.out.println("\nThe part in the txt file corresponding with the second modifier's color was invalid.");
+						throw new RuntimeException();
 					}
 					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
 					
-					if (date.equals("2023-04-28")) { //April 28's daily challenge was changed
+					if (date.equals("2023-04-28")) { //April 28's daily challenge was changed (specifically the 3rd modifier)
 						System.out.println("purple>Hidden UI</span>");
 					} else {
 						switch (color3) {
@@ -121,26 +119,26 @@ public class EntryPointDailyChallenges {
 						case "P": System.out.print("purple"); break;
 						case "R": System.out.print("red"); break;
 						default:
-							System.out.println("\nThe part corresponding with the third modifier's color was invalid.");
-							throw re;
+							System.out.println("\nThe part in the txt file corresponding with the third modifier's color was invalid.");
+							throw new RuntimeException();
 						}
 						System.out.println(">" + mod3 + "</span>");
 					}
 				}
-			} while (true);
+			}
 			
 			System.out.println("|}");
 		} catch (FileNotFoundException e) {
-			System.out.println("\nThe file does not exist or could not be found.");
+			System.out.println("\nThe txt file does not exist or could not be found.");
 			System.err.println("FileNotFoundException: " + e.getMessage());
 		} catch (IOException e) {
-			System.out.println("\nThe file could not be read or closed.");
+			System.out.println("\nThe txt file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("\nA substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
+			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex. This was caused by an invalid line in the txt file.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
 		} catch (NumberFormatException e) {
-			System.out.println("\nThe Short.parseShort(string) method returned an error.");
+			System.out.println("\nThe Short.parseShort method returned an error. This was caused by an invalid date in the txt file.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
