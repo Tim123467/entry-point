@@ -1,5 +1,5 @@
 /* Program used to translate Breakbar's txt file into wikitext. Note that I renamed the txt file to "EP Daily Challenges.txt"
- * The only edits that should be made are to the values of the final String variables near the top: txtFileName, currentYearAndMonth, and year.
+ * The only edits that should be made are to the values of the String variables near the top: txtFileName, currentYearAndMonth, and year.
  * (unless you want to try to improve the code)
  */
 
@@ -8,13 +8,13 @@ import java.io.*;
 public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
 		final String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
+		final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
+		final String year = "2025"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+		                            //currently, the txt file covers the end of 2022 to most of 2025
 		
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
-			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
-			final String year = "2025"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
-			                            //currently, the txt file covers the end of 2022 to most of 2025
 			
 			while (true) {
 				line = readFile.readLine();
