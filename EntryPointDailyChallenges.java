@@ -27,19 +27,16 @@ public class EntryPointDailyChallenges {
 					color1 = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
 					mod1 = line.substring(0, line.indexOf(','));
-					mod1 = mod1.equals("Takedown Limit") ? "Takedown Limit (4)" : mod1;
-					mod1 = mod1.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod1;
+					mod1 = mod1.equals("Takedown Limit") ? "Takedown Limit (4)" : mod1.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod1;
 					line = line.substring(line.indexOf(',')+1);
 					color2 = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
 					mod2 = line.substring(0, line.indexOf(','));
-					mod2 = mod2.equals("Takedown Limit") ? "Takedown Limit (4)" : mod2;
-					mod2 = mod2.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod2;
+					mod2 = mod2.equals("Takedown Limit") ? "Takedown Limit (4)" : mod2.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod2;
 					line = line.substring(line.indexOf(',')+1);
 					color3 = line.substring(0, line.indexOf(','));
 					mod3 = line.substring(line.indexOf(',')+1);
-					mod3 = mod3.equals("Takedown Limit") ? "Takedown Limit (4)" : mod3;
-					mod3 = mod3.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod3;
+					mod3 = mod3.equals("Takedown Limit") ? "Takedown Limit (4)" : mod3.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod3;
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
 						if (date.substring(5, 7).equals("01")) { //first month of the year
