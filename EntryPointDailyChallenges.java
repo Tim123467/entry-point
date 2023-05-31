@@ -43,7 +43,7 @@ public class EntryPointDailyChallenges {
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
 						if (date.substring(5, 7).equals("01")) { //first month of the year
-							System.out.print("'''Daily Challenges''' from 2025 will be displayed here.\n\n===January");
+							System.out.print("'''Daily Challenges''' from " + year + " will be displayed here.\n\n===January");
 						} else {
 							System.out.print("|}\n===");
 							switch (date.substring(5, 7)) {
@@ -64,12 +64,12 @@ public class EntryPointDailyChallenges {
 							}
 						}
 						
-						System.out.print(" " + date.substring(0, 4) + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
+						System.out.print(" " + year + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
 						
 						if (date.substring(0, 7).equals(currentYearAndMonth)) { //current year and current month
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
-						} else if (Short.parseShort(date.substring(0, 4)) < Short.parseShort(currentYearAndMonth.substring(0, 4)) ||
-								  (Short.parseShort(date.substring(0, 4)) == Short.parseShort(currentYearAndMonth.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7)))) {
+						} else if (Short.parseShort(year) < Short.parseShort(currentYearAndMonth.substring(0, 4)) ||
+								  (Short.parseShort(year) == Short.parseShort(currentYearAndMonth.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7)))) {
 							//earlier year OR same year but earlier month
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
 						} else { //current year and later month OR later year
@@ -135,10 +135,12 @@ public class EntryPointDailyChallenges {
 			System.out.println("\nThe txt file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex. This was caused by an invalid line in the txt file.");
+			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex."
+						     + "This was caused by either an invalid line in the txt file or an invalid value for the currentYearAndMonth variable.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
 		} catch (NumberFormatException e) {
-			System.out.println("\nThe Short.parseShort method returned an error. This was caused by an invalid date in the txt file.");
+			System.out.println("\nThe Short.parseShort method returned an error."
+					         + "This was caused by either an invalid date in the txt file or invalid values for the currentYearAndMonth variable or for the year variable.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
