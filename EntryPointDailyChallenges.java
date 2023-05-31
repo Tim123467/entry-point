@@ -1,5 +1,5 @@
 /* Program used to translate Breakbar's txt file into wikitext. Note that I renamed his txt file to "EP Daily Challenges.txt"
- * Don't forget to update both currentYearAndMonth and lastDayWithDailyChallenges.
+ * Don't forget to update currentYearAndMonth.
  */
 
 import java.io.*;
@@ -13,11 +13,12 @@ public class EntryPointDailyChallenges {
 			final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
 			final String year = "2025"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 			                            //currently, Breakbar's txt file covers the end of 2022 to most of 2025
-			final String lastDayWithDailyChallenges = "2025-09-16"; //last day that Breakbar's txt file has a daily challenge for;
-			                                                        //change this whenever that txt file gets updated
 			
 			do {
 				line = readFile.readLine();
+				if (line == null) {
+					break;
+				}
 				date = line.substring(0, line.indexOf(','));
 				
 				if (date.substring(0, 4).equals(year)) { //checks if the year matches
@@ -126,7 +127,7 @@ public class EntryPointDailyChallenges {
 						System.out.println(">" + mod3 + "</span>");
 					}
 				}
-			} while (!date.equals(lastDayWithDailyChallenges));
+			} while (true);
 			
 			System.out.println("|}");
 		} catch (FileNotFoundException e) {
@@ -135,9 +136,6 @@ public class EntryPointDailyChallenges {
 		} catch (IOException e) {
 			System.out.println("\nThe file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
-		} catch (NullPointerException e) {
-			System.out.println("\nThe value of lastDayWithDailyChallenges is invalid.");
-			System.err.println("NullPointerException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("\nA substring(beginIndex, endIndex) method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
