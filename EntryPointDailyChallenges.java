@@ -15,7 +15,6 @@ public class EntryPointDailyChallenges {
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
-			
 			while (true) {
 				line = readFile.readLine();
 				if (line == null) {break;} //stops the loop when there's no more lines to read
