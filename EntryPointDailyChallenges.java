@@ -8,8 +8,8 @@ import java.io.*;
 public class EntryPointDailyChallenges {
 	public static void main(String[] args) {
 		final String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-		final String currentYearAndMonth = "2023-05"; //must be in the format "YYYY-MM"
-		final String year = "2025"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+		final String currentYearAndMonth = "2023-06"; //must be in the format "YYYY-MM"
+		final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 		                            //currently, the txt file covers the end of 2022 to most of 2025
 		
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
@@ -79,15 +79,14 @@ public class EntryPointDailyChallenges {
 					}
 					
 					System.out.print("|-\n!" + date + "\n|");
+					
 					switch (mission) {
-					case "The Auction":
-					case "The Gala":
-					case "The Cache":
-					case "The Setup":
-					case "The Lockup":
-					case "The Score": System.out.print("{{Robux}} ");
+					case "The Auction": case "The Gala": case "The Cache": case "The Setup": case "The Lockup": case "The Score":
+						System.out.print("{{Robux}} ");
 					}
+					
 					System.out.print(mission + "\n|" + tactic + "\n|<span class=challenge-");
+					
 					switch (color1) {
 					case "G": System.out.print("green"); break;
 					case "B": System.out.print("blue"); break;
@@ -97,7 +96,9 @@ public class EntryPointDailyChallenges {
 						System.out.println("\nThe part in the txt file corresponding with the first modifier's color was invalid.");
 						throw new RuntimeException();
 					}
+					
 					System.out.print(">" + mod1 + "</span>, <span class=challenge-");
+					
 					switch (color2) {
 					case "G": System.out.print("green"); break;
 					case "B": System.out.print("blue"); break;
@@ -107,6 +108,7 @@ public class EntryPointDailyChallenges {
 						System.out.println("\nThe part in the txt file corresponding with the second modifier's color was invalid.");
 						throw new RuntimeException();
 					}
+					
 					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
 					
 					if (date.equals("2023-04-28")) { //April 28's daily challenge was changed (specifically the 3rd modifier)
