@@ -1,7 +1,7 @@
 /* Program that gives the probability of each modifier appearing on a certain mission. */
 
 import java.io.*;
-import java.util.*;
+import java.util.EnumMap;
 
 public class EntryPointProbabilities {
 	/** The missions that can have daily challenges, in all caps and without "The" at the beginning.
