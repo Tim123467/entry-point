@@ -145,7 +145,7 @@ public class EntryPointProbabilities {
 							loud2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(loud2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
 							loud2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[4]), increment(loud2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[4]))));
 						} else if (!(strings[0].equals("BLACK_DUSK") && strings[1].toLowerCase().contains("stealth"))) {
-							System.out.println("A tactic in the 2022 or later daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
+							System.out.println("The part in the txt file corresponding with a tactic in the 2021 daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
 							for (String s : strings) {
 								System.out.println(s);
 							}
@@ -163,7 +163,7 @@ public class EntryPointProbabilities {
 							loud2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(loud2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
 							loud2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[4]), increment(loud2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[4]))));
 						} else {
-							System.out.println("A tactic in the 2022 or later daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
+							System.out.println("The part in the txt file corresponding with a tactic in the 2022 or later daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
 							for (String s : strings) {
 								System.out.println(s);
 							}
@@ -216,7 +216,7 @@ public class EntryPointProbabilities {
 			System.out.println("The txt file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (NullPointerException e) {
-			System.out.println("A mission or modifier was invalid.");
+			System.out.println("The part in the txt file corresponding with a mission or modifier was invalid.");
 			System.err.println("NullPointerException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
