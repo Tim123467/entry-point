@@ -84,7 +84,7 @@
 !2021-08-17
 |The Killhouse
 |Stealth
-|<span class="challenge-blue">Unskilled</span>, <span class="challenge-blue">Reinforced Doors</span>, <span class="challenge-purple">Hidden Dectection Bars</span>
+|<span class="challenge-blue">Unskilled</span>, <span class="challenge-blue">Reinforced Doors</span>, <span class="challenge-purple">Hidden Detection Bars</span>
 |-
 !2021-08-18
 |The SCRS
@@ -717,7 +717,7 @@
 !2021-12-17
 |The Killhouse
 |Stealth
-|<span class="challenge-purple">Faster Detection</span>, <span class="challenge-purple">Unimtimidating</span>, <span class="challenge-purple">Fifteen Minutes</span>
+|<span class="challenge-purple">Faster Detection</span>, <span class="challenge-purple">Unintimidating</span>, <span class="challenge-purple">Fifteen Minutes</span>
 |-
 !2021-12-18
 |{{Robux}} The Lockup
