@@ -176,6 +176,7 @@ public class EntryPointProbabilities {
 			}
 			
 			//displays how often modifiers appear as decimals
+			System.out.println("Stealth:");
 			for (Modifier m : stealthModifiers) {
 				System.out.println(m + ":");
 				for (Mission mi : stealthMissions) {
@@ -183,6 +184,7 @@ public class EntryPointProbabilities {
 				}
 				System.out.println();
 			}
+			System.out.println("Loud:");
 			for (Modifier m : loudModifiers) {
 				System.out.println(m + ":");
 				for (Mission mi : loudMissions) {
