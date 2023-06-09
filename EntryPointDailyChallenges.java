@@ -6,12 +6,12 @@
 import java.io.*;
 
 public class EntryPointDailyChallenges {
+	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
+	final static String currentYearAndMonth = "2023-06"; //must be in the format "YYYY-MM"
+	final static String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+	                            //currently, the txt file covers the end of 2022 to most of 2025
+	
 	public static void main(String[] args) {
-		final String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-		final String currentYearAndMonth = "2023-06"; //must be in the format "YYYY-MM"
-		final String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
-		                            //currently, the txt file covers the end of 2022 to most of 2025
-		
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
