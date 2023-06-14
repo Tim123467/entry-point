@@ -1,5 +1,5 @@
 /* Program that gives the probability of each modifier appearing on a certain mission.
- * This implementation uses HashMaps and Strings instead of EnumMaps and enums. */
+ * This implementation avoids enums and uses HashMaps instead of EnumMaps. */
 
 import java.io.*;
 import java.util.*;
