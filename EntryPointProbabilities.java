@@ -1,7 +1,7 @@
 /* Program that gives the probability of each modifier appearing on a certain mission. */
 
 import java.io.*;
-import java.util.EnumMap;
+import java.util.*;
 
 public class EntryPointProbabilities {
 	/** The missions that can have daily challenges, in all caps and without "The" at the beginning.
@@ -44,14 +44,14 @@ public class EntryPointProbabilities {
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges Wikitext.txt")));) {
 			//The Short values will represent the number of occurrences
-			EnumMap<Mission, EnumMap<Modifier, Short>> stealth2021 = new EnumMap<Mission, EnumMap<Modifier, Short>>(getMissionClass());
-			EnumMap<Mission, EnumMap<Modifier, Short>> loud2021 = new EnumMap<Mission, EnumMap<Modifier, Short>>(getMissionClass());
-			EnumMap<Mission, EnumMap<Modifier, Short>> stealth2022 = new EnumMap<Mission, EnumMap<Modifier, Short>>(getMissionClass());
-			EnumMap<Mission, EnumMap<Modifier, Short>> loud2022 = new EnumMap<Mission, EnumMap<Modifier, Short>>(getMissionClass());
-			EnumMap<Mission, Short> stealth2021missions = new EnumMap<Mission, Short>(getMissionClass());
-			EnumMap<Mission, Short> loud2021missions = new EnumMap<Mission, Short>(getMissionClass());
-			EnumMap<Mission, Short> stealth2022missions = new EnumMap<Mission, Short>(getMissionClass());
-			EnumMap<Mission, Short> loud2022missions = new EnumMap<Mission, Short>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> stealth2021 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> loud2021 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> stealth2022 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> loud2022 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
+			Map<Mission, Short> stealth2021missions = new EnumMap<Mission, Short>(getMissionClass());
+			Map<Mission, Short> loud2021missions = new EnumMap<Mission, Short>(getMissionClass());
+			Map<Mission, Short> stealth2022missions = new EnumMap<Mission, Short>(getMissionClass());
+			Map<Mission, Short> loud2022missions = new EnumMap<Mission, Short>(getMissionClass());
 			Mission[] stealthMissions = {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
@@ -132,7 +132,7 @@ public class EntryPointProbabilities {
 					strings[3] = strings[3].replace(' ', '_');
 					strings[4] = strings[4].replace(' ', '_');
 					
-					//increments the values in the EnumMaps
+					//increments the values in the maps
 					if (is2021) {
 						if (strings[1].toLowerCase().contains("stealth") && !strings[0].equals("BLACK_DUSK")) {
 							stealth2021missions.put(Mission.valueOf(strings[0]), increment(stealth2021missions.get(Mission.valueOf(strings[0]))));
