@@ -7,4 +7,4 @@
 
 2) A program that gives the probability of each modifier appearing on a certain mission and gives a list of modifiers removed from certain missions. There's two different implementatios of this program: one using enums and EnumMaps and one that avoids enums and uses HashMaps instead of EnumMaps.
 
-I'm currently in the process of making Python versions for readers more experienced with Python than with Java. These versions will not be identical due to limitations present in the development environments.
+I'm currently in the process of making Python versions for readers more experienced with Python than with Java. These versions may or may not be identical due to limitations present in the development environments.
