@@ -46,20 +46,20 @@ public class EntryPointProbabilitiesNoEnums {
 				"no explosives", "shield swarm", "explosive flashbangs", "explosive revenge"
 			};
 			//The Short values will represent the number of occurrences
-			Map<String, Map<String, Short>> stealth2021 = new HashMap<String, Map<String, Short>>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> loud2021 = new HashMap<String, Map<String, Short>>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> stealth2022 = new HashMap<String, Map<String, Short>>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> loud2022 = new HashMap<String, Map<String, Short>>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Short> stealth2021missions = new HashMap<String, Short>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Short> loud2021missions = new HashMap<String, Short>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Short> stealth2022missions = new HashMap<String, Short>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Short> loud2022missions = new HashMap<String, Short>((int)(loudMissions.length / 0.75 + 1));
+			Map<String, Map<String, Short>> stealth2021 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
+			Map<String, Map<String, Short>> loud2021 = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
+			Map<String, Map<String, Short>> stealth2022 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
+			Map<String, Map<String, Short>> loud2022 = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
+			Map<String, Short> stealth2021missions = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
+			Map<String, Short> loud2021missions = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
+			Map<String, Short> stealth2022missions = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
+			Map<String, Short> loud2022missions = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
 			
 			for (String m : stealthMissions) {
 				stealth2021missions.put(m, Short.valueOf((short)0));
 				stealth2022missions.put(m, Short.valueOf((short)0));
-				stealth2021.put(m, new HashMap<String, Short>((int)(stealthModifiers.length / 0.75 + 1)));
-				stealth2022.put(m, new HashMap<String, Short>((int)(stealthModifiers.length / 0.75 + 1)));
+				stealth2021.put(m, new HashMap<>((int)(stealthModifiers.length / 0.75 + 1)));
+				stealth2022.put(m, new HashMap<>((int)(stealthModifiers.length / 0.75 + 1)));
 				for (String mo : stealthModifiers) {
 					stealth2021.get(m).put(mo, Short.valueOf((short)0));
 					stealth2022.get(m).put(mo, Short.valueOf((short)0));
@@ -68,8 +68,8 @@ public class EntryPointProbabilitiesNoEnums {
 			for (String m : loudMissions) {
 				loud2021missions.put(m, Short.valueOf((short)0));
 				loud2022missions.put(m, Short.valueOf((short)0));
-				loud2021.put(m, new HashMap<String, Short>((int)(loudModifiers.length / 0.75 + 1)));
-				loud2022.put(m, new HashMap<String, Short>((int)(loudModifiers.length / 0.75 + 1)));
+				loud2021.put(m, new HashMap<>((int)(loudModifiers.length / 0.75 + 1)));
+				loud2022.put(m, new HashMap<>((int)(loudModifiers.length / 0.75 + 1)));
 				for (String mo : loudModifiers) {
 					loud2021.get(m).put(mo, Short.valueOf((short)0));
 					loud2022.get(m).put(mo, Short.valueOf((short)0));
