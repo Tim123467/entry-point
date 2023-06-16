@@ -3,6 +3,7 @@
 Program used to translate Breakbar's txt file into wikitext. Note that I renamed the txt file to "EP Daily Challenges.txt"
 The only edits that should be made are to the values of the variables near the top: txtFileName, currentYearAndMonth, and lastYear.
 (unless you want to try to improve the code)
+The output is produced in a separate text file.
 '''
 
 txtFileName = 'EP Daily Challenges.txt' #change depending on the name you set for Breakbar's txt file
