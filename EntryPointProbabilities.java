@@ -44,14 +44,14 @@ public class EntryPointProbabilities {
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges Wikitext.txt")));) {
 			//The Short values will represent the number of occurrences
-			Map<Mission, Map<Modifier, Short>> stealth2021 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
-			Map<Mission, Map<Modifier, Short>> loud2021 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
-			Map<Mission, Map<Modifier, Short>> stealth2022 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
-			Map<Mission, Map<Modifier, Short>> loud2022 = new EnumMap<Mission, Map<Modifier, Short>>(getMissionClass());
-			Map<Mission, Short> stealth2021missions = new EnumMap<Mission, Short>(getMissionClass());
-			Map<Mission, Short> loud2021missions = new EnumMap<Mission, Short>(getMissionClass());
-			Map<Mission, Short> stealth2022missions = new EnumMap<Mission, Short>(getMissionClass());
-			Map<Mission, Short> loud2022missions = new EnumMap<Mission, Short>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> stealth2021 = new EnumMap<>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> loud2021 = new EnumMap<>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> stealth2022 = new EnumMap<>(getMissionClass());
+			Map<Mission, Map<Modifier, Short>> loud2022 = new EnumMap<>(getMissionClass());
+			Map<Mission, Short> stealth2021missions = new EnumMap<>(getMissionClass());
+			Map<Mission, Short> loud2021missions = new EnumMap<>(getMissionClass());
+			Map<Mission, Short> stealth2022missions = new EnumMap<>(getMissionClass());
+			Map<Mission, Short> loud2022missions = new EnumMap<>(getMissionClass());
 			Mission[] stealthMissions = {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
