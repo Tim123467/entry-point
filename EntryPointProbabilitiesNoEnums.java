@@ -165,16 +165,16 @@ public class EntryPointProbabilitiesNoEnums {
 			for (String m : stealthModifiers) {
 				if (m.equals("boarded up") || m.equals("no equipment bags")) {continue;} //these were removed from the stealth pool
 				for (String mi : stealthMissionsNoExpansions) {
-					if ((double)stealth2021.get(mi).get(m).shortValue() != 0 &&
-						(double)stealth2022.get(mi).get(m).shortValue() == 0) {
+					if (stealth2021.get(mi).get(m).shortValue() != 0 &&
+						stealth2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
 			}
 			for (String m : loudModifiers) {
 				for (String mi : loudMissionsNoExpansions) {
-					if ((double)loud2021.get(mi).get(m).shortValue() != 0 &&
-						(double)loud2022.get(mi).get(m).shortValue() == 0) {
+					if (loud2021.get(mi).get(m).shortValue() != 0 &&
+						loud2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
