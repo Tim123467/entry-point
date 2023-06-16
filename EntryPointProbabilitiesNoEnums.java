@@ -87,14 +87,14 @@ public class EntryPointProbabilitiesNoEnums {
 				if (strings[0] == null) {break;} //stops the loop when there's no more lines to read
 				
 				if (strings[0].startsWith("|The") || strings[0].startsWith("|Black") || strings[0].startsWith("|{{Robux")) {
-					strings[1] = readFile.readLine();
-					strings[2] = readFile.readLine();
+					strings[1] = readFile.readLine().toLowerCase();
+					strings[2] = readFile.readLine().toLowerCase();
 					
 					strings[0] = strings[0].contains("The") ? strings[0].substring(strings[0].indexOf('e') + 1).trim().toLowerCase() : "black dusk";
-					strings[4] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim().toLowerCase();
+					strings[4] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim();
 					strings[2] = strings[2].substring(0, strings[2].lastIndexOf(',', strings[2].length() - 2));
-					strings[3] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim().toLowerCase();
-					strings[2] = strings[2].substring(strings[2].indexOf('>') + 1, strings[2].indexOf('<', 2)).trim().toLowerCase();
+					strings[3] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim();
+					strings[2] = strings[2].substring(strings[2].indexOf('>') + 1, strings[2].indexOf('<', 2)).trim();
 					
 					strings[2] = strings[2].endsWith(")") ? strings[2].substring(0, strings[2].indexOf('(')).trim() : strings[2];
 					strings[3] = strings[3].endsWith(")") ? strings[3].substring(0, strings[3].indexOf('(')).trim() : strings[3];
@@ -102,17 +102,17 @@ public class EntryPointProbabilitiesNoEnums {
 					
 					//increments the values in the HashMaps
 					if (is2021) {
-						if (strings[1].toLowerCase().contains("stealth") && !strings[0].equals("black dusk")) {
+						if (strings[1].contains("stealth") && !strings[0].equals("black dusk")) {
 							stealth2021missions.put(strings[0], increment(stealth2021missions.get(strings[0])));
 							stealth2021.get(strings[0]).put(strings[2], increment(stealth2021.get(strings[0]).get(strings[2])));
 							stealth2021.get(strings[0]).put(strings[3], increment(stealth2021.get(strings[0]).get(strings[3])));
 							stealth2021.get(strings[0]).put(strings[4], increment(stealth2021.get(strings[0]).get(strings[4])));
-						} else if (strings[1].toLowerCase().contains("loud")) {
+						} else if (strings[1].contains("loud")) {
 							loud2021missions.put(strings[0], increment(loud2021missions.get(strings[0])));
 							loud2021.get(strings[0]).put(strings[2], increment(loud2021.get(strings[0]).get(strings[2])));
 							loud2021.get(strings[0]).put(strings[3], increment(loud2021.get(strings[0]).get(strings[3])));
 							loud2021.get(strings[0]).put(strings[4], increment(loud2021.get(strings[0]).get(strings[4])));
-						} else if (!(strings[0].equals("black dusk") && strings[1].toLowerCase().contains("stealth"))) {
+						} else if (!(strings[0].equals("black dusk") && strings[1].contains("stealth"))) {
 							System.out.println("The part in the txt file corresponding with a tactic in the 2021 daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
 							for (String s : strings) {
 								System.out.println(s);
@@ -120,12 +120,12 @@ public class EntryPointProbabilitiesNoEnums {
 							throw new RuntimeException();
 						}
 					} else { //not 2021
-						if (strings[1].toLowerCase().contains("stealth")) {
+						if (strings[1].contains("stealth")) {
 							stealth2022missions.put(strings[0], increment(stealth2022missions.get(strings[0])));
 							stealth2022.get(strings[0]).put(strings[2], increment(stealth2022.get(strings[0]).get(strings[2])));
 							stealth2022.get(strings[0]).put(strings[3], increment(stealth2022.get(strings[0]).get(strings[3])));
 							stealth2022.get(strings[0]).put(strings[4], increment(stealth2022.get(strings[0]).get(strings[4])));
-						} else if (strings[1].toLowerCase().contains("loud")) {
+						} else if (strings[1].contains("loud")) {
 							loud2022missions.put(strings[0], increment(loud2022missions.get(strings[0])));
 							loud2022.get(strings[0]).put(strings[2], increment(loud2022.get(strings[0]).get(strings[2])));
 							loud2022.get(strings[0]).put(strings[3], increment(loud2022.get(strings[0]).get(strings[3])));
