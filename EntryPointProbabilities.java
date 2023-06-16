@@ -54,23 +54,23 @@ public class EntryPointProbabilities {
 			Map<Mission, Short> loud2021missions = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> stealth2022missions = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> loud2022missions = new EnumMap<>(getMissionClass());
-			Mission[] stealthMissions = {
+			final Mission[] stealthMissions = {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
 			};
-			Mission[] stealthMissionsNoExpansions = {
+			final Mission[] stealthMissionsNoExpansions = {
 					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 					Mission.SCRS, Mission.KILLHOUSE
 				};
-			Mission[] loudMissions = {
+			final Mission[] loudMissions = {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
 			};
-			Mission[] loudMissionsNoExpansions = {
+			final Mission[] loudMissionsNoExpansions = {
 					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 					Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE
 				};
-			Modifier[] stealthModifiers = {
+			final Modifier[] stealthModifiers = {
 				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
 				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
 				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
@@ -79,7 +79,7 @@ public class EntryPointProbabilities {
 				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
 				Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
 			};
-			Modifier[] loudModifiers = {
+			final Modifier[] loudModifiers = {
 				Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
 				Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
 				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
