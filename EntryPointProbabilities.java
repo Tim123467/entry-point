@@ -118,14 +118,14 @@ public class EntryPointProbabilities {
 				if (strings[0] == null) {break;} //stops the loop when there's no more lines to read
 				
 				if (strings[0].startsWith("|The") || strings[0].startsWith("|Black") || strings[0].startsWith("|{{Robux")) {
-					strings[1] = readFile.readLine();
-					strings[2] = readFile.readLine();
+					strings[1] = readFile.readLine().toLowerCase();
+					strings[2] = readFile.readLine().toUpperCase();
 					
 					strings[0] = strings[0].contains("The") ? strings[0].substring(strings[0].indexOf('e') + 1).trim().toUpperCase() : "BLACK_DUSK";
-					strings[4] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim().toUpperCase();
+					strings[4] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim();
 					strings[2] = strings[2].substring(0, strings[2].lastIndexOf(',', strings[2].length() - 2));
-					strings[3] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim().toUpperCase();
-					strings[2] = strings[2].substring(strings[2].indexOf('>') + 1, strings[2].indexOf('<', 2)).trim().toUpperCase();
+					strings[3] = strings[2].substring(strings[2].lastIndexOf('>', strings[2].length() - 2) + 1, strings[2].lastIndexOf('<')).trim();
+					strings[2] = strings[2].substring(strings[2].indexOf('>') + 1, strings[2].indexOf('<', 2)).trim();
 					
 					strings[2] = strings[2].endsWith(")") ? strings[2].substring(0, strings[2].indexOf('(')).trim() : strings[2];
 					strings[3] = strings[3].endsWith(")") ? strings[3].substring(0, strings[3].indexOf('(')).trim() : strings[3];
@@ -136,17 +136,17 @@ public class EntryPointProbabilities {
 					
 					//increments the values in the maps
 					if (is2021) {
-						if (strings[1].toLowerCase().contains("stealth") && !strings[0].equals("BLACK_DUSK")) {
+						if (strings[1].contains("stealth") && !strings[0].equals("BLACK_DUSK")) {
 							stealth2021missions.put(Mission.valueOf(strings[0]), increment(stealth2021missions.get(Mission.valueOf(strings[0]))));
 							stealth2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[2]), increment(stealth2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[2]))));
 							stealth2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(stealth2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
 							stealth2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[4]), increment(stealth2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[4]))));
-						} else if (strings[1].toLowerCase().contains("loud")) {
+						} else if (strings[1].contains("loud")) {
 							loud2021missions.put(Mission.valueOf(strings[0]), increment(loud2021missions.get(Mission.valueOf(strings[0]))));
 							loud2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[2]), increment(loud2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[2]))));
 							loud2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(loud2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
 							loud2021.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[4]), increment(loud2021.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[4]))));
-						} else if (!(strings[0].equals("BLACK_DUSK") && strings[1].toLowerCase().contains("stealth"))) {
+						} else if (!(strings[0].equals("BLACK_DUSK") && strings[1].contains("stealth"))) {
 							System.out.println("The part in the txt file corresponding with a tactic in the 2021 daily challenges was invalid. The daily challenge entry with the invalid tactic is listed below:");
 							for (String s : strings) {
 								System.out.println(s);
@@ -154,12 +154,12 @@ public class EntryPointProbabilities {
 							throw new RuntimeException();
 						}
 					} else { //not 2021
-						if (strings[1].toLowerCase().contains("stealth")) {
+						if (strings[1].contains("stealth")) {
 							stealth2022missions.put(Mission.valueOf(strings[0]), increment(stealth2022missions.get(Mission.valueOf(strings[0]))));
 							stealth2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[2]), increment(stealth2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[2]))));
 							stealth2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(stealth2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
 							stealth2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[4]), increment(stealth2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[4]))));
-						} else if (strings[1].toLowerCase().contains("loud")) {
+						} else if (strings[1].contains("loud")) {
 							loud2022missions.put(Mission.valueOf(strings[0]), increment(loud2022missions.get(Mission.valueOf(strings[0]))));
 							loud2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[2]), increment(loud2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[2]))));
 							loud2022.get(Mission.valueOf(strings[0])).put(Modifier.valueOf(strings[3]), increment(loud2022.get(Mission.valueOf(strings[0])).get(Modifier.valueOf(strings[3]))));
