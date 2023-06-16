@@ -89,8 +89,8 @@ public class EntryPointProbabilities {
 			for (Mission m : stealthMissions) {
 				stealth2021missions.put(m, Short.valueOf((short)0));
 				stealth2022missions.put(m, Short.valueOf((short)0));
-				stealth2021.put(m, new EnumMap<Modifier, Short>(getModifierClass()));
-				stealth2022.put(m, new EnumMap<Modifier, Short>(getModifierClass()));
+				stealth2021.put(m, new EnumMap<>(getModifierClass()));
+				stealth2022.put(m, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : stealthModifiers) {
 					stealth2021.get(m).put(mo, Short.valueOf((short)0));
 					stealth2022.get(m).put(mo, Short.valueOf((short)0));
@@ -99,8 +99,8 @@ public class EntryPointProbabilities {
 			for (Mission m : loudMissions) {
 				loud2021missions.put(m, Short.valueOf((short)0));
 				loud2022missions.put(m, Short.valueOf((short)0));
-				loud2021.put(m, new EnumMap<Modifier, Short>(getModifierClass()));
-				loud2022.put(m, new EnumMap<Modifier, Short>(getModifierClass()));
+				loud2021.put(m, new EnumMap<>(getModifierClass()));
+				loud2022.put(m, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : loudModifiers) {
 					loud2021.get(m).put(mo, Short.valueOf((short)0));
 					loud2022.get(m).put(mo, Short.valueOf((short)0));
