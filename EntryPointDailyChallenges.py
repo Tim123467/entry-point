@@ -28,26 +28,26 @@ try:
         line = fin.readline()
         if line == '': #stops the loop when there's no more lines to read
             break
-        date = line[:line.find(',')]
+        date = line[:line.index(',')]
         
         if date[:4] == year: #checks if the year matches the specified year
-            line = line[line.find(',') + 1:]
-            mission = line[:line.find(',')]
-            line = line[line.find(',') + 1:]
-            tactic = line[:line.find(',')]
-            line = line[line.find(',') + 1:]
-            color1 = line[:line.find(',')]
-            line = line[line.find(',') + 1:]
-            mod1 = line[:line.find(',')]
+            line = line[line.index(',') + 1:]
+            mission = line[:line.index(',')]
+            line = line[line.index(',') + 1:]
+            tactic = line[:line.index(',')]
+            line = line[line.index(',') + 1:]
+            color1 = line[:line.index(',')]
+            line = line[line.index(',') + 1:]
+            mod1 = line[:line.index(',')]
             mod1 = 'Takedown Limit (4)' if mod1 == 'Takedown Limit' else 'Takedown Limit (6)' if mod1 == 'Takedown Limit 6' else mod1
-            line = line[line.find(',') + 1:]
-            color2 = line[:line.find(',')]
-            line = line[line.find(',') + 1:]
-            mod2 = line[:line.find(',')]
+            line = line[line.index(',') + 1:]
+            color2 = line[:line.index(',')]
+            line = line[line.index(',') + 1:]
+            mod2 = line[:line.index(',')]
             mod2 = 'Takedown Limit (4)' if mod2 == 'Takedown Limit' else 'Takedown Limit (6)' if mod2 == 'Takedown Limit 6' else mod2
-            line = line[line.find(',') + 1:]
-            color3 = line[:line.find(',')]
-            mod3 = line[line.find(',') + 1:].strip()
+            line = line[line.index(',') + 1:]
+            color3 = line[:line.index(',')]
+            mod3 = line[line.index(',') + 1:].strip()
             mod3 = 'Takedown Limit (4)' if mod3 == 'Takedown Limit' else 'Takedown Limit (6)' if mod3 == 'Takedown Limit 6' else mod3
             
             if date[8:10] == '01': #first day of the month
