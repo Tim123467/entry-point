@@ -45,7 +45,7 @@ public class EntryPointProbabilitiesNoEnums {
 				"one shot", "inexperienced", "less health",
 				"no explosives", "shield swarm", "explosive flashbangs", "explosive revenge"
 			};
-			//The Short values will represent the number of occurrences
+			//the Short values will represent the number of occurrences
 			Map<String, Map<String, Short>> stealth2021 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
 			Map<String, Map<String, Short>> loud2021 = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
 			Map<String, Map<String, Short>> stealth2022 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
