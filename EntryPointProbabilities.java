@@ -199,16 +199,16 @@ public class EntryPointProbabilities {
 			for (Modifier m : stealthModifiers) {
 				if (m.equals(Modifier.BOARDED_UP) || m.equals(Modifier.NO_EQUIPMENT_BAGS)) {continue;} //these were removed from the stealth pool
 				for (Mission mi : stealthMissionsNoExpansions) {
-					if ((double)stealth2021.get(mi).get(m).shortValue() != 0 &&
-						(double)stealth2022.get(mi).get(m).shortValue() == 0) {
+					if (stealth2021.get(mi).get(m).shortValue() != 0 &&
+						stealth2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
 			}
 			for (Modifier m : loudModifiers) {
 				for (Mission mi : loudMissionsNoExpansions) {
-					if ((double)loud2021.get(mi).get(m).shortValue() != 0 &&
-						(double)loud2022.get(mi).get(m).shortValue() == 0) {
+					if (loud2021.get(mi).get(m).shortValue() != 0 &&
+						loud2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
