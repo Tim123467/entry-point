@@ -8,14 +8,14 @@ import java.util.*;
 public class EntryPointProbabilities {
 	/** The missions that can have daily challenges, in all caps and without "The" at the beginning.
 	 * I could've split this enum into one for stealth missions and one for loud missions, but that would require more typing. */
-	public enum Mission {
+	private enum Mission {
 		BLACKSITE, FINANCIER, DEPOSIT, LAKEHOUSE, WITHDRAWAL, SCIENTIST, SCRS, BLACK_DUSK,
 		KILLHOUSE, AUCTION, GALA, CACHE, SETUP, LOCKUP, SCORE
 	}
 	
 	/** All modifiers that can be picked for a daily challenge, in all caps and with spaces replaced with underscores.
 	 * I could've split this enum into one for stealth modifiers and one for loud modifiers, but that would require more typing.*/
-	public enum Modifier {
+	private enum Modifier {
 		MISPLACED_GEAR, NO_AEGIS_ARMOR, BOARDED_UP, FOG, NO_SUPPRESSORS, NO_SAFECRACKING,
 		WEAPON_SCANNERS, NO_SCRAMBLER, BLOODLESS, UNSKILLED, SMALL_ARMS_ONLY, CRIMINAL_ARSENAL, NO_HYBRID_CLASSES,
 		CASCADE_ARSENAL, FLASHBANG_FRENZY, REINFORCED_DOORS, HEAVY_BAGS, ARMERA_ARSENAL, NO_EQUIPMENT_BAGS,
@@ -27,19 +27,19 @@ public class EntryPointProbabilities {
 	
 	/** @return the Class object representing Mission. */
 	@SuppressWarnings("unchecked")
-	public static Class<Mission> getMissionClass() {
+	private static Class<Mission> getMissionClass() {
 		return (Class<Mission>)Mission.SCRS.getClass(); //could be any mission here
 	}
 	
 	/** @return the Class object representing Modifier. */
 	@SuppressWarnings("unchecked")
-	public static Class<Modifier> getModifierClass() {
+	private static Class<Modifier> getModifierClass() {
 		return (Class<Modifier>)Modifier.FOG.getClass(); //could be any modifier here
 	}
 	
 	/** @param s an instance of the Short class.
 	 * @return an instance of the Short class with its value 1 above the value of s. */
-	public static Short increment(Short s) {
+	private static Short increment(Short s) {
 		return Short.valueOf((short)(s.shortValue() + 1));
 	}
 	
