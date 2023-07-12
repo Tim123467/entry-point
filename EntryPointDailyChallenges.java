@@ -8,7 +8,7 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2023-06"; //must be in the format "YYYY-MM"
+	final static String currentYearAndMonth = "2023-07"; //must be in the format "YYYY-MM"
 	final static String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
@@ -137,11 +137,11 @@ public class EntryPointDailyChallenges {
 			System.out.println("\nThe txt file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex."
+			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex. "
 						     + "This was caused by either an invalid line in the txt file or an invalid value for the currentYearAndMonth variable.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
 		} catch (NumberFormatException e) {
-			System.out.println("\nThe Short.parseShort method returned an error."
+			System.out.println("\nThe Short.parseShort method returned an error. "
 					         + "This was caused by either an invalid date in the txt file or invalid values for the currentYearAndMonth variable or for the year variable.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
