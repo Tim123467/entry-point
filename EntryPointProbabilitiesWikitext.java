@@ -117,6 +117,7 @@ public class EntryPointProbabilitiesWikitext {
 			boolean isStealth = true;
 			
 			p("Credit to General_Gunner for the idea. This blog post will only count [[Daily Challenges|daily challenges]] starting in 2022 due to the removal of certain modifiers from certain missions around that time.");
+			//Discord username, not Github username
 			p();
 			p("A blank cell means 0% chance.");
 			p("==Stealth==");
