@@ -25,20 +25,20 @@ public class EntryPointProbabilities {
 		NO_EXPLOSIVES, TAKEDOWN_LIMIT, SHIELD_SWARM, EXPLOSIVE_FLASHBANGS, NO_KNOCKOUTS, NO_MOVING_BODIES, NO_DISGUISE, EXPLOSIVE_REVENGE
 	}
 	
-	/** @return the Class object representing Mission. */
+	/** @return The Class object representing Mission. */
 	@SuppressWarnings("unchecked")
 	private static Class<Mission> getMissionClass() {
 		return (Class<Mission>)Mission.SCRS.getClass(); //could be any mission here
 	}
 	
-	/** @return the Class object representing Modifier. */
+	/** @return The Class object representing Modifier. */
 	@SuppressWarnings("unchecked")
 	private static Class<Modifier> getModifierClass() {
 		return (Class<Modifier>)Modifier.FOG.getClass(); //could be any modifier here
 	}
 	
-	/** @param s an instance of the Short class.
-	 * @return an instance of the Short class with its value 1 above the value of s. */
+	/** @param s An instance of the Short class.
+	 * @return An instance of the Short class with its value 1 above the value of s. */
 	private static Short increment(Short s) {
 		return Short.valueOf((short)(s.shortValue() + 1));
 	}
