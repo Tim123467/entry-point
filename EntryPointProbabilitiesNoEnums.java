@@ -7,8 +7,8 @@ import java.io.*;
 import java.util.*;
 
 public class EntryPointProbabilitiesNoEnums {
-	/** @param s an instance of the Short class.
-	 * @return an instance of the Short class with its value 1 above the value of s. */
+	/** @param s An instance of the Short class.
+	 * @return An instance of the Short class with its value 1 above the value of s. */
 	private static Short increment(Short s) {
 		return Short.valueOf((short)(s.shortValue() + 1));
 	}
