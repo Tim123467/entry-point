@@ -10,9 +10,7 @@ import java.util.*;
 public class EntryPointProbabilitiesWikitext {
 	final static String txtFileName = "EP Probabilities Raw.txt"; //change depending on the name you set for the output of EntryPointProbabilities.java
 	
-	/**
-	 * This is needed because enums cannot override their compareTo method.
-	 */
+	/** This is needed because enums cannot override their compareTo method. */
 	static final Comparator<Modifier> STRING_ORDER = new Comparator<Modifier>() {
 		public int compare(Modifier m1, Modifier m2) {
 			return m1.toString().compareTo(m2.toString());
@@ -24,7 +22,7 @@ public class EntryPointProbabilitiesWikitext {
 	}
 	
 	/** All modifiers that can be picked for a daily challenge, in all caps and with spaces replaced with underscores.
-	 * I could've split this enum into one for stealth modifiers and one for loud modifiers, but that would require more typing.*/
+	 * I could've split this enum into one for stealth modifiers and one for loud modifiers, but that would require more typing. */
 	private enum Modifier {
 		MISPLACED_GEAR(Color.GREEN), NO_AEGIS_ARMOR(Color.GREEN), BOARDED_UP(Color.GREEN),
 		FOG(Color.GREEN), NO_SUPPRESSORS(Color.GREEN), NO_SAFECRACKING(Color.GREEN),
@@ -45,7 +43,7 @@ public class EntryPointProbabilitiesWikitext {
 		}
 		
 		/**
-		 * @return the string representation of the modifier's color in lowercase
+		 * @return The string representation of the modifier's color in lowercase.
 		 */
 		String getColor() {
 			return color.toString().toLowerCase();
@@ -68,7 +66,7 @@ public class EntryPointProbabilitiesWikitext {
 	
 	/**
 	 * A method specifically designed for this program.
-	 * @return the input string but in title case (with an exception for Hidden UI)
+	 * @return The input string but in title case (with a built-in exception for Hidden UI).
 	 */
 	private static String titleCase(String input) {
 		String[] array = input.trim().toLowerCase().split(" ");
