@@ -7,7 +7,7 @@ The output is produced in a separate text file.
 '''
 
 txtFileName = 'EP Daily Challenges.txt' #change depending on the name you set for Breakbar's txt file
-currentYearAndMonth = '2023-06' #must be in the format "YYYY-MM"
+currentYearAndMonth = '2023-08' #must be in the format "YYYY-MM"
 lastYear = 2025 #the last year that the txt file has daily challenges for, as an integer
 
 while True: #prompts for year
@@ -126,7 +126,7 @@ try:
             
             fout.write('>' + mod2 + '</span>, <span class=challenge-')
             
-            if date == '2023-04-28': #April 28's daily challenge was changed (specifically the 3rd modifier)
+            if date == '2023-04-28' or date == '2023-07-29': #April 28 and July 29's daily challenges were changed (specifically the 3rd modifier)
                 fout.write('purple>Hidden UI</span>\n')
             else:
                 if color3 == 'G':
