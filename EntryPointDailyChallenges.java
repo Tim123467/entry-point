@@ -8,7 +8,7 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2023-07"; //must be in the format "YYYY-MM"
+	final static String currentYearAndMonth = "2023-08"; //must be in the format "YYYY-MM"
 	final static String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
@@ -112,7 +112,7 @@ public class EntryPointDailyChallenges {
 					
 					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
 					
-					if (date.equals("2023-04-28")) { //April 28's daily challenge was changed (specifically the 3rd modifier)
+					if (date.equals("2023-04-28") || date.equals("2023-07-29")) { //April 28 and July 29's daily challenges were changed (specifically the 3rd modifier)
 						System.out.println("purple>Hidden UI</span>");
 					} else {
 						switch (color3) {
