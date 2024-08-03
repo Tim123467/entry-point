@@ -11,4 +11,4 @@ There are three different programs, two of which are available in both Java and 
 3) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java". I currently do not plan on making a Python version of it.
 
 # Black Dawn date checker
-"EntryPointBlackDawnDateChecker.java"
+"EntryPointBlackDawnDateChecker.java". It's only available in Java. I currently do not plan on making a Python version of it.
