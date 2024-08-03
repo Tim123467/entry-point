@@ -41,7 +41,7 @@ public class EntryPointBlackDawnDateChecker {
 					lineNum++;
 					
 					System.out.println("Date: " + line.substring(37, 47));
-					System.out.println("Time: " + line.substring(48, line.length() - 3));
+					System.out.println("Time: " + line.substring(48, line.length() - 3) + " UTC");
 				}
 			} catch (Exception e) {
 				System.out.println("Either this user does not exist, or there was a problem running the program.");
