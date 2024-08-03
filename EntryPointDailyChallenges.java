@@ -8,8 +8,8 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2023-12"; //must be in the format "YYYY-MM"
-	final static String year = "2023"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+	final static String currentYearAndMonth = "2024-08"; //must be in the format "YYYY-MM"
+	final static String year = "2024"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
 	public static void main(String[] args) {
