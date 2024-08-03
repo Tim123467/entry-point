@@ -7,7 +7,7 @@ The output is produced in a separate text file.
 '''
 
 txtFileName = 'EP Daily Challenges.txt' #change depending on the name you set for Breakbar's txt file
-currentYearAndMonth = '2023-12' #must be in the format "YYYY-MM"
+currentYearAndMonth = '2024-08' #must be in the format "YYYY-MM"
 lastYear = 2025 #the last year that the txt file has daily challenges for, as an integer
 
 while True: #prompts for year
