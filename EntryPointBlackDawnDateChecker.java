@@ -10,7 +10,7 @@ public class EntryPointBlackDawnDateChecker {
 		Scanner input = new Scanner(System.in);
 		String line;
 		long userID;
-		short lineNum;
+		boolean readPage;
 		
 		outer: while (true) {
 			do {
@@ -26,19 +26,19 @@ public class EntryPointBlackDawnDateChecker {
 			} while (userID < 0);
 			
 			try (BufferedReader readWeb = new BufferedReader(new InputStreamReader(new URI("https://badges.roblox.com/v1/users/" + userID + "/badges/2124422246/awarded-date").toURL().openStream()));) {
-				lineNum = 0;
+				readPage = false;
 				
 				while (true) {
 					line = readWeb.readLine();
 					
 					if (line == null) {
-						if (lineNum == 0) {
+						if (!readPage) {
 							System.out.println("User " + userID + " either does not exist or does not have the Black Dawn badge.");
 						}
 						break;
 					}
 					
-					lineNum++;
+					readPage = true;
 					
 					System.out.println("User ID: " + userID);
 					System.out.println("Date: " + line.substring(37, 47));
