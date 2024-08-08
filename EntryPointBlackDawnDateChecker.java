@@ -33,13 +33,14 @@ public class EntryPointBlackDawnDateChecker {
 					
 					if (line == null) {
 						if (lineNum == 0) {
-							System.out.println("This user either does not exist or does not have the Black Dawn badge.");
+							System.out.println("User " + userID + " either does not exist or does not have the Black Dawn badge.");
 						}
 						break;
 					}
 					
 					lineNum++;
 					
+					System.out.println("User ID: " + userID);
 					System.out.println("Date: " + line.substring(37, 47));
 					System.out.println("Time: " + line.substring(48, line.length() - 3) + " UTC");
 				}
