@@ -13,17 +13,21 @@ public class EntryPointBlackDawnDateChecker {
 		boolean readPage;
 		
 		outer: while (true) {
-			do {
+			while (true) {
 				System.out.print("Enter a valid Roblox user ID (or enter 0 to quit): ");
 				try {
 					userID = Long.parseLong(input.nextLine().trim());
 					
-					if (userID == 0) {break outer;}
+					if (userID > 0) {
+						break;
+					} else if (userID == 0) {
+						break outer;
+					}
 				} catch (NumberFormatException e) {
 					userID = -1;
-					continue;
 				}
-			} while (userID < 0);
+				System.out.println("Invalid user ID.");
+			}
 			
 			try (BufferedReader readWeb = new BufferedReader(new InputStreamReader(new URI("https://badges.roblox.com/v1/users/" + userID + "/badges/2124422246/awarded-date").toURL().openStream()));) {
 				readPage = false;
