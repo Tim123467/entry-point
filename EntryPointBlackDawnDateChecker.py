@@ -36,4 +36,4 @@ while True:
         if isBlank:
             print('User ' + str(userID) + ' either does not exist or does not have the Black Dawn badge.')
     except URLError:
-        print('This user does not exist.')
+        print('Either this user does not exist, or there was a problem running the program.')
