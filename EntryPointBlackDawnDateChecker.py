@@ -32,7 +32,7 @@ while True:
                 print('User ID: ' + str(userID))
                 print('Date: ' + line[37:47])
                 print('Time: ' + line[48:-3] + ' UTC')
-        
+                
         if isBlank:
             print('User ' + str(userID) + ' either does not exist or does not have the Black Dawn badge.')
     except URLError:
