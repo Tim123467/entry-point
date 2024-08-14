@@ -1,3 +1,10 @@
+# Black Dawn date checker
+Both versions of this program are known to bug out on online IDEs, so instead I recommend downloading and using either Eclipse (https://eclipseide.org/), Anaconda (https://www.anaconda.com/download/success), or VS Code (https://code.visualstudio.com/docs/setup/setup-overview).
+
+1) Java: "EntryPointBlackDawnDateChecker.java". I recommend using Eclipse to run this.
+2) Python: "EntryPointBlackDawnDateChecker.py". I recommend opening Anaconda Navigator (included in the Anaconda Distribution) and using Spyder to run this.
+3) If you have VS Code installed, it can be used as an alternative to Eclipse/Anaconda. I tried both versions in VS Code and the Python version ran without issues. Due to my lack of experience working with Java in VS Code, I could not figure out how to get any Java program to run in VS Code. Since the Python version worked in VS Code, if you can get Java programs to run in VS Code then I assume the Java version will work too (although this is just an assumption).
+
 # Daily Challenges programs
 There are three different programs, two of which are available in both Java and Python. The output for the Java versions is produced in the console, while the output for the Python versions is produced in a separate text file.
 1) A program that translates Breakbar's txt file into wikitext.
@@ -9,10 +16,3 @@ There are three different programs, two of which are available in both Java and 
 2) A program that gives the probability of each modifier appearing on a certain mission and gives a list of modifiers removed from certain missions. The Java version has two different implementations: one using enums and EnumMaps ("EntryPointProbabilities.java") and one that avoids enums and uses HashMaps instead of EnumMaps ("EntryPointProbabilitiesNoEnums.java"). The Python version is "EntryPointProbabilities.py".
 
 3) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java". I currently do not plan on making a Python version of it.
-
-# Black Dawn date checker
-Both versions of this program are known to bug out on online IDEs, so instead I recommend downloading and using either Eclipse (https://eclipseide.org/), Anaconda (https://www.anaconda.com/download/success), or VS Code (https://code.visualstudio.com/docs/setup/setup-overview).
-
-1) Java: "EntryPointBlackDawnDateChecker.java". I recommend using Eclipse to run this.
-2) Python: "EntryPointBlackDawnDateChecker.py". I recommend opening Anaconda Navigator (included in the Anaconda Distribution) and using Spyder to run this.
-3) If you have VS Code installed, it can be used as an alternative to Eclipse/Anaconda. I tried both versions in VS Code and the Python version ran without issues. Due to my lack of experience working with Java in VS Code, I could not figure out how to get any Java program to run in VS Code. Since the Python version worked in VS Code, if you can get Java programs to run in VS Code then I assume the Java version will work too (although this is just an assumption).
