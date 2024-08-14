@@ -50,7 +50,6 @@ public class EntryPointBlackDawnDateChecker {
 				}
 			} catch (Exception e) {
 				System.out.println("Either this user does not exist, or there was a problem running the program.");
-				continue;
 			}
 		}
 		input.close();
