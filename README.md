@@ -11,7 +11,7 @@ There are three different programs, two of which are available in both Java and 
 3) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java". I currently do not plan on making a Python version of it.
 
 # Black Dawn date checker
-This program is known to bug out on online IDEs, so instead I recommend using either Eclipse for the Java version (https://eclipseide.org/) or Anaconda for the Python version (https://www.anaconda.com/download/success).
+This program is known to bug out on online IDEs, so instead I recommend downloading and using either Eclipse for the Java version (https://eclipseide.org/) or Anaconda for the Python version (https://www.anaconda.com/download/success).
 
 1) Java: "EntryPointBlackDawnDateChecker.java". I recommend using Eclipse to run this.
 2) Python: "EntryPointBlackDawnDateChecker.py". I recommend opening Anaconda Navigator (included in the Anaconda Distribution) and using Spyder to run this.
