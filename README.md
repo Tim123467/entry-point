@@ -1,11 +1,19 @@
 # Black Dawn date checker (no downloads required version)
-Requires a Google account (if you have a YouTube channel then you have a Google account). Your Google account can stay private, you do not need to share it.
+This version requires you to have a Google account (if you have a YouTube channel then you have a Google account). Your Google account can stay private, you do not need to share it.
+
+There are 2 different methods to access this version. I recommend doing Method 1 to avoid the annoying warning message that pops up when doing Method 2. If your Google Drive is full, then you will have to do Method 2.
+
+Method 1:
 1) Open "EntryPointBlackDawnDateChecker.ipynb"
 2) Copy the part in the box next to "In [13]:". The part you should copy starts with "# -\*- coding: utf-8 -\*-" and ends with "print('Time: ' + r.text[48:-3] + ' UTC')".
 3) Go to https://colab.research.google.com/
 4) Click "New notebook"
 5) Paste the code into the box.
 6) Run the code. To access the program again, go to your Google Drive and there should be a folder called "Colab Notebooks" containing this program.
+
+Method 2:
+1) Go to https://colab.research.google.com/github/Tim123467/entry-point/blob/main/EntryPointBlackDawnDateChecker.ipynb
+2) You can run the code from that website.
 
 # Black Dawn date checker (original versions)
 Both versions of this program are known to bug out on online IDEs, so instead I recommend downloading and using either Eclipse (https://eclipseide.org/), Anaconda (https://www.anaconda.com/download/success), or VS Code (https://code.visualstudio.com/docs/setup/setup-overview).
