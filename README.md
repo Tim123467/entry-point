@@ -22,7 +22,7 @@ Both versions of this program are known to bug out on online IDEs, so instead I 
 2) Python: "EntryPointBlackDawnDateChecker.py". I recommend opening Anaconda Navigator (included in the Anaconda Distribution) and using Spyder to run this.
 3) If you have VS Code installed, it can be used as an alternative to Eclipse/Anaconda. I tried both versions in VS Code and the Python version ran without issues. Due to my lack of experience working with Java in VS Code, I could not figure out how to get any Java program to run in VS Code. Since the Python version worked in VS Code, if you can get Java programs to run in VS Code then I assume the Java version will work too (although this is just an assumption).
 
-# Daily Challenges programs
+# Daily challenges programs
 There are three different programs, two of which are available in both Java and Python. The output for the Java versions is produced in the console, while the output for the Python versions is produced in a separate text file.
 1) A program that translates Breakbar's txt file into wikitext.
 
