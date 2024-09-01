@@ -7,7 +7,7 @@ The output is produced in a separate text file.
 '''
 
 txtFileName = 'EP Daily Challenges.txt' #change depending on the name you set for Breakbar's txt file
-currentYearAndMonth = '2024-08' #must be in the format "YYYY-MM"
+currentYearAndMonth = '2024-09' #must be in the format "YYYY-MM"
 lastYear = 2025 #the last year that the txt file has daily challenges for, as an integer
 
 while True: #prompts for year
@@ -93,42 +93,58 @@ try:
             
             fout.write('|-\n!' + date + '\n|')
             
-            if mission == 'The Auction' or mission == 'The Gala' or mission == 'The Cache' or mission == 'The Setup' or mission == 'The Lockup' or mission == 'The Score':
-                fout.write('{{Robux}} ')
-            
-            fout.write(mission + '\n|' + tactic + '\n|<span class=challenge-')
-            
-            if color1 == 'G':
-                fout.write('green')
-            elif color1 == 'B':
-                fout.write('blue')
-            elif color1 == 'P':
-                fout.write('purple')
-            elif color1 == 'R':
-                fout.write('red')
+            if mission == 'The Scientist' and mod1 == 'No Suppressors' and mod2 == 'Hidden UI' and mod3 == 'No Knockouts': #invalid modifier combinations
+                fout.write('The Scientist\n|Stealth\n|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden UI</span>\n')
+            elif mission == 'The Scientist' and (mod1 == 'No Suppressors' or mod2 == 'No Suppressors') and mod3 == 'No Knockouts':
+                fout.write('The Scientist\n|Stealth\n|<span class=challenge-green>' + mod1 + '</span>, <span class=challenge-')
+                
+                if color2 == 'G':
+                    fout.write('green')
+                elif color2 == 'B':
+                    fout.write('blue')
+                elif color2 == 'P':
+                    fout.write('purple')
+                elif color2 == 'R':
+                    fout.write('red')
+                else:
+                    print("\nThe part in the txt file corresponding with the second modifier's color was invalid.")
+                    raise ValueError
+                
+                fout.write('>' + mod2 + '</span>, <span class=challenge-purple>Hidden UI</span>\n')
             else:
-                print("\nThe part in the txt file corresponding with the first modifier's color was invalid.")
-                raise ValueError
-            
-            fout.write('>' + mod1 + '</span>, <span class=challenge-')
-            
-            if color2 == 'G':
-                fout.write('green')
-            elif color2 == 'B':
-                fout.write('blue')
-            elif color2 == 'P':
-                fout.write('purple')
-            elif color2 == 'R':
-                fout.write('red')
-            else:
-                print("\nThe part in the txt file corresponding with the second modifier's color was invalid.")
-                raise ValueError
-            
-            fout.write('>' + mod2 + '</span>, <span class=challenge-')
-            
-            if date == '2023-04-28' or date == '2023-07-29' or date == '2023-09-13': #These daily challenges were changed (specifically the 3rd modifier)
-                fout.write('purple>Hidden UI</span>\n')
-            else:
+                if mission == 'The Auction' or mission == 'The Gala' or mission == 'The Cache' or mission == 'The Setup' or mission == 'The Lockup' or mission == 'The Score':
+                    fout.write('{{Robux}} ')
+                
+                fout.write(mission + '\n|' + tactic + '\n|<span class=challenge-')
+                
+                if color1 == 'G':
+                    fout.write('green')
+                elif color1 == 'B':
+                    fout.write('blue')
+                elif color1 == 'P':
+                    fout.write('purple')
+                elif color1 == 'R':
+                    fout.write('red')
+                else:
+                    print("\nThe part in the txt file corresponding with the first modifier's color was invalid.")
+                    raise ValueError
+                
+                fout.write('>' + mod1 + '</span>, <span class=challenge-')
+                
+                if color2 == 'G':
+                    fout.write('green')
+                elif color2 == 'B':
+                    fout.write('blue')
+                elif color2 == 'P':
+                    fout.write('purple')
+                elif color2 == 'R':
+                    fout.write('red')
+                else:
+                    print("\nThe part in the txt file corresponding with the second modifier's color was invalid.")
+                    raise ValueError
+                
+                fout.write('>' + mod2 + '</span>, <span class=challenge-')
+                
                 if color3 == 'G':
                     fout.write('green')
                 elif color3 == 'B':
