@@ -8,7 +8,7 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2024-08"; //must be in the format "YYYY-MM"
+	final static String currentYearAndMonth = "2024-09"; //must be in the format "YYYY-MM"
 	final static String year = "2024"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
@@ -81,6 +81,27 @@ public class EntryPointDailyChallenges {
 					
 					System.out.print("|-\n!" + date + "\n|");
 					
+					if (mission.equals("The Scientist") && mod3.equals("No Knockouts")) { //invalid modifier combinations
+						if (mod1.equals("No Suppressors") && mod2.equals("Hidden UI")) {
+							System.out.println("The Scientist\n|Stealth\n|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden UI</span>");
+							continue;
+						} else if (mod1.equals("No Suppressors") || mod2.equals("No Suppressors")) {
+							System.out.print("The Scientist\n|Stealth\n|<span class=challenge-green>" + mod1 + "</span>, <span class=challenge-");
+							
+							switch (color2) {
+							case "G": System.out.print("green"); break;
+							case "B": System.out.print("blue"); break;
+							case "P": System.out.print("purple"); break;
+							case "R": System.out.print("red"); break;
+							default:
+								System.out.println("\nThe part in the txt file corresponding with the second modifier's color was invalid.");
+								throw new RuntimeException();
+							}
+							System.out.println(">" + mod2 + "</span>, <span class=challenge-purple>Hidden UI</span>");
+							continue;
+						}
+					}
+					
 					switch (mission) {
 					case "The Auction": case "The Gala": case "The Cache": case "The Setup": case "The Lockup": case "The Score":
 						System.out.print("{{Robux}} ");
@@ -97,7 +118,6 @@ public class EntryPointDailyChallenges {
 						System.out.println("\nThe part in the txt file corresponding with the first modifier's color was invalid.");
 						throw new RuntimeException();
 					}
-					
 					System.out.print(">" + mod1 + "</span>, <span class=challenge-");
 					
 					switch (color2) {
@@ -109,23 +129,18 @@ public class EntryPointDailyChallenges {
 						System.out.println("\nThe part in the txt file corresponding with the second modifier's color was invalid.");
 						throw new RuntimeException();
 					}
-					
 					System.out.print(">" + mod2 + "</span>, <span class=challenge-");
 					
-					if (date.equals("2023-04-28") || date.equals("2023-07-29") || date.equals("2023-09-13")) { //These daily challenges were changed (specifically the 3rd modifier)
-						System.out.println("purple>Hidden UI</span>");
-					} else {
-						switch (color3) {
-						case "G": System.out.print("green"); break;
-						case "B": System.out.print("blue"); break;
-						case "P": System.out.print("purple"); break;
-						case "R": System.out.print("red"); break;
-						default:
-							System.out.println("\nThe part in the txt file corresponding with the third modifier's color was invalid.");
-							throw new RuntimeException();
-						}
-						System.out.println(">" + mod3 + "</span>");
+					switch (color3) {
+					case "G": System.out.print("green"); break;
+					case "B": System.out.print("blue"); break;
+					case "P": System.out.print("purple"); break;
+					case "R": System.out.print("red"); break;
+					default:
+						System.out.println("\nThe part in the txt file corresponding with the third modifier's color was invalid.");
+						throw new RuntimeException();
 					}
+					System.out.println(">" + mod3 + "</span>");
 				}
 			}
 			
