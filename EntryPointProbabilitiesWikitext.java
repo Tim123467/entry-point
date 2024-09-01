@@ -114,7 +114,7 @@ public class EntryPointProbabilitiesWikitext {
 			String line = readFile.readLine(); //first line of the txt file is not needed
 			boolean isStealth = true;
 			
-			p("Credit to General_Gunner for the idea. This blog post will only count [[Daily Challenges|daily challenges]] starting in 2022 due to the removal of certain modifiers from certain missions around that time.");
+			p("Credit to General_Gunner for the idea. This blog post will only count [[Daily Challenges|daily challenges]] starting in 2022 due to the removal of certain modifiers from certain missions around that time. Note that these percentages weren't extracted from the game; they were just taken from the list of daily challenges on the wiki.");
 			//Discord username, not Github username
 			p();
 			p("A blank cell means 0% chance.");
