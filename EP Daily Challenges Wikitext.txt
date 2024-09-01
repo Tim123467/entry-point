@@ -156,6 +156,7 @@
 |Loud
 |<span class="challenge-blue">Glass Cannon</span>, <span class="challenge-blue">Armera Arsenal</span>, <span class="challenge-purple">Inexperienced</span>
 |}
+
 ===September 2021===
 {| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
@@ -3493,7 +3494,7 @@
 |<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-red>No Knockouts</span>
 |}
 ===June 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous and Upcoming Challenges" data-collapsetext="Hide Previous and Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -3650,7 +3651,7 @@
 |<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Small Arms Only</span>, <span class=challenge-purple>One Shot</span>
 |}
 ===July 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -3799,7 +3800,7 @@
 !2023-07-29
 |The Scientist
 |Stealth
-|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-red>No Knockouts</span>
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Hidden UI</span>
 |-
 !2023-07-30
 |The Killhouse
@@ -3812,7 +3813,7 @@
 |<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-purple>Flashbang Revenge</span>
 |}
 ===August 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -3974,7 +3975,7 @@
 |<span class=challenge-green>Fog</span>, <span class=challenge-blue>No Hybrid Classes</span>, <span class=challenge-red>Explosive Revenge</span>
 |}
 ===September 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4043,7 +4044,7 @@
 !2023-09-13
 |The Scientist
 |Stealth
-|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-red>No Knockouts</span>
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-purple>Hidden UI</span>
 |-
 !2023-09-14
 |{{Robux}} The Cache
@@ -4131,7 +4132,7 @@
 |<span class=challenge-purple>Aegis Academy</span>, <span class=challenge-red>Explosive Revenge</span>, <span class=challenge-red>Explosive Flashbangs</span>
 |}
 ===October 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4293,7 +4294,7 @@
 |<span class=challenge-green>Fog</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Fifteen Minutes</span>
 |}
 ===November 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4450,7 +4451,7 @@
 |<span class=challenge-green>Fog</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-purple>Less Health</span>
 |}
 ===December 2023===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4614,7 +4615,7 @@
 '''Daily Challenges''' from 2024 will be displayed here.
 
 ===January 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4776,7 +4777,7 @@
 |<span class=challenge-green>Fog</span>, <span class=challenge-blue>No Hybrid Classes</span>, <span class=challenge-purple>Flashbang Revenge</span>
 |}
 ===February 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -4928,7 +4929,7 @@
 |<span class=challenge-blue>Small Arms Only</span>, <span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-red>Shield Swarm</span>
 |}
 ===March 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5090,7 +5091,7 @@
 |<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-red>Explosive Revenge</span>
 |}
 ===April 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5247,7 +5248,7 @@
 |<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-red>Shield Swarm</span>
 |}
 ===May 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5366,7 +5367,7 @@
 !2024-05-23
 |The Scientist
 |Stealth
-|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-red>No Knockouts</span>
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-purple>Hidden UI</span>
 |-
 !2024-05-24
 |Black Dusk
@@ -5409,7 +5410,7 @@
 |<span class=challenge-green>Fog</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Reinforced Cameras</span>
 |}
 ===June 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5566,7 +5567,7 @@
 |<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-red>No Disguise</span>
 |}
 ===July 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5728,7 +5729,7 @@
 |<span class=challenge-green>No Safecracking</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>No Interrogation</span>
 |}
 ===August 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -5767,7 +5768,7 @@
 !2024-08-07
 |The Scientist
 |Stealth
-|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-red>No Knockouts</span>
+|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden UI</span>
 |-
 !2024-08-08
 |The Withdrawal
@@ -5890,7 +5891,7 @@
 |<span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-red>Explosive Flashbangs</span>, <span class=challenge-red>Explosive Revenge</span>
 |}
 ===September 2024===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous and Upcoming Challenges" data-collapsetext="Hide Previous and Upcoming Challenges"
 !Date
 !Mission
 !Tactic
