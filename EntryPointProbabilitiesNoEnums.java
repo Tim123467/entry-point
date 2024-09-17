@@ -14,7 +14,7 @@ public class EntryPointProbabilitiesNoEnums {
 	}
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges Wikitext.txt")));) {
+		try (BufferedReader readFile = new BufferedReader(new FileReader("EP Daily Challenges Wikitext.txt"));) {
 			final String[] stealthMissions = {
 					"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "killhouse",
 					"auction", "gala", "cache", "setup", "lockup"
