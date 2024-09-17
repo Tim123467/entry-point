@@ -44,7 +44,7 @@ public class EntryPointProbabilities {
 	}
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(new File("EP Daily Challenges Wikitext.txt")));) {
+		try (BufferedReader readFile = new BufferedReader(new FileReader("EP Daily Challenges Wikitext.txt"));) {
 			//The Short values will represent the number of occurrences
 			Map<Mission, Map<Modifier, Short>> stealth2021 = new EnumMap<>(getMissionClass());
 			Map<Mission, Map<Modifier, Short>> loud2021 = new EnumMap<>(getMissionClass());
