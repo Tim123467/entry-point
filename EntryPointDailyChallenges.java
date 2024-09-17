@@ -13,7 +13,7 @@ public class EntryPointDailyChallenges {
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
+		try (BufferedReader readFile = new BufferedReader(new FileReader(txtFileName));) {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			while (true) {
