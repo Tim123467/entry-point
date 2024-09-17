@@ -80,7 +80,7 @@ public class EntryPointProbabilitiesWikitext {
 	}
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(new File(txtFileName)));) {
+		try (BufferedReader readFile = new BufferedReader(new FileReader(txtFileName));) {
 			final Modifier[] stealthModifiers = {
 				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
 				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
