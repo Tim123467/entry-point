@@ -25,15 +25,15 @@ while True:
     isBlank = True
     
     try:
-        with urlopen('https://badges.roblox.com/v1/users/' + str(userID) + '/badges/2124422246/awarded-date') as response:
+        with urlopen(f'https://badges.roblox.com/v1/users/{userID}/badges/2124422246/awarded-date') as response:
             for line in response:
                 line = line.decode()
                 isBlank = False
-                print('User ID: ' + str(userID))
-                print('Date: ' + line[37:47])
-                print('Time: ' + line[48:-3] + ' UTC')
+                print(f'User ID: {userID}')
+                print(f'Date: {line[37:47]}')
+                print(f'Time: {line[48:-3]} UTC')
         
         if isBlank:
-            print('User ' + str(userID) + ' either does not exist or does not have the Black Dawn badge.')
+            print(f'User {userID} either does not exist or does not have the Black Dawn badge.')
     except URLError:
         print('Either this user does not exist, or there was a problem running the program.')
