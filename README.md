@@ -1,7 +1,7 @@
 # Black Dawn date checker (no downloads required version)
 This version requires you to have a Google account (if you have a YouTube channel then you have a Google account). Your Google account can stay private, you do not need to share it.
 
-There are 2 different methods to access this version. If your Google Drive is full, then you will have to do Method 2.
+There are 2 different methods to access this version.
 
 Method 1:
 1) Go to https://colab.research.google.com/github/Tim123467/entry-point/blob/main/EntryPointBlackDawnDateChecker.ipynb
