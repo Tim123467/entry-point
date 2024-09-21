@@ -74,8 +74,7 @@ with open('EP Daily Challenges Wikitext.txt') as fin:
                         loud2021[strings[0]][strings[3]] += 1
                         loud2021[strings[0]][strings[4]] += 1
                     elif not (strings[0] == 'black dusk' and 'stealth' in strings[1]):
-                        print('The part in the txt file corresponding with a tactic in the 2021 daily challenges was invalid.')
-                        raise ValueError
+                        raise ValueError('The part in the txt file corresponding with a tactic in the 2021 daily challenges was invalid.')
                 else: #not 2021
                     if 'stealth' in strings[1]:
                         stealth2022missions[strings[0]] += 1
@@ -88,8 +87,7 @@ with open('EP Daily Challenges Wikitext.txt') as fin:
                         loud2022[strings[0]][strings[3]] += 1
                         loud2022[strings[0]][strings[4]] += 1
                     else:
-                        print('The part in the txt file corresponding with a tactic in the 2022 or later daily challenges was invalid.')
-                        raise ValueError
+                        raise ValueError('The part in the txt file corresponding with a tactic in the 2022 or later daily challenges was invalid.')
             elif strings[0].strip() == '===January 2022===':
                 is2021 = False
         
