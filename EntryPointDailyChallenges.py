@@ -76,8 +76,7 @@ with open(txtFileName) as fin:
                         elif date[5:7] == '12':
                             fout.write('December')
                         else:
-                            print('\nThe part in the txt file corresponding with the month was invalid.')
-                            raise ValueError
+                            raise ValueError('The part in the txt file corresponding with the month was invalid.')
                     fout.write(f' {year}===\n{{| class="fandom-table article-table mw-collapsible mw-collapsed" ')
                     
                     if date[:7] == currentYearAndMonth: #current year and current month
@@ -105,8 +104,7 @@ with open(txtFileName) as fin:
                     elif color2 == 'R':
                         fout.write('red')
                     else:
-                        print("\nThe part in the txt file corresponding with the second modifier's color was invalid.")
-                        raise ValueError
+                        raise ValueError("The part in the txt file corresponding with the second modifier's color was invalid.")
                     
                     fout.write(f'>{mod2}</span>, <span class=challenge-purple>Hidden UI</span>\n')
                 else:
@@ -124,8 +122,7 @@ with open(txtFileName) as fin:
                     elif color1 == 'R':
                         fout.write('red')
                     else:
-                        print("\nThe part in the txt file corresponding with the first modifier's color was invalid.")
-                        raise ValueError
+                        raise ValueError("The part in the txt file corresponding with the first modifier's color was invalid.")
                     
                     fout.write(f'>{mod1}</span>, <span class=challenge-')
                     
@@ -138,8 +135,7 @@ with open(txtFileName) as fin:
                     elif color2 == 'R':
                         fout.write('red')
                     else:
-                        print("\nThe part in the txt file corresponding with the second modifier's color was invalid.")
-                        raise ValueError
+                        raise ValueError("The part in the txt file corresponding with the second modifier's color was invalid.")
                     
                     fout.write(f'>{mod2}</span>, <span class=challenge-')
                     
@@ -152,8 +148,7 @@ with open(txtFileName) as fin:
                     elif color3 == 'R':
                         fout.write('red')
                     else:
-                        print("\nThe part in the txt file corresponding with the third modifier's color was invalid.")
-                        raise ValueError
+                        raise ValueError("The part in the txt file corresponding with the third modifier's color was invalid.")
                     
                     fout.write(f'>{mod3}</span>\n')
         
