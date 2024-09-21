@@ -14,7 +14,7 @@ public class EntryPointProbabilities {
 	}
 	
 	/** All modifiers that can be picked for a daily challenge, in all caps and with spaces replaced with underscores.
-	 * I could've split this enum into one for stealth modifiers and one for loud modifiers, but that would require more typing.*/
+	 * I could've split this enum into one for stealth modifiers and one for loud modifiers, but that would require more typing. */
 	private enum Modifier {
 		MISPLACED_GEAR, NO_AEGIS_ARMOR, BOARDED_UP, FOG, NO_SUPPRESSORS, NO_SAFECRACKING,
 		WEAPON_SCANNERS, NO_SCRAMBLER, BLOODLESS, UNSKILLED, SMALL_ARMS_ONLY, CRIMINAL_ARSENAL, NO_HYBRID_CLASSES,
