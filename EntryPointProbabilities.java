@@ -61,7 +61,7 @@ public class EntryPointProbabilities {
 			final Mission[] stealthMissionsNoExpansions = {
 					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 					Mission.SCRS, Mission.KILLHOUSE
-				};
+			};
 			final Mission[] loudMissions = {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
