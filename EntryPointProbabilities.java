@@ -69,7 +69,7 @@ public class EntryPointProbabilities {
 			final Mission[] loudMissionsNoExpansions = {
 					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 					Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE
-				};
+			};
 			final Modifier[] stealthModifiers = {
 				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
 				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
