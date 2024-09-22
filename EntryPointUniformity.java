@@ -172,9 +172,7 @@ public class EntryPointUniformity {
 					//division by 3 at the end is for normalization
 					gini += stealthFreq.get(m).get(mo) * stealthFreq.get(m).get(mo);
 					entropy += stealthFreq.get(m).get(mo) == 0 ? 0 : (stealthFreq.get(m).get(mo) * Math.log(stealthFreq.get(m).get(mo)) / Math.log(2));
-					if (stealthFreq.get(m).get(mo) > error) {
-						error = stealthFreq.get(m).get(mo);
-					}
+					error = stealthFreq.get(m).get(mo) > error ? stealthFreq.get(m).get(mo) : error;
 					
 				}
 				gini = 1 - gini;
@@ -199,9 +197,7 @@ public class EntryPointUniformity {
 					loudFreq.get(m).put(mo, (double)loudOccurrences.get(m).get(mo).shortValue() / loudMissionOccurrences.get(m).shortValue() / 3);
 					gini += loudFreq.get(m).get(mo) * loudFreq.get(m).get(mo);
 					entropy += loudFreq.get(m).get(mo) == 0 ? 0 : (loudFreq.get(m).get(mo) * Math.log(loudFreq.get(m).get(mo)) / Math.log(2));
-					if (loudFreq.get(m).get(mo) > error) {
-						error = loudFreq.get(m).get(mo);
-					}
+					error = loudFreq.get(m).get(mo) > error ? loudFreq.get(m).get(mo) : error;
 				}
 				gini = 1 - gini;
 				entropy *= -1;
