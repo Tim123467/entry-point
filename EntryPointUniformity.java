@@ -161,6 +161,7 @@ public class EntryPointUniformity {
 			Map<Mission, Map<Modifier, Double>> loudFreq = new EnumMap<>(getMissionClass());
 			//0 = Gini; 1 = Entropy; 2 = Error
 			double gini, entropy, error;
+			String mission;
 			
 			for (Mission m : stealthMissions) {
 				stealthFreq.put(m, new EnumMap<>(getModifierClass()));
@@ -181,9 +182,13 @@ public class EntryPointUniformity {
 				entropy *= -1;
 				error = 1 - error;
 				
-				System.out.println((titleCase(m.toString().replace('_', ' ')).equals("Black Dusk") ? "Black Dusk" : "The " + titleCase(m.toString().replace('_', ' ')))
-									+ " stealth has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
-				
+				mission = titleCase(m.toString().replace('_', ' '));
+				switch (mission) {
+				case "Scrs": mission = "The SCRS";
+				case "Black Dusk": break;
+				default: mission = "The " + mission;
+				}
+				System.out.println(mission + " stealth has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
 			}
 			System.out.println();
 			for (Mission m : loudMissions) {
@@ -203,8 +208,13 @@ public class EntryPointUniformity {
 				entropy *= -1;
 				error = 1 - error;
 				
-				System.out.println((titleCase(m.toString().replace('_', ' ')).equals("Black Dusk") ? "Black Dusk" : "The " + titleCase(m.toString().replace('_', ' ')))
-									+ " loud has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
+				mission = titleCase(m.toString().replace('_', ' '));
+				switch (mission) {
+				case "Scrs": mission = "The SCRS";
+				case "Black Dusk": break;
+				default: mission = "The " + mission;
+				}
+				System.out.println(mission + " loud has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("The txt file does not exist or could not be found.");
