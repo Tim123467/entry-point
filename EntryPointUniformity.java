@@ -159,7 +159,6 @@ public class EntryPointUniformity {
 			//Part 2: uniformity calculations
 			Map<Mission, Map<Modifier, Double>> stealthFreq = new EnumMap<>(getMissionClass());
 			Map<Mission, Map<Modifier, Double>> loudFreq = new EnumMap<>(getMissionClass());
-			//0 = Gini; 1 = Entropy; 2 = Error
 			double gini, entropy, error;
 			String mission;
 			
