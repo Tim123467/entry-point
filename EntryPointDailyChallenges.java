@@ -8,7 +8,7 @@ import java.io.*;
 
 public class EntryPointDailyChallenges {
 	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2024-09"; //must be in the format "YYYY-MM"
+	final static String currentYearAndMonth = "2024-10"; //must be in the format "YYYY-MM"
 	final static String year = "2024"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
@@ -92,7 +92,6 @@ public class EntryPointDailyChallenges {
 							case "G": System.out.print("green"); break;
 							case "B": System.out.print("blue"); break;
 							case "P": System.out.print("purple"); break;
-							case "R": System.out.print("red"); break;
 							default:
 								System.out.println("\nThe part in the txt file corresponding with the second modifier's color was invalid.");
 								throw new RuntimeException();
