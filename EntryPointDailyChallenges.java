@@ -45,7 +45,6 @@ public class EntryPointDailyChallenges {
 						if (date.substring(5, 7).equals("01")) { //first month of the year
 							System.out.print("'''Daily Challenges''' from " + year + " will be displayed here.\n\n===January");
 						} else {
-							System.out.print("");
 							switch (date.substring(5, 7)) {
 							case "02": System.out.print("|}\n===February"); break;
 							case "03": System.out.print("|}\n===March"); break;
