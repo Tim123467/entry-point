@@ -45,19 +45,19 @@ public class EntryPointDailyChallenges {
 						if (date.substring(5, 7).equals("01")) { //first month of the year
 							System.out.print("'''Daily Challenges''' from " + year + " will be displayed here.\n\n===January");
 						} else {
-							System.out.print("|}\n===");
+							System.out.print("");
 							switch (date.substring(5, 7)) {
-							case "02": System.out.print("February"); break;
-							case "03": System.out.print("March"); break;
-							case "04": System.out.print("April"); break;
-							case "05": System.out.print("May"); break;
-							case "06": System.out.print("June"); break;
-							case "07": System.out.print("July"); break;
-							case "08": System.out.print("August"); break;
-							case "09": System.out.print("September"); break;
-							case "10": System.out.print("October"); break;
-							case "11": System.out.print("November"); break;
-							case "12": System.out.print("December"); break;
+							case "02": System.out.print("|}\n===February"); break;
+							case "03": System.out.print("|}\n===March"); break;
+							case "04": System.out.print("|}\n===April"); break;
+							case "05": System.out.print("|}\n===May"); break;
+							case "06": System.out.print("|}\n===June"); break;
+							case "07": System.out.print("|}\n===July"); break;
+							case "08": System.out.print("|}\n===August"); break;
+							case "09": System.out.print("|}\n===September"); break;
+							case "10": System.out.print("|}\n===October"); break;
+							case "11": System.out.print("|}\n===November"); break;
+							case "12": System.out.print("|}\n===December"); break;
 							default:
 								System.out.println("\nThe part in the txt file corresponding with the month was invalid.");
 								throw new RuntimeException();
