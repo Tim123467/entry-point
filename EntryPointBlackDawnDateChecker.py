@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-"""
+'''
 Program used to check what date a specified user has earned the Black Dawn badge.
-"""
+'''
 from urllib.request import urlopen
 from urllib.error import URLError
 
