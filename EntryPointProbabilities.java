@@ -40,7 +40,7 @@ public class EntryPointProbabilities {
 	/** @param s An instance of the Short class.
 	 * @return A short with its value 1 above the value of s. */
 	private static short increment(Short s) {
-		return (short)(s.shortValue() + 1);
+		return (short)(s + 1);
 	}
 	
 	public static void main(String[] args) {
