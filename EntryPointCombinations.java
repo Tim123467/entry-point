@@ -21,12 +21,6 @@ public class EntryPointCombinations {
 		return (Class<Mission>)Mission.SCRS.getClass(); //could be any mission here
 	}
 	
-	/** @param s An instance of the Short class.
-	 * @return A short with its value 1 above the value of s. */
-	private static short increment(Short s) {
-		return (short)(s.shortValue() + 1);
-	}
-	
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader(txtFileName));) {
 			Map<Mission, Short> stealthNumModifiers = new EnumMap<>(getMissionClass());
@@ -66,9 +60,9 @@ public class EntryPointCombinations {
 				
 				mission = Mission.valueOf(line.substring(0, line.indexOf(':')));
 				if (isStealth) {
-					stealthNumModifiers.put(mission, increment(stealthNumModifiers.get(mission)));
+					stealthNumModifiers.put(mission, (short)(stealthNumModifiers.get(mission) + 1));
 				} else { //is loud
-					loudNumModifiers.put(mission, increment(loudNumModifiers.get(mission)));
+					loudNumModifiers.put(mission, (short)(loudNumModifiers.get(mission) + 1));
 				}
 			}
 			
