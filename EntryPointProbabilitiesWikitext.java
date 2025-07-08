@@ -201,8 +201,7 @@ public class EntryPointProbabilitiesWikitext {
 			p("The txt file could not be read or closed.");
 			System.err.println("IOException: " + e.getMessage());
 		} catch (NumberFormatException e) {
-			p("\nThe Float.parseFloat method returned an error. "
-			         + "This was caused by an invalid probability value.");
+			p("\nThe Float.parseFloat method returned an error. This was caused by an invalid probability value.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
