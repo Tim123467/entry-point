@@ -39,3 +39,5 @@ The other programs listed below currently do not have Python versions.
 3) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java".
 
 4) A program that gives the uniformity of each mission and tactic.
+
+5) A program that outputs the number of combinations of daily challenge modifiers.
