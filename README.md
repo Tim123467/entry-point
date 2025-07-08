@@ -25,19 +25,17 @@ Both versions of this program are known to bug out on online IDEs, so instead I 
 # Daily challenges programs
 Tip: if you're using Google Colab, don't download the .py file. Instead, copy the code and paste it into a new Google Colaboratory.
 
-There are 4 different programs, two of which are available in both Java and Python. The output for the Java versions is produced in the console, while the output for the Python versions is produced in a separate text file (unless the file extension is .ipynb instead of.py).
+There are 5 different programs, 3 of which are available in both Java and Python. The output for the Java versions is produced in the console, while the output for the Python versions is produced in a separate text file (unless noted otherwise).
 1) A program that translates Breakbar's txt file into wikitext.
 
     1.1. Java: "EntryPointDailyChallenges.java". Edit the values of the 3 final static String variables at the top.
 
-    1.2. Python: "EntryPointDailyChallenges.ipynb". Edit the values of the 3 variables at the top. Similarly to the Black Dawn Date Checker, it can also be accessed at https://colab.research.google.com/github/Tim123467/entry-point/blob/main/EntryPointDailyChallenges.ipynb
+    1.2. Python: "EntryPointDailyChallenges.ipynb". Edit the values of the 3 variables at the top. Similarly to the Black Dawn Date Checker, it can also be accessed at https://colab.research.google.com/github/Tim123467/entry-point/blob/main/EntryPointDailyChallenges.ipynb (the output of the .ipynb will not be produced in a separate text file).
 
 2) A program that gives the probability of each modifier appearing on a certain mission and gives a list of modifiers removed from certain missions. The Java version has two different implementations: one using enums and EnumMaps ("EntryPointProbabilities.java") and one that avoids enums and uses HashMaps instead of EnumMaps ("EntryPointProbabilitiesNoEnums.java"). The Python version is "EntryPointProbabilities.py".
+3) A program that gives the number of combinations of daily challenges for each tactic and mission. The total numbers for each tactic and the grand total are also outputted. The Java version is "EntryPointCombinations.java" and the Python version is "EntryPointCombinations.py". Note that both versions will produce outputs in the console instead of generating a separate text file.
 
 The other programs listed below currently do not have Python versions.
 
-3) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java".
-
-4) A program that gives the uniformity of each mission and tactic.
-
-5) A program that outputs the number of combinations of daily challenge modifiers.
+4) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java".
+5) A program that gives the uniformity of each mission and tactic.
