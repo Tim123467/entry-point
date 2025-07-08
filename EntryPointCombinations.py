@@ -29,11 +29,10 @@ with open('EP Probabilities Generated Output.txt') as fin: #change depending on 
         if line.endswith('0.0') or '.' not in line:
             continue
         
-        mission = line[0:line.index(':')]
         if isStealth:
-            stealthNumModifiers[mission] += 1
+            stealthNumModifiers[line[0:line.index(':')]] += 1
         else: #is loud
-            loudNumModifiers[mission] += 1
+            loudNumModifiers[line[0:line.index(':')]] += 1
     
     #calculate raw num combos for each mission
     stealthNumCombos = {mission: math.comb(stealthNumModifiers[mission], 3) for mission in stealthMissions}
