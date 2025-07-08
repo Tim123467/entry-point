@@ -42,8 +42,8 @@ public class EntryPointCombinations {
 				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
 				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
 			};
-			String line = readFile.readLine(); //first line of the txt file is not needed
 			Mission mission;
+			String line = readFile.readLine(); //first line of the txt file is not needed
 			boolean isStealth = true;
 			int totalStealth = 0, totalLoud = 0;
 			
