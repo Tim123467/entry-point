@@ -38,9 +38,9 @@ public class EntryPointProbabilities {
 	}
 	
 	/** @param s An instance of the Short class.
-	 * @return An instance of the Short class with its value 1 above the value of s. */
-	private static Short increment(Short s) {
-		return Short.valueOf((short)(s.shortValue() + 1));
+	 * @return A short with its value 1 above the value of s. */
+	private static short increment(Short s) {
+		return (short)(s.shortValue() + 1);
 	}
 	
 	public static void main(String[] args) {
@@ -88,29 +88,29 @@ public class EntryPointProbabilities {
 				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
 				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
 			};
+			String[] strings = new String[5]; //represents mission, tactic, and each modifier respectively
+			boolean is2021 = true;
+			
 			for (Mission m : stealthMissions) {
-				stealth2021missions.put(m, Short.valueOf((short)0));
-				stealth2022missions.put(m, Short.valueOf((short)0));
+				stealth2021missions.put(m, (short)0);
+				stealth2022missions.put(m, (short)0);
 				stealth2021.put(m, new EnumMap<>(getModifierClass()));
 				stealth2022.put(m, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : stealthModifiers) {
-					stealth2021.get(m).put(mo, Short.valueOf((short)0));
-					stealth2022.get(m).put(mo, Short.valueOf((short)0));
+					stealth2021.get(m).put(mo, (short)0);
+					stealth2022.get(m).put(mo, (short)0);
 				}
 			}
 			for (Mission m : loudMissions) {
-				loud2021missions.put(m, Short.valueOf((short)0));
-				loud2022missions.put(m, Short.valueOf((short)0));
+				loud2021missions.put(m, (short)0);
+				loud2022missions.put(m, (short)0);
 				loud2021.put(m, new EnumMap<>(getModifierClass()));
 				loud2022.put(m, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : loudModifiers) {
-					loud2021.get(m).put(mo, Short.valueOf((short)0));
-					loud2022.get(m).put(mo, Short.valueOf((short)0));
+					loud2021.get(m).put(mo, (short)0);
+					loud2022.get(m).put(mo, (short)0);
 				}
 			}
-			
-			String[] strings = new String[5]; //represents mission, tactic, and each modifier respectively
-			boolean is2021 = true;
 			
 			//processes the txt file
 			while (true) {
