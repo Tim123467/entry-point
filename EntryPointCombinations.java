@@ -43,7 +43,7 @@ public class EntryPointCombinations {
 				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
 			};
 			String line = readFile.readLine(); //first line of the txt file is not needed
-			String mission;
+			Mission mission;
 			boolean isStealth = true;
 			int totalStealth = 0, totalLoud = 0;
 			
@@ -64,11 +64,11 @@ public class EntryPointCombinations {
 				}
 				if (line.endsWith("0.0") || !line.contains(".")) {continue;}
 				
-				mission = line.substring(0, line.indexOf(':'));
+				mission = Mission.valueOf(line.substring(0, line.indexOf(':')));
 				if (isStealth) {
-					stealthNumModifiers.put(Mission.valueOf(mission), increment(stealthNumModifiers.get(Mission.valueOf(mission))));
+					stealthNumModifiers.put(mission, increment(stealthNumModifiers.get(mission)));
 				} else { //is loud
-					loudNumModifiers.put(Mission.valueOf(mission), increment(loudNumModifiers.get(Mission.valueOf(mission))));
+					loudNumModifiers.put(mission, increment(loudNumModifiers.get(mission)));
 				}
 			}
 			
