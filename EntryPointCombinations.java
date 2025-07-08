@@ -76,7 +76,8 @@ public class EntryPointCombinations {
 			
 			//remove No Knockouts & No Suppressors combos
 			stealthNumCombos.put(Mission.SCIENTIST, (short)(stealthNumCombos.get(Mission.SCIENTIST) - stealthNumModifiers.get(Mission.SCIENTIST) + 2));
-			
+
+			//displays the number of combinations
 			System.out.println("Stealth:");
 			for (Mission m : stealthMissions) {
 				totalStealth += stealthNumCombos.get(m);
