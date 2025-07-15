@@ -91,18 +91,18 @@ public class EntryPointUniformity {
 				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
 				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
 			};
-			for (Mission m : stealthMissions) {
-				stealthMissionOccurrences.put(m, Short.valueOf((short)0));
-				stealthOccurrences.put(m, new EnumMap<>(getModifierClass()));
+			for (Mission mi : stealthMissions) {
+				stealthMissionOccurrences.put(mi, Short.valueOf((short)0));
+				stealthOccurrences.put(mi, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : stealthModifiers) {
-					stealthOccurrences.get(m).put(mo, Short.valueOf((short)0));
+					stealthOccurrences.get(mi).put(mo, Short.valueOf((short)0));
 				}
 			}
-			for (Mission m : loudMissions) {
-				loudMissionOccurrences.put(m, Short.valueOf((short)0));
-				loudOccurrences.put(m, new EnumMap<>(getModifierClass()));
+			for (Mission mi : loudMissions) {
+				loudMissionOccurrences.put(mi, Short.valueOf((short)0));
+				loudOccurrences.put(mi, new EnumMap<>(getModifierClass()));
 				for (Modifier mo : loudModifiers) {
-					loudOccurrences.get(m).put(mo, Short.valueOf((short)0));
+					loudOccurrences.get(mi).put(mo, Short.valueOf((short)0));
 				}
 			}
 			
@@ -162,23 +162,23 @@ public class EntryPointUniformity {
 			double gini, entropy, error;
 			String mission;
 			
-			for (Mission m : stealthMissions) {
-				stealthFreq.put(m, new EnumMap<>(getModifierClass()));
+			for (Mission mi : stealthMissions) {
+				stealthFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
 				for (Modifier mo : stealthModifiers) {
-					stealthFreq.get(m).put(mo, (double)stealthOccurrences.get(m).get(mo).shortValue() / stealthMissionOccurrences.get(m).shortValue() / 3);
+					stealthFreq.get(mi).put(mo, (double)stealthOccurrences.get(mi).get(mo).shortValue() / stealthMissionOccurrences.get(mi).shortValue() / 3);
 					//division by 3 at the end is for normalization
-					gini += stealthFreq.get(m).get(mo) * stealthFreq.get(m).get(mo);
-					entropy += stealthFreq.get(m).get(mo) == 0 ? 0 : (stealthFreq.get(m).get(mo) * Math.log(stealthFreq.get(m).get(mo)) / Math.log(2));
-					error = Math.max(stealthFreq.get(m).get(mo), error);
+					gini += stealthFreq.get(mi).get(mo) * stealthFreq.get(mi).get(mo);
+					entropy += stealthFreq.get(mi).get(mo) == 0 ? 0 : (stealthFreq.get(mi).get(mo) * Math.log(stealthFreq.get(mi).get(mo)) / Math.log(2));
+					error = Math.max(stealthFreq.get(mi).get(mo), error);
 				}
 				gini = 1 - gini;
 				entropy *= -1;
 				error = 1 - error;
 				
-				mission = titleCase(m.toString().replace('_', ' '));
+				mission = titleCase(mi.toString().replace('_', ' '));
 				switch (mission) {
 				case "Scrs": mission = "The SCRS";
 				case "Black Dusk": break;
@@ -187,22 +187,22 @@ public class EntryPointUniformity {
 				System.out.println(mission + " stealth has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
 			}
 			System.out.println();
-			for (Mission m : loudMissions) {
-				loudFreq.put(m, new EnumMap<>(getModifierClass()));
+			for (Mission mi : loudMissions) {
+				loudFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
 				for (Modifier mo : loudModifiers) {
-					loudFreq.get(m).put(mo, (double)loudOccurrences.get(m).get(mo).shortValue() / loudMissionOccurrences.get(m).shortValue() / 3);
-					gini += loudFreq.get(m).get(mo) * loudFreq.get(m).get(mo);
-					entropy += loudFreq.get(m).get(mo) == 0 ? 0 : (loudFreq.get(m).get(mo) * Math.log(loudFreq.get(m).get(mo)) / Math.log(2));
-					error = Math.max(loudFreq.get(m).get(mo), error);
+					loudFreq.get(mi).put(mo, (double)loudOccurrences.get(mi).get(mo).shortValue() / loudMissionOccurrences.get(mi).shortValue() / 3);
+					gini += loudFreq.get(mi).get(mo) * loudFreq.get(mi).get(mo);
+					entropy += loudFreq.get(mi).get(mo) == 0 ? 0 : (loudFreq.get(mi).get(mo) * Math.log(loudFreq.get(mi).get(mo)) / Math.log(2));
+					error = Math.max(loudFreq.get(mi).get(mo), error);
 				}
 				gini = 1 - gini;
 				entropy *= -1;
 				error = 1 - error;
 				
-				mission = titleCase(m.toString().replace('_', ' '));
+				mission = titleCase(mi.toString().replace('_', ' '));
 				switch (mission) {
 				case "Scrs": mission = "The SCRS";
 				case "Black Dusk": break;
