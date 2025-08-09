@@ -16,11 +16,6 @@
             "request": "launch",
             "name": "Launch Current File",
             "mainClass": "${file}"
-        },
-        {
-            "type": "jdk",
-            "request": "launch",
-            "name": "Launch Java App"
         }
     ]
 }
