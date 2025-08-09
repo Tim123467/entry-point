@@ -25,6 +25,33 @@ public class EntryPointUniformity {
 		NO_EXPLOSIVES, TAKEDOWN_LIMIT, SHIELD_SWARM, EXPLOSIVE_FLASHBANGS, NO_KNOCKOUTS, NO_MOVING_BODIES, NO_DISGUISE, EXPLOSIVE_REVENGE
 	}
 	
+	final static Mission[] STEALTH_MISSIONS = {
+		Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+		Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
+	};
+	final static Mission[] LOUD_MISSIONS = {
+		Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+		Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
+	};
+	final static Modifier[] STEALTH_MODIFIERS = {
+		Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
+		Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
+		Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
+		Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
+		Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+		Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+		Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
+	};
+	final static Modifier[] LOUD_MODIFIERS = {
+		Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
+		Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+		Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+		Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
+		Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
+		Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+		Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
+	};
+	
 	/** @return The Class object representing Mission. */
 	@SuppressWarnings("unchecked")
 	private static Class<Mission> getMissionClass() {
@@ -65,43 +92,17 @@ public class EntryPointUniformity {
 			Map<Mission, Map<Modifier, Short>> loudOccurrences = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> stealthMissionOccurrences = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> loudMissionOccurrences = new EnumMap<>(getMissionClass());
-			final Mission[] stealthMissions = {
-				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-				Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
-			};
-			final Mission[] loudMissions = {
-				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
-			};
-			final Modifier[] stealthModifiers = {
-				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
-				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
-				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
-				Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
-				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
-				Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
-			};
-			final Modifier[] loudModifiers = {
-				Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
-				Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
-				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
-				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
-				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
-				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
-			};
-			for (Mission mi : stealthMissions) {
+			for (Mission mi : STEALTH_MISSIONS) {
 				stealthMissionOccurrences.put(mi, Short.valueOf((short)0));
 				stealthOccurrences.put(mi, new EnumMap<>(getModifierClass()));
-				for (Modifier mo : stealthModifiers) {
+				for (Modifier mo : STEALTH_MODIFIERS) {
 					stealthOccurrences.get(mi).put(mo, Short.valueOf((short)0));
 				}
 			}
-			for (Mission mi : loudMissions) {
+			for (Mission mi : LOUD_MISSIONS) {
 				loudMissionOccurrences.put(mi, Short.valueOf((short)0));
 				loudOccurrences.put(mi, new EnumMap<>(getModifierClass()));
-				for (Modifier mo : loudModifiers) {
+				for (Modifier mo : LOUD_MODIFIERS) {
 					loudOccurrences.get(mi).put(mo, Short.valueOf((short)0));
 				}
 			}
@@ -162,12 +163,12 @@ public class EntryPointUniformity {
 			double gini, entropy, error;
 			String mission;
 			
-			for (Mission mi : stealthMissions) {
+			for (Mission mi : STEALTH_MISSIONS) {
 				stealthFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
-				for (Modifier mo : stealthModifiers) {
+				for (Modifier mo : STEALTH_MODIFIERS) {
 					stealthFreq.get(mi).put(mo, (double)stealthOccurrences.get(mi).get(mo).shortValue() / stealthMissionOccurrences.get(mi).shortValue() / 3);
 					//division by 3 at the end is for normalization
 					gini += stealthFreq.get(mi).get(mo) * stealthFreq.get(mi).get(mo);
@@ -187,12 +188,12 @@ public class EntryPointUniformity {
 				System.out.println(mission + " stealth has gini = " + gini + ", entropy = " + entropy + ", and error = " + error + ".");
 			}
 			System.out.println();
-			for (Mission mi : loudMissions) {
+			for (Mission mi : LOUD_MISSIONS) {
 				loudFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
-				for (Modifier mo : loudModifiers) {
+				for (Modifier mo : LOUD_MODIFIERS) {
 					loudFreq.get(mi).put(mo, (double)loudOccurrences.get(mi).get(mo).shortValue() / loudMissionOccurrences.get(mi).shortValue() / 3);
 					gini += loudFreq.get(mi).get(mo) * loudFreq.get(mi).get(mo);
 					entropy += loudFreq.get(mi).get(mo) == 0 ? 0 : (loudFreq.get(mi).get(mo) * Math.log(loudFreq.get(mi).get(mo)) / Math.log(2));
