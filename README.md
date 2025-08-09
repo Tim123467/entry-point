@@ -38,4 +38,5 @@ There are 5 different programs, 3 of which are available in both Java and Python
 The other programs listed below currently do not have Python versions.
 
 4) A program that translates the output of EntryPointProbabilities.java into wikitext. It is "EntryPointProbabilitiesWikitext.java".
-5) A program that gives the uniformity of each mission and tactic. If you imagine each combination of missions and tactics (ex. The Blacksite stealth) having their own barchart listing every possible modifier and their frequency, the uniformity is a measure of how close to uniform that barchart is.
+5) A program that gives the uniformity of each mission and tactic. It is "EntryPointUniformity.java". If you imagine each combination of missions and tactics (ex. The Blacksite stealth) having their own barchart listing every possible modifier and their frequency, the uniformity is a measure of how close to uniform that barchart is.
+6) A program used to verify that the statement "There cannot be two of the same mission in between every Freelance Heist challenge." cannot be made any more specific. It is "EntryPointDuplicateMissions.java".
