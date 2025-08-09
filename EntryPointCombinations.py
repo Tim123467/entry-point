@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 '''
 Program that calculates and outputs the total number of possible combinations of daily challenges.
