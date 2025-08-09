@@ -9,7 +9,7 @@ import java.io.*;
 public class EntryPointDailyChallenges {
 	final static String TXT_FILE_NAME = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
 	final static String CURRENT_YEAR_AND_MONTH = "2024-10"; //must be in the format "YYYY-MM"
-	final static String YEAR = "2024"; //change manually for the YEAR you want the wikitext for (due to the console's limited number of lines)
+	final static String YEAR = "2024"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class EntryPointDailyChallenges {
 				if (line == null) {break;} //stops the loop when there's no more lines to read
 				date = line.substring(0, line.indexOf(','));
 				
-				if (date.substring(0, 4).equals(YEAR)) { //checks if the YEAR matches the specified YEAR
+				if (date.substring(0, 4).equals(YEAR)) { //checks if the year matches the specified year
 					line = line.substring(line.indexOf(',')+1);
 					mission = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
@@ -42,7 +42,7 @@ public class EntryPointDailyChallenges {
 					mod3 = mod3.equals("Takedown Limit") ? "Takedown Limit (4)" : (mod3.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod3);
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
-						if (date.substring(5, 7).equals("01")) { //first month of the YEAR
+						if (date.substring(5, 7).equals("01")) { //first month of the year
 							System.out.print("'''Daily Challenges''' from " + YEAR + " will be displayed here.\n\n===January");
 						} else {
 							switch (date.substring(5, 7)) {
@@ -65,13 +65,13 @@ public class EntryPointDailyChallenges {
 						
 						System.out.print(" " + YEAR + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
 						
-						if (date.substring(0, 7).equals(CURRENT_YEAR_AND_MONTH)) { //current YEAR and current month
+						if (date.substring(0, 7).equals(CURRENT_YEAR_AND_MONTH)) { //current year and current month
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
 						} else if (Short.parseShort(YEAR) < Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(0, 4)) ||
 								  (Short.parseShort(YEAR) == Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(5, 7)))) {
-							//earlier YEAR OR same YEAR but earlier month
+							//earlier year OR same year but earlier month
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
-						} else { //current YEAR and later month OR later YEAR
+						} else { //current year and later month OR later year
 							System.out.println("data-expandtext=\"Show Upcoming Challenges\" data-collapsetext=\"Hide Upcoming Challenges\"");
 						}
 						
