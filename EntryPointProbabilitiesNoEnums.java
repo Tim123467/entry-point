@@ -7,6 +7,39 @@ import java.io.*;
 import java.util.*;
 
 public class EntryPointProbabilitiesNoEnums {
+	final static String[] STEALTH_MISSIONS = {
+			"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "killhouse",
+			"auction", "gala", "cache", "setup", "lockup"
+	};
+	final static String[] STEALTH_MISSIONS_NO_EXPANSIONS = {
+		"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "killhouse"
+	};
+	final static String[] LOUD_MISSIONS = {
+		"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "black dusk",
+		"killhouse", "lockup", "score"
+	};
+	final static String[] LOUD_MISSIONS_NO_EXPANSIONS = {
+		"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "black dusk", "killhouse"
+	};
+	final static String[] STEALTH_MODIFIERS = {
+		"misplaced gear", "boarded up", "fog", "no suppressors", "no safecracking",
+		"weapon scanners", "no scrambler", "bloodless", "unskilled", "no hybrid classes",
+		"cascade arsenal", "reinforced doors", "heavy bags", "no equipment bags",
+		"reinforced locks", "no interrogation", "extra cameras",
+		"unintimidating", "hidden ui", "faster detection", "reinforced cameras",
+		"hidden detection bars", "no lockpicks", "inexperienced", "fifteen minutes",
+		"takedown limit", "no knockouts", "no moving bodies", "no disguise"
+	};
+	final static String[] LOUD_MODIFIERS = {
+		"no aegis armor", "boarded up", "fog",
+		"unskilled", "small arms only", "criminal arsenal", "no hybrid classes", "cascade arsenal",
+		"flashbang frenzy", "reinforced doors", "armera arsenal", "no equipment bags",
+		"reinforced locks", "glass cannon", "mandatory headshots", "no heavy armor",
+		"weaker medkits", "hidden ui", "aegis academy", "flashbang revenge",
+		"one shot", "inexperienced", "less health",
+		"no explosives", "shield swarm", "explosive flashbangs", "explosive revenge"
+	};
+	
 	/** @param s An instance of the Short class.
 	 * @return An instance of the Short class with its value 1 above the value of s. */
 	private static Short increment(Short s) {
@@ -15,64 +48,32 @@ public class EntryPointProbabilitiesNoEnums {
 	
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader("EP Daily Challenges Wikitext.txt"));) {
-			final String[] stealthMissions = {
-					"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "killhouse",
-					"auction", "gala", "cache", "setup", "lockup"
-			};
-			final String[] stealthMissionsNoExpansions = {
-				"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "killhouse"
-			};
-			final String[] loudMissions = {
-				"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "black dusk",
-				"killhouse", "lockup", "score"
-			};
-			final String[] loudMissionsNoExpansions = {
-				"blacksite", "financier", "deposit", "lakehouse", "withdrawal", "scientist", "scrs", "black dusk", "killhouse"
-			};
-			final String[] stealthModifiers = {
-				"misplaced gear", "boarded up", "fog", "no suppressors", "no safecracking",
-				"weapon scanners", "no scrambler", "bloodless", "unskilled", "no hybrid classes",
-				"cascade arsenal", "reinforced doors", "heavy bags", "no equipment bags",
-				"reinforced locks", "no interrogation", "extra cameras",
-				"unintimidating", "hidden ui", "faster detection", "reinforced cameras",
-				"hidden detection bars", "no lockpicks", "inexperienced", "fifteen minutes",
-				"takedown limit", "no knockouts", "no moving bodies", "no disguise"
-			};
-			final String[] loudModifiers = {
-				"no aegis armor", "boarded up", "fog",
-				"unskilled", "small arms only", "criminal arsenal", "no hybrid classes", "cascade arsenal",
-				"flashbang frenzy", "reinforced doors", "armera arsenal", "no equipment bags",
-				"reinforced locks", "glass cannon", "mandatory headshots", "no heavy armor",
-				"weaker medkits", "hidden ui", "aegis academy", "flashbang revenge",
-				"one shot", "inexperienced", "less health",
-				"no explosives", "shield swarm", "explosive flashbangs", "explosive revenge"
-			};
 			//The Short values will represent the number of occurrences
-			Map<String, Map<String, Short>> stealth2021 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> loud2021 = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> stealth2022 = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Map<String, Short>> loud2022 = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Short> stealth2021missions = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Short> loud2021missions = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
-			Map<String, Short> stealth2022missions = new HashMap<>((int)(stealthMissions.length / 0.75 + 1));
-			Map<String, Short> loud2022missions = new HashMap<>((int)(loudMissions.length / 0.75 + 1));
+			Map<String, Map<String, Short>> stealth2021 = new HashMap<>((int)(STEALTH_MISSIONS.length / 0.75 + 1));
+			Map<String, Map<String, Short>> loud2021 = new HashMap<>((int)(LOUD_MISSIONS.length / 0.75 + 1));
+			Map<String, Map<String, Short>> stealth2022 = new HashMap<>((int)(STEALTH_MISSIONS.length / 0.75 + 1));
+			Map<String, Map<String, Short>> loud2022 = new HashMap<>((int)(LOUD_MISSIONS.length / 0.75 + 1));
+			Map<String, Short> stealth2021missions = new HashMap<>((int)(STEALTH_MISSIONS.length / 0.75 + 1));
+			Map<String, Short> loud2021missions = new HashMap<>((int)(LOUD_MISSIONS.length / 0.75 + 1));
+			Map<String, Short> stealth2022missions = new HashMap<>((int)(STEALTH_MISSIONS.length / 0.75 + 1));
+			Map<String, Short> loud2022missions = new HashMap<>((int)(LOUD_MISSIONS.length / 0.75 + 1));
 			
-			for (String m : stealthMissions) {
+			for (String m : STEALTH_MISSIONS) {
 				stealth2021missions.put(m, Short.valueOf((short)0));
 				stealth2022missions.put(m, Short.valueOf((short)0));
-				stealth2021.put(m, new HashMap<>((int)(stealthModifiers.length / 0.75 + 1)));
-				stealth2022.put(m, new HashMap<>((int)(stealthModifiers.length / 0.75 + 1)));
-				for (String mo : stealthModifiers) {
+				stealth2021.put(m, new HashMap<>((int)(STEALTH_MODIFIERS.length / 0.75 + 1)));
+				stealth2022.put(m, new HashMap<>((int)(STEALTH_MODIFIERS.length / 0.75 + 1)));
+				for (String mo : STEALTH_MODIFIERS) {
 					stealth2021.get(m).put(mo, Short.valueOf((short)0));
 					stealth2022.get(m).put(mo, Short.valueOf((short)0));
 				}
 			}
-			for (String m : loudMissions) {
+			for (String m : LOUD_MISSIONS) {
 				loud2021missions.put(m, Short.valueOf((short)0));
 				loud2022missions.put(m, Short.valueOf((short)0));
-				loud2021.put(m, new HashMap<>((int)(loudModifiers.length / 0.75 + 1)));
-				loud2022.put(m, new HashMap<>((int)(loudModifiers.length / 0.75 + 1)));
-				for (String mo : loudModifiers) {
+				loud2021.put(m, new HashMap<>((int)(LOUD_MODIFIERS.length / 0.75 + 1)));
+				loud2022.put(m, new HashMap<>((int)(LOUD_MODIFIERS.length / 0.75 + 1)));
+				for (String mo : LOUD_MODIFIERS) {
 					loud2021.get(m).put(mo, Short.valueOf((short)0));
 					loud2022.get(m).put(mo, Short.valueOf((short)0));
 				}
@@ -145,34 +146,34 @@ public class EntryPointProbabilitiesNoEnums {
 			
 			//displays how often modifiers appear as decimals
 			System.out.println("Stealth:");
-			for (String m : stealthModifiers) {
+			for (String m : STEALTH_MODIFIERS) {
 				System.out.println(m + ":");
-				for (String mi : stealthMissions) {
+				for (String mi : STEALTH_MISSIONS) {
 					System.out.println(mi + ": " + ((double)stealth2022.get(mi).get(m).shortValue() / stealth2022missions.get(mi).shortValue()));
 				}
 				System.out.println();
 			}
 			System.out.println("Loud:");
-			for (String m : loudModifiers) {
+			for (String m : LOUD_MODIFIERS) {
 				System.out.println(m + ":");
-				for (String mi : loudMissions) {
+				for (String mi : LOUD_MISSIONS) {
 					System.out.println(mi + ": " + ((double)loud2022.get(mi).get(m).shortValue() / loud2022missions.get(mi).shortValue()));
 				}
 				System.out.println();
 			}
 			
 			//displays which modifiers were removed from certain missions from 2021 to 2022
-			for (String m : stealthModifiers) {
+			for (String m : STEALTH_MODIFIERS) {
 				if (m.equals("boarded up") || m.equals("no equipment bags")) {continue;} //these were removed from the stealth pool
-				for (String mi : stealthMissionsNoExpansions) {
+				for (String mi : STEALTH_MISSIONS_NO_EXPANSIONS) {
 					if (stealth2021.get(mi).get(m).shortValue() != 0 &&
 						stealth2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
 			}
-			for (String m : loudModifiers) {
-				for (String mi : loudMissionsNoExpansions) {
+			for (String m : LOUD_MODIFIERS) {
+				for (String mi : LOUD_MISSIONS_NO_EXPANSIONS) {
 					if (loud2021.get(mi).get(m).shortValue() != 0 &&
 						loud2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
