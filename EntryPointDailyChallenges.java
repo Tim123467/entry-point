@@ -1,5 +1,5 @@
 /* Program used to translate Breakbar's txt file into wikitext. Note that I renamed the txt file to "EP Daily Challenges.txt"
- * The only edits that should be made are to the values of the String variables near the top: txtFileName, currentYearAndMonth, and year
+ * The only edits that should be made are to the values of the String variables near the top: TXT_FILE_NAME, CURRENT_YEAR_AND_MONTH, and YEAR
  * (unless you want to try to improve the code).
  * The output is produced in the console.
  */
@@ -7,13 +7,13 @@
 import java.io.*;
 
 public class EntryPointDailyChallenges {
-	final static String txtFileName = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
-	final static String currentYearAndMonth = "2024-10"; //must be in the format "YYYY-MM"
-	final static String year = "2024"; //change manually for the year you want the wikitext for (due to the console's limited number of lines)
+	final static String TXT_FILE_NAME = "EP Daily Challenges.txt"; //change depending on the name you set for Breakbar's txt file
+	final static String CURRENT_YEAR_AND_MONTH = "2024-10"; //must be in the format "YYYY-MM"
+	final static String YEAR = "2024"; //change manually for the YEAR you want the wikitext for (due to the console's limited number of lines)
 	                                   //currently, the txt file covers the end of 2022 to most of 2025
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(txtFileName));) {
+		try (BufferedReader readFile = new BufferedReader(new FileReader(TXT_FILE_NAME));) {
 			String line, date, mission, tactic, color1, mod1, color2, mod2, color3, mod3; //using an array instead would make my code take up less lines,
 			                                                                              //but it would also make my code harder to understand
 			while (true) {
@@ -21,7 +21,7 @@ public class EntryPointDailyChallenges {
 				if (line == null) {break;} //stops the loop when there's no more lines to read
 				date = line.substring(0, line.indexOf(','));
 				
-				if (date.substring(0, 4).equals(year)) { //checks if the year matches the specified year
+				if (date.substring(0, 4).equals(YEAR)) { //checks if the YEAR matches the specified YEAR
 					line = line.substring(line.indexOf(',')+1);
 					mission = line.substring(0, line.indexOf(','));
 					line = line.substring(line.indexOf(',')+1);
@@ -42,8 +42,8 @@ public class EntryPointDailyChallenges {
 					mod3 = mod3.equals("Takedown Limit") ? "Takedown Limit (4)" : (mod3.equals("Takedown Limit 6") ? "Takedown Limit (6)" : mod3);
 					
 					if (date.substring(8, 10).equals("01")) { //first day of the month
-						if (date.substring(5, 7).equals("01")) { //first month of the year
-							System.out.print("'''Daily Challenges''' from " + year + " will be displayed here.\n\n===January");
+						if (date.substring(5, 7).equals("01")) { //first month of the YEAR
+							System.out.print("'''Daily Challenges''' from " + YEAR + " will be displayed here.\n\n===January");
 						} else {
 							switch (date.substring(5, 7)) {
 							case "02": System.out.print("|}\n===February"); break;
@@ -63,15 +63,15 @@ public class EntryPointDailyChallenges {
 							}
 						}
 						
-						System.out.print(" " + year + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
+						System.out.print(" " + YEAR + "===\n{| class=\"fandom-table article-table mw-collapsible mw-collapsed\" ");
 						
-						if (date.substring(0, 7).equals(currentYearAndMonth)) { //current year and current month
+						if (date.substring(0, 7).equals(CURRENT_YEAR_AND_MONTH)) { //current YEAR and current month
 							System.out.println("data-expandtext=\"Show Previous and Upcoming Challenges\" data-collapsetext=\"Hide Previous and Upcoming Challenges\"");
-						} else if (Short.parseShort(year) < Short.parseShort(currentYearAndMonth.substring(0, 4)) ||
-								  (Short.parseShort(year) == Short.parseShort(currentYearAndMonth.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(currentYearAndMonth.substring(5, 7)))) {
-							//earlier year OR same year but earlier month
+						} else if (Short.parseShort(YEAR) < Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(0, 4)) ||
+								  (Short.parseShort(YEAR) == Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(0, 4)) && Short.parseShort(date.substring(5, 7)) < Short.parseShort(CURRENT_YEAR_AND_MONTH.substring(5, 7)))) {
+							//earlier YEAR OR same YEAR but earlier month
 							System.out.println("data-expandtext=\"Show Previous Challenges\" data-collapsetext=\"Hide Previous Challenges\"");
-						} else { //current year and later month OR later year
+						} else { //current YEAR and later month OR later YEAR
 							System.out.println("data-expandtext=\"Show Upcoming Challenges\" data-collapsetext=\"Hide Upcoming Challenges\"");
 						}
 						
@@ -151,11 +151,11 @@ public class EntryPointDailyChallenges {
 			System.err.println("IOException: " + e.getMessage());
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("\nA substring method returned an error: beginIndex was negative, or endIndex was greater than the length of the String, or beginIndex was greater than endIndex. "
-						     + "This was caused by either an invalid line in the txt file or an invalid value for the currentYearAndMonth variable.");
+						     + "This was caused by either an invalid line in the txt file or an invalid value for the CURRENT_YEAR_AND_MONTH variable.");
 			System.err.println("IndexOutOfBoundsException: " + e.getMessage());
 		} catch (NumberFormatException e) {
 			System.out.println("\nThe Short.parseShort method returned an error. "
-					         + "This was caused by either an invalid date in the txt file or invalid values for the currentYearAndMonth variable or for the year variable.");
+					         + "This was caused by either an invalid date in the txt file or invalid values for the CURRENT_YEAR_AND_MONTH variable or for the YEAR variable.");
 			System.err.println("NumberFormatException: " + e.getMessage());
 		} catch (RuntimeException e) {
 			System.err.println("RuntimeException: " + e.getMessage());
