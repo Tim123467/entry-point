@@ -1,0 +1,792 @@
+Stealth:
+misplaced gear:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.2857142857142857
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.19672131147540983
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+boarded up:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.0
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+fog:
+blacksite: 0.0
+financier: 0.1016949152542373
+deposit: 0.06493506493506493
+lakehouse: 0.05263157894736842
+withdrawal: 0.09090909090909091
+scientist: 0.25
+scrs: 0.09836065573770492
+killhouse: 0.19047619047619047
+auction: 0.22916666666666666
+gala: 0.225
+cache: 0.14583333333333334
+setup: 0.08823529411764706
+lockup: 0.12903225806451613
+
+no suppressors:
+blacksite: 0.25609756097560976
+financier: 0.13559322033898305
+deposit: 0.19480519480519481
+lakehouse: 0.17543859649122806
+withdrawal: 0.13636363636363635
+scientist: 0.22058823529411764
+scrs: 0.09836065573770492
+killhouse: 0.23809523809523808
+auction: 0.20833333333333334
+gala: 0.25
+cache: 0.125
+setup: 0.058823529411764705
+lockup: 0.0967741935483871
+
+no safecracking:
+blacksite: 0.0
+financier: 0.2711864406779661
+deposit: 0.18181818181818182
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.2786885245901639
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.2916666666666667
+setup: 0.35294117647058826
+lockup: 0.0
+
+weapon scanners:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.2077922077922078
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+no scrambler:
+blacksite: 0.4634146341463415
+financier: 0.0
+deposit: 0.07792207792207792
+lakehouse: 0.0
+withdrawal: 0.24242424242424243
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.0
+auction: 0.2708333333333333
+gala: 0.15
+cache: 0.16666666666666666
+setup: 0.20588235294117646
+lockup: 0.0
+
+bloodless:
+blacksite: 0.3048780487804878
+financier: 0.1016949152542373
+deposit: 0.06493506493506493
+lakehouse: 0.21052631578947367
+withdrawal: 0.10606060606060606
+scientist: 0.0
+scrs: 0.22950819672131148
+killhouse: 0.23809523809523808
+auction: 0.08333333333333333
+gala: 0.15
+cache: 0.2708333333333333
+setup: 0.11764705882352941
+lockup: 0.12903225806451613
+
+unskilled:
+blacksite: 0.08536585365853659
+financier: 0.06779661016949153
+deposit: 0.025974025974025976
+lakehouse: 0.05263157894736842
+withdrawal: 0.06060606060606061
+scientist: 0.08823529411764706
+scrs: 0.04918032786885246
+killhouse: 0.09523809523809523
+auction: 0.0
+gala: 0.025
+cache: 0.0625
+setup: 0.0
+lockup: 0.0
+
+no hybrid classes:
+blacksite: 0.024390243902439025
+financier: 0.05084745762711865
+deposit: 0.025974025974025976
+lakehouse: 0.03508771929824561
+withdrawal: 0.030303030303030304
+scientist: 0.058823529411764705
+scrs: 0.0
+killhouse: 0.09523809523809523
+auction: 0.041666666666666664
+gala: 0.025
+cache: 0.041666666666666664
+setup: 0.029411764705882353
+lockup: 0.0
+
+cascade arsenal:
+blacksite: 0.15853658536585366
+financier: 0.22033898305084745
+deposit: 0.05194805194805195
+lakehouse: 0.21052631578947367
+withdrawal: 0.18181818181818182
+scientist: 0.22058823529411764
+scrs: 0.08196721311475409
+killhouse: 0.0
+auction: 0.1875
+gala: 0.2
+cache: 0.020833333333333332
+setup: 0.058823529411764705
+lockup: 0.0967741935483871
+
+reinforced doors:
+blacksite: 0.18292682926829268
+financier: 0.05084745762711865
+deposit: 0.07792207792207792
+lakehouse: 0.14035087719298245
+withdrawal: 0.09090909090909091
+scientist: 0.0
+scrs: 0.14754098360655737
+killhouse: 0.1746031746031746
+auction: 0.14583333333333334
+gala: 0.225
+cache: 0.16666666666666666
+setup: 0.08823529411764706
+lockup: 0.22580645161290322
+
+heavy bags:
+blacksite: 0.2073170731707317
+financier: 0.0847457627118644
+deposit: 0.11688311688311688
+lakehouse: 0.15789473684210525
+withdrawal: 0.18181818181818182
+scientist: 0.29411764705882354
+scrs: 0.13114754098360656
+killhouse: 0.1746031746031746
+auction: 0.16666666666666666
+gala: 0.3
+cache: 0.1875
+setup: 0.029411764705882353
+lockup: 0.12903225806451613
+
+no equipment bags:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.0
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+reinforced locks:
+blacksite: 0.23170731707317074
+financier: 0.11864406779661017
+deposit: 0.05194805194805195
+lakehouse: 0.0
+withdrawal: 0.045454545454545456
+scientist: 0.1323529411764706
+scrs: 0.06557377049180328
+killhouse: 0.20634920634920634
+auction: 0.14583333333333334
+gala: 0.15
+cache: 0.20833333333333334
+setup: 0.058823529411764705
+lockup: 0.03225806451612903
+
+no interrogation:
+blacksite: 0.0
+financier: 0.2542372881355932
+deposit: 0.12987012987012986
+lakehouse: 0.22807017543859648
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.25396825396825395
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+extra cameras:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.19480519480519481
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.29508196721311475
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+unintimidating:
+blacksite: 0.0
+financier: 0.3220338983050847
+deposit: 0.15584415584415584
+lakehouse: 0.14035087719298245
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.2459016393442623
+killhouse: 0.2698412698412698
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.29411764705882354
+lockup: 0.45161290322580644
+
+hidden ui:
+blacksite: 0.21951219512195122
+financier: 0.15254237288135594
+deposit: 0.09090909090909091
+lakehouse: 0.15789473684210525
+withdrawal: 0.13636363636363635
+scientist: 0.16176470588235295
+scrs: 0.09836065573770492
+killhouse: 0.19047619047619047
+auction: 0.125
+gala: 0.075
+cache: 0.16666666666666666
+setup: 0.0
+lockup: 0.03225806451612903
+
+faster detection:
+blacksite: 0.0
+financier: 0.1694915254237288
+deposit: 0.19480519480519481
+lakehouse: 0.08771929824561403
+withdrawal: 0.21212121212121213
+scientist: 0.3382352941176471
+scrs: 0.16393442622950818
+killhouse: 0.2698412698412698
+auction: 0.1875
+gala: 0.3
+cache: 0.14583333333333334
+setup: 0.17647058823529413
+lockup: 0.16129032258064516
+
+reinforced cameras:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.12987012987012986
+lakehouse: 0.2982456140350877
+withdrawal: 0.16666666666666666
+scientist: 0.20588235294117646
+scrs: 0.3114754098360656
+killhouse: 0.0
+auction: 0.125
+gala: 0.25
+cache: 0.3958333333333333
+setup: 0.14705882352941177
+lockup: 0.1935483870967742
+
+hidden detection bars:
+blacksite: 0.25609756097560976
+financier: 0.13559322033898305
+deposit: 0.14285714285714285
+lakehouse: 0.14035087719298245
+withdrawal: 0.18181818181818182
+scientist: 0.17647058823529413
+scrs: 0.11475409836065574
+killhouse: 0.15873015873015872
+auction: 0.22916666666666666
+gala: 0.325
+cache: 0.3333333333333333
+setup: 0.14705882352941177
+lockup: 0.06451612903225806
+
+no lockpicks:
+blacksite: 0.0
+financier: 0.288135593220339
+deposit: 0.12987012987012986
+lakehouse: 0.49122807017543857
+withdrawal: 0.3181818181818182
+scientist: 0.0
+scrs: 0.18032786885245902
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.14705882352941177
+lockup: 0.41935483870967744
+
+inexperienced:
+blacksite: 0.0975609756097561
+financier: 0.06779661016949153
+deposit: 0.03896103896103896
+lakehouse: 0.05263157894736842
+withdrawal: 0.07575757575757576
+scientist: 0.07352941176470588
+scrs: 0.04918032786885246
+killhouse: 0.047619047619047616
+auction: 0.041666666666666664
+gala: 0.0
+cache: 0.0625
+setup: 0.0
+lockup: 0.03225806451612903
+
+fifteen minutes:
+blacksite: 0.5121951219512195
+financier: 0.1694915254237288
+deposit: 0.19480519480519481
+lakehouse: 0.0
+withdrawal: 0.24242424242424243
+scientist: 0.29411764705882354
+scrs: 0.0
+killhouse: 0.14285714285714285
+auction: 0.14583333333333334
+gala: 0.0
+cache: 0.20833333333333334
+setup: 0.14705882352941177
+lockup: 0.0967741935483871
+
+takedown limit:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.0
+lakehouse: 0.24561403508771928
+withdrawal: 0.30303030303030304
+scientist: 0.0
+scrs: 0.16393442622950818
+killhouse: 0.0
+auction: 0.22916666666666666
+gala: 0.0
+cache: 0.0
+setup: 0.29411764705882354
+lockup: 0.5806451612903226
+
+no knockouts:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.0
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.4852941176470588
+scrs: 0.0
+killhouse: 0.0
+auction: 0.0
+gala: 0.0
+cache: 0.0
+setup: 0.0
+lockup: 0.0
+
+no moving bodies:
+blacksite: 0.0
+financier: 0.23728813559322035
+deposit: 0.16883116883116883
+lakehouse: 0.12280701754385964
+withdrawal: 0.19696969696969696
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.25396825396825395
+auction: 0.1875
+gala: 0.35
+cache: 0.0
+setup: 0.20588235294117646
+lockup: 0.12903225806451613
+
+no disguise:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.0
+lakehouse: 0.0
+withdrawal: 0.0
+scientist: 0.0
+scrs: 0.0
+killhouse: 0.0
+auction: 0.25
+gala: 0.0
+cache: 0.0
+setup: 0.35294117647058826
+lockup: 0.0
+
+Loud:
+no aegis armor:
+blacksite: 0.24489795918367346
+financier: 0.13432835820895522
+deposit: 0.11363636363636363
+lakehouse: 0.1
+withdrawal: 0.19298245614035087
+scientist: 0.12727272727272726
+scrs: 0.1320754716981132
+black dusk: 0.13333333333333333
+killhouse: 0.07142857142857142
+lockup: 0.15
+score: 0.26
+
+boarded up:
+blacksite: 0.0
+financier: 0.1044776119402985
+deposit: 0.20454545454545456
+lakehouse: 0.26
+withdrawal: 0.14035087719298245
+scientist: 0.0
+scrs: 0.0
+black dusk: 0.0
+killhouse: 0.0
+lockup: 0.0
+score: 0.0
+
+fog:
+blacksite: 0.0
+financier: 0.1044776119402985
+deposit: 0.09090909090909091
+lakehouse: 0.12
+withdrawal: 0.12280701754385964
+scientist: 0.16363636363636364
+scrs: 0.07547169811320754
+black dusk: 0.0
+killhouse: 0.08928571428571429
+lockup: 0.0
+score: 0.0
+
+unskilled:
+blacksite: 0.04081632653061224
+financier: 0.029850746268656716
+deposit: 0.0
+lakehouse: 0.04
+withdrawal: 0.03508771929824561
+scientist: 0.05454545454545454
+scrs: 0.018867924528301886
+black dusk: 0.008333333333333333
+killhouse: 0.03571428571428571
+lockup: 0.05
+score: 0.0
+
+small arms only:
+blacksite: 0.10204081632653061
+financier: 0.1044776119402985
+deposit: 0.11363636363636363
+lakehouse: 0.14
+withdrawal: 0.03508771929824561
+scientist: 0.2
+scrs: 0.09433962264150944
+black dusk: 0.15
+killhouse: 0.0
+lockup: 0.15
+score: 0.0
+
+criminal arsenal:
+blacksite: 0.08163265306122448
+financier: 0.1044776119402985
+deposit: 0.06818181818181818
+lakehouse: 0.06
+withdrawal: 0.17543859649122806
+scientist: 0.14545454545454545
+scrs: 0.1320754716981132
+black dusk: 0.15833333333333333
+killhouse: 0.0
+lockup: 0.3
+score: 0.28
+
+no hybrid classes:
+blacksite: 0.0
+financier: 0.029850746268656716
+deposit: 0.022727272727272728
+lakehouse: 0.04
+withdrawal: 0.03508771929824561
+scientist: 0.01818181818181818
+scrs: 0.07547169811320754
+black dusk: 0.025
+killhouse: 0.017857142857142856
+lockup: 0.0
+score: 0.0
+
+cascade arsenal:
+blacksite: 0.08163265306122448
+financier: 0.07462686567164178
+deposit: 0.09090909090909091
+lakehouse: 0.06
+withdrawal: 0.12280701754385964
+scientist: 0.09090909090909091
+scrs: 0.05660377358490566
+black dusk: 0.09166666666666666
+killhouse: 0.0
+lockup: 0.0
+score: 0.0
+
+flashbang frenzy:
+blacksite: 0.12244897959183673
+financier: 0.11940298507462686
+deposit: 0.09090909090909091
+lakehouse: 0.04
+withdrawal: 0.07017543859649122
+scientist: 0.09090909090909091
+scrs: 0.22641509433962265
+black dusk: 0.14166666666666666
+killhouse: 0.19642857142857142
+lockup: 0.15
+score: 0.2
+
+reinforced doors:
+blacksite: 0.08163265306122448
+financier: 0.05970149253731343
+deposit: 0.045454545454545456
+lakehouse: 0.14
+withdrawal: 0.05263157894736842
+scientist: 0.0
+scrs: 0.07547169811320754
+black dusk: 0.09166666666666666
+killhouse: 0.05357142857142857
+lockup: 0.0
+score: 0.0
+
+armera arsenal:
+blacksite: 0.20408163265306123
+financier: 0.1044776119402985
+deposit: 0.13636363636363635
+lakehouse: 0.08
+withdrawal: 0.15789473684210525
+scientist: 0.10909090909090909
+scrs: 0.16981132075471697
+black dusk: 0.15
+killhouse: 0.0
+lockup: 0.1
+score: 0.0
+
+no equipment bags:
+blacksite: 0.12244897959183673
+financier: 0.08955223880597014
+deposit: 0.13636363636363635
+lakehouse: 0.12
+withdrawal: 0.03508771929824561
+scientist: 0.12727272727272726
+scrs: 0.11320754716981132
+black dusk: 0.14166666666666666
+killhouse: 0.10714285714285714
+lockup: 0.15
+score: 0.26
+
+reinforced locks:
+blacksite: 0.14285714285714285
+financier: 0.05970149253731343
+deposit: 0.1590909090909091
+lakehouse: 0.0
+withdrawal: 0.05263157894736842
+scientist: 0.05454545454545454
+scrs: 0.11320754716981132
+black dusk: 0.09166666666666666
+killhouse: 0.08928571428571429
+lockup: 0.0
+score: 0.04
+
+glass cannon:
+blacksite: 0.10204081632653061
+financier: 0.05970149253731343
+deposit: 0.09090909090909091
+lakehouse: 0.1
+withdrawal: 0.12280701754385964
+scientist: 0.16363636363636364
+scrs: 0.1509433962264151
+black dusk: 0.075
+killhouse: 0.2857142857142857
+lockup: 0.15
+score: 0.18
+
+mandatory headshots:
+blacksite: 0.12244897959183673
+financier: 0.14925373134328357
+deposit: 0.22727272727272727
+lakehouse: 0.16
+withdrawal: 0.05263157894736842
+scientist: 0.18181818181818182
+scrs: 0.1509433962264151
+black dusk: 0.06666666666666667
+killhouse: 0.25
+lockup: 0.15
+score: 0.28
+
+no heavy armor:
+blacksite: 0.16326530612244897
+financier: 0.11940298507462686
+deposit: 0.11363636363636363
+lakehouse: 0.1
+withdrawal: 0.03508771929824561
+scientist: 0.07272727272727272
+scrs: 0.11320754716981132
+black dusk: 0.16666666666666666
+killhouse: 0.17857142857142858
+lockup: 0.3
+score: 0.0
+
+weaker medkits:
+blacksite: 0.20408163265306123
+financier: 0.14925373134328357
+deposit: 0.11363636363636363
+lakehouse: 0.22
+withdrawal: 0.15789473684210525
+scientist: 0.14545454545454545
+scrs: 0.11320754716981132
+black dusk: 0.11666666666666667
+killhouse: 0.19642857142857142
+lockup: 0.1
+score: 0.24
+
+hidden ui:
+blacksite: 0.14285714285714285
+financier: 0.05970149253731343
+deposit: 0.045454545454545456
+lakehouse: 0.12
+withdrawal: 0.19298245614035087
+scientist: 0.05454545454545454
+scrs: 0.03773584905660377
+black dusk: 0.06666666666666667
+killhouse: 0.05357142857142857
+lockup: 0.05
+score: 0.02
+
+aegis academy:
+blacksite: 0.0
+financier: 0.16417910447761194
+deposit: 0.18181818181818182
+lakehouse: 0.0
+withdrawal: 0.14035087719298245
+scientist: 0.10909090909090909
+scrs: 0.07547169811320754
+black dusk: 0.225
+killhouse: 0.21428571428571427
+lockup: 0.1
+score: 0.14
+
+flashbang revenge:
+blacksite: 0.10204081632653061
+financier: 0.19402985074626866
+deposit: 0.09090909090909091
+lakehouse: 0.2
+withdrawal: 0.19298245614035087
+scientist: 0.16363636363636364
+scrs: 0.1320754716981132
+black dusk: 0.2
+killhouse: 0.17857142857142858
+lockup: 0.15
+score: 0.28
+
+one shot:
+blacksite: 0.10204081632653061
+financier: 0.11940298507462686
+deposit: 0.045454545454545456
+lakehouse: 0.24
+withdrawal: 0.17543859649122806
+scientist: 0.10909090909090909
+scrs: 0.16981132075471697
+black dusk: 0.175
+killhouse: 0.26785714285714285
+lockup: 0.15
+score: 0.12
+
+inexperienced:
+blacksite: 0.0
+financier: 0.0
+deposit: 0.045454545454545456
+lakehouse: 0.04
+withdrawal: 0.017543859649122806
+scientist: 0.03636363636363636
+scrs: 0.05660377358490566
+black dusk: 0.025
+killhouse: 0.017857142857142856
+lockup: 0.0
+score: 0.0
+
+less health:
+blacksite: 0.1836734693877551
+financier: 0.1791044776119403
+deposit: 0.13636363636363635
+lakehouse: 0.16
+withdrawal: 0.08771929824561403
+scientist: 0.2545454545454545
+scrs: 0.18867924528301888
+black dusk: 0.14166666666666666
+killhouse: 0.19642857142857142
+lockup: 0.25
+score: 0.0
+
+no explosives:
+blacksite: 0.12244897959183673
+financier: 0.11940298507462686
+deposit: 0.25
+lakehouse: 0.12
+withdrawal: 0.19298245614035087
+scientist: 0.05454545454545454
+scrs: 0.2641509433962264
+black dusk: 0.15833333333333333
+killhouse: 0.0
+lockup: 0.15
+score: 0.2
+
+shield swarm:
+blacksite: 0.08163265306122448
+financier: 0.16417910447761194
+deposit: 0.06818181818181818
+lakehouse: 0.12
+withdrawal: 0.08771929824561403
+scientist: 0.2
+scrs: 0.11320754716981132
+black dusk: 0.175
+killhouse: 0.10714285714285714
+lockup: 0.05
+score: 0.16
+
+explosive flashbangs:
+blacksite: 0.1836734693877551
+financier: 0.14925373134328357
+deposit: 0.18181818181818182
+lakehouse: 0.06
+withdrawal: 0.17543859649122806
+scientist: 0.10909090909090909
+scrs: 0.11320754716981132
+black dusk: 0.125
+killhouse: 0.19642857142857142
+lockup: 0.15
+score: 0.24
+
+explosive revenge:
+blacksite: 0.2653061224489796
+financier: 0.2537313432835821
+deposit: 0.13636363636363635
+lakehouse: 0.16
+withdrawal: 0.14035087719298245
+scientist: 0.16363636363636364
+scrs: 0.03773584905660377
+black dusk: 0.1
+killhouse: 0.19642857142857142
+lockup: 0.2
+score: 0.1
+
+faster detection was removed from blacksite
+no knockouts was removed from financier
+no disguise was removed from financier
+no disguise was removed from deposit
