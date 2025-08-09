@@ -25,6 +25,41 @@ public class EntryPointProbabilities {
 		NO_EXPLOSIVES, TAKEDOWN_LIMIT, SHIELD_SWARM, EXPLOSIVE_FLASHBANGS, NO_KNOCKOUTS, NO_MOVING_BODIES, NO_DISGUISE, EXPLOSIVE_REVENGE
 	}
 	
+	final static Mission[] STEALTH_MISSIONS = {
+		Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+		Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
+	};
+	final static Mission[] STEALTH_MISSIONS_NO_EXPANSIONS = {
+			Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+			Mission.SCRS, Mission.KILLHOUSE
+	};
+	final static Mission[] LOUD_MISSIONS = {
+		Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+		Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
+	};
+	final static Mission[] LOUD_MISSIONS_NO_EXPANSIONS = {
+			Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
+			Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE
+	};
+	final static Modifier[] STEALTH_MODIFIERS = {
+		Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
+		Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
+		Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
+		Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
+		Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+		Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+		Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
+	};
+	final static Modifier[] LOUD_MODIFIERS = {
+		Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
+		Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+		Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+		Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
+		Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
+		Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+		Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
+	};
+	
 	/** @return The Class object representing Mission. */
 	@SuppressWarnings("unchecked")
 	private static Class<Mission> getMissionClass() {
@@ -54,59 +89,25 @@ public class EntryPointProbabilities {
 			Map<Mission, Short> loud2021missions = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> stealth2022missions = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> loud2022missions = new EnumMap<>(getMissionClass());
-			final Mission[] stealthMissions = {
-				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-				Mission.SCRS, Mission.KILLHOUSE, Mission.AUCTION, Mission.GALA, Mission.CACHE, Mission.SETUP, Mission.LOCKUP
-			};
-			final Mission[] stealthMissionsNoExpansions = {
-					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-					Mission.SCRS, Mission.KILLHOUSE
-			};
-			final Mission[] loudMissions = {
-				Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-				Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE, Mission.LOCKUP, Mission.SCORE
-			};
-			final Mission[] loudMissionsNoExpansions = {
-					Mission.BLACKSITE, Mission.FINANCIER, Mission.DEPOSIT, Mission.LAKEHOUSE, Mission.WITHDRAWAL, Mission.SCIENTIST,
-					Mission.SCRS, Mission.BLACK_DUSK, Mission.KILLHOUSE
-			};
-			final Modifier[] stealthModifiers = {
-				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
-				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
-				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
-				Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
-				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
-				Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
-			};
-			final Modifier[] loudModifiers = {
-				Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
-				Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
-				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
-				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
-				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
-				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
-			};
 			String[] strings = new String[5]; //represents mission, tactic, and each modifier respectively
 			boolean is2021 = true;
 			
-			for (Mission m : stealthMissions) {
+			for (Mission m : STEALTH_MISSIONS) {
 				stealth2021missions.put(m, (short)0);
 				stealth2022missions.put(m, (short)0);
 				stealth2021.put(m, new EnumMap<>(getModifierClass()));
 				stealth2022.put(m, new EnumMap<>(getModifierClass()));
-				for (Modifier mo : stealthModifiers) {
+				for (Modifier mo : STEALTH_MODIFIERS) {
 					stealth2021.get(m).put(mo, (short)0);
 					stealth2022.get(m).put(mo, (short)0);
 				}
 			}
-			for (Mission m : loudMissions) {
+			for (Mission m : LOUD_MISSIONS) {
 				loud2021missions.put(m, (short)0);
 				loud2022missions.put(m, (short)0);
 				loud2021.put(m, new EnumMap<>(getModifierClass()));
 				loud2022.put(m, new EnumMap<>(getModifierClass()));
-				for (Modifier mo : loudModifiers) {
+				for (Modifier mo : LOUD_MODIFIERS) {
 					loud2021.get(m).put(mo, (short)0);
 					loud2022.get(m).put(mo, (short)0);
 				}
@@ -179,34 +180,34 @@ public class EntryPointProbabilities {
 			
 			//displays how often modifiers appear as decimals
 			System.out.println("Stealth:");
-			for (Modifier m : stealthModifiers) {
+			for (Modifier m : STEALTH_MODIFIERS) {
 				System.out.println(m + ":");
-				for (Mission mi : stealthMissions) {
+				for (Mission mi : STEALTH_MISSIONS) {
 					System.out.println(mi + ": " + ((double)stealth2022.get(mi).get(m).shortValue() / stealth2022missions.get(mi).shortValue()));
 				}
 				System.out.println();
 			}
 			System.out.println("Loud:");
-			for (Modifier m : loudModifiers) {
+			for (Modifier m : LOUD_MODIFIERS) {
 				System.out.println(m + ":");
-				for (Mission mi : loudMissions) {
+				for (Mission mi : LOUD_MISSIONS) {
 					System.out.println(mi + ": " + ((double)loud2022.get(mi).get(m).shortValue() / loud2022missions.get(mi).shortValue()));
 				}
 				System.out.println();
 			}
 			
 			//displays which modifiers were removed from certain missions from 2021 to 2022
-			for (Modifier m : stealthModifiers) {
+			for (Modifier m : STEALTH_MODIFIERS) {
 				if (m.equals(Modifier.BOARDED_UP) || m.equals(Modifier.NO_EQUIPMENT_BAGS)) {continue;} //these were removed from the stealth pool
-				for (Mission mi : stealthMissionsNoExpansions) {
+				for (Mission mi : STEALTH_MISSIONS_NO_EXPANSIONS) {
 					if (stealth2021.get(mi).get(m).shortValue() != 0 &&
 						stealth2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
 					}
 				}
 			}
-			for (Modifier m : loudModifiers) {
-				for (Mission mi : loudMissionsNoExpansions) {
+			for (Modifier m : LOUD_MODIFIERS) {
+				for (Mission mi : LOUD_MISSIONS_NO_EXPANSIONS) {
 					if (loud2021.get(mi).get(m).shortValue() != 0 &&
 						loud2022.get(mi).get(m).shortValue() == 0) {
 						System.out.println(m + " was removed from " + mi);
