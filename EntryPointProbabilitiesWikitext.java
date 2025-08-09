@@ -1,5 +1,5 @@
 /* Program used to translate the output of EntryPointProbabilities.java into wikitext.
- * The only edits that should be made are to the value of txtFileName
+ * The only edits that should be made are to the value of TXT_FILE_NAME
  * (unless you want to try to improve the code).
  * The output is produced in the console.
  */
@@ -8,10 +8,10 @@ import java.io.*;
 import java.util.*;
 
 public class EntryPointProbabilitiesWikitext {
-	final static String txtFileName = "EP Probabilities Raw.txt"; //change depending on the name you set for the output of EntryPointProbabilities.java
+	final static String TXT_FILE_NAME = "EP Probabilities Raw.txt"; //change depending on the name you set for the output of EntryPointProbabilities.java
 	
 	/** This is needed because enums cannot override their compareTo method. */
-	static final Comparator<Modifier> STRING_ORDER = new Comparator<Modifier>() {
+	final static Comparator<Modifier> STRING_ORDER = new Comparator<Modifier>() {
 		public int compare(Modifier m1, Modifier m2) {
 			return m1.toString().compareTo(m2.toString());
 		}
@@ -50,6 +50,25 @@ public class EntryPointProbabilitiesWikitext {
 		}
 	}
 	
+	final static Modifier[] STEALTH_MODIFIERS = {
+			Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
+			Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
+			Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
+			Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
+			Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+			Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+			Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
+	};
+	final static Modifier[] LOUD_MODIFIERS = {
+		Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
+		Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+		Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+		Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
+		Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
+		Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+		Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
+	};
+	
 	/**
 	 * System.out.println();
 	 */
@@ -80,35 +99,17 @@ public class EntryPointProbabilitiesWikitext {
 	}
 	
 	public static void main(String[] args) {
-		try (BufferedReader readFile = new BufferedReader(new FileReader(txtFileName));) {
-			final Modifier[] stealthModifiers = {
-				Modifier.MISPLACED_GEAR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
-				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
-				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.EXTRA_CAMERAS,
-				Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
-				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
-				Modifier.TAKEDOWN_LIMIT, Modifier.NO_KNOCKOUTS, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE
-			};
-			final Modifier[] loudModifiers = {
-				Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG,
-				Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
-				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
-				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
-				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
-				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE
-			};
-			String[] stealthModifierStrings = new String[stealthModifiers.length];
-			String[] loudModifierStrings = new String[loudModifiers.length];
-			for (int i = 0; i < stealthModifiers.length; i++) {
-				stealthModifierStrings[i] = stealthModifiers[i].toString();
+		try (BufferedReader readFile = new BufferedReader(new FileReader(TXT_FILE_NAME));) {
+			String[] stealthModifierStrings = new String[STEALTH_MODIFIERS.length];
+			String[] loudModifierStrings = new String[LOUD_MODIFIERS.length];
+			for (int i = 0; i < STEALTH_MODIFIERS.length; i++) {
+				stealthModifierStrings[i] = STEALTH_MODIFIERS[i].toString();
 			}
-			for (int i = 0; i < loudModifiers.length; i++) {
-				loudModifierStrings[i] = loudModifiers[i].toString();
+			for (int i = 0; i < LOUD_MODIFIERS.length; i++) {
+				loudModifierStrings[i] = LOUD_MODIFIERS[i].toString();
 			}
-			Arrays.sort(stealthModifiers, STRING_ORDER);
-			Arrays.sort(loudModifiers, STRING_ORDER);
+			Arrays.sort(STEALTH_MODIFIERS, STRING_ORDER);
+			Arrays.sort(LOUD_MODIFIERS, STRING_ORDER);
 			Arrays.sort(stealthModifierStrings);
 			Arrays.sort(loudModifierStrings); //sorting is a prerequisite for binary search
 			String line = readFile.readLine(); //first line of the txt file is not needed
@@ -162,8 +163,8 @@ public class EntryPointProbabilitiesWikitext {
 						p("!Score");
 					} else if (Arrays.binarySearch(stealthModifierStrings, line.substring(0, line.length() - 1)) >= 0) { //is a stealth modifier
 						p("|-");
-						System.out.print("|<span class=\"challenge-" + stealthModifiers[Arrays.binarySearch(stealthModifierStrings, line.substring(0, line.length() - 1))].getColor() + "\">");
-						p(titleCase(stealthModifiers[Arrays.binarySearch(stealthModifierStrings, line.substring(0, line.length() - 1))].toString().replace('_', ' ')) + "</span>");
+						System.out.print("|<span class=\"challenge-" + STEALTH_MODIFIERS[Arrays.binarySearch(stealthModifierStrings, line.substring(0, line.length() - 1))].getColor() + "\">");
+						p(titleCase(STEALTH_MODIFIERS[Arrays.binarySearch(stealthModifierStrings, line.substring(0, line.length() - 1))].toString().replace('_', ' ')) + "</span>");
 					} else if (line.contains(".")) { //mission: number
 						if (line.substring(line.indexOf(':') + 2).equals("0.0")) {
 							p("|");
@@ -177,8 +178,8 @@ public class EntryPointProbabilitiesWikitext {
 				} else //is loud
 				if (Arrays.binarySearch(loudModifierStrings, line.substring(0, line.length() - 1)) >= 0) { //is a loud modifier
 					p("|-");
-					System.out.print("|<span class=\"challenge-" + loudModifiers[Arrays.binarySearch(loudModifierStrings, line.substring(0, line.length() - 1))].getColor() + "\">");
-					p(titleCase(loudModifiers[Arrays.binarySearch(loudModifierStrings, line.substring(0, line.length() - 1))].toString().replace('_', ' ')) + "</span>");
+					System.out.print("|<span class=\"challenge-" + LOUD_MODIFIERS[Arrays.binarySearch(loudModifierStrings, line.substring(0, line.length() - 1))].getColor() + "\">");
+					p(titleCase(LOUD_MODIFIERS[Arrays.binarySearch(loudModifierStrings, line.substring(0, line.length() - 1))].toString().replace('_', ' ')) + "</span>");
 				} else if (line.contains(".")) { //mission: number
 					if (line.substring(line.indexOf(':') + 2).equals("0.0")) {
 						p("|");
