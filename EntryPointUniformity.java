@@ -157,22 +157,19 @@ public class EntryPointUniformity {
 			}
 			
 			//Part 2: uniformity calculations
-			Map<Mission, Map<Modifier, Double>> stealthFreq = new EnumMap<>(getMissionClass());
-			Map<Mission, Map<Modifier, Double>> loudFreq = new EnumMap<>(getMissionClass());
-			double gini, entropy, error;
+			double stealthFreq, loudFreq, gini, entropy, error;
 			String mission;
 			
 			for (Mission mi : STEALTH_MISSIONS) {
-				stealthFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
 				for (Modifier mo : STEALTH_MODIFIERS) {
-					stealthFreq.get(mi).put(mo, (double)stealthOccurrences.get(mi).get(mo).shortValue() / stealthMissionOccurrences.get(mi).shortValue() / 3);
+					stealthFreq = (double)stealthOccurrences.get(mi).get(mo).shortValue() / stealthMissionOccurrences.get(mi).shortValue() / 3;
 					//division by 3 at the end is for normalization
-					gini += stealthFreq.get(mi).get(mo) * stealthFreq.get(mi).get(mo);
-					entropy += stealthFreq.get(mi).get(mo) == 0 ? 0 : (stealthFreq.get(mi).get(mo) * Math.log(stealthFreq.get(mi).get(mo)) / Math.log(2));
-					error = Math.max(stealthFreq.get(mi).get(mo), error);
+					gini += stealthFreq * stealthFreq;
+					entropy += stealthFreq == 0 ? 0 : (stealthFreq * Math.log(stealthFreq) / Math.log(2));
+					error = Math.max(stealthFreq, error);
 				}
 				gini = 1 - gini;
 				entropy *= -1;
@@ -188,15 +185,14 @@ public class EntryPointUniformity {
 			}
 			System.out.println();
 			for (Mission mi : LOUD_MISSIONS) {
-				loudFreq.put(mi, new EnumMap<>(getModifierClass()));
 				gini = 0;
 				entropy = 0;
 				error = 0;
 				for (Modifier mo : LOUD_MODIFIERS) {
-					loudFreq.get(mi).put(mo, (double)loudOccurrences.get(mi).get(mo).shortValue() / loudMissionOccurrences.get(mi).shortValue() / 3);
-					gini += loudFreq.get(mi).get(mo) * loudFreq.get(mi).get(mo);
-					entropy += loudFreq.get(mi).get(mo) == 0 ? 0 : (loudFreq.get(mi).get(mo) * Math.log(loudFreq.get(mi).get(mo)) / Math.log(2));
-					error = Math.max(loudFreq.get(mi).get(mo), error);
+					loudFreq = (double)loudOccurrences.get(mi).get(mo).shortValue() / loudMissionOccurrences.get(mi).shortValue() / 3;
+					gini += loudFreq * loudFreq;
+					entropy += loudFreq == 0 ? 0 : (loudFreq * Math.log(loudFreq) / Math.log(2));
+					error = Math.max(loudFreq, error);
 				}
 				gini = 1 - gini;
 				entropy *= -1;
