@@ -18,7 +18,7 @@ with open('EP Daily Challenges Wikitext.txt') as fin:
     try:
         #processes the txt file
         while True:
-            line = fin.readline().strip()
+            line = fin.readline()
             if line == '': #stops the loop when there's no more lines to read
                 break
             
