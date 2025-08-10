@@ -87,7 +87,6 @@ public class EntryPointUniformity {
 	public static void main(String[] args) {
 		try (BufferedReader readFile = new BufferedReader(new FileReader("EP Daily Challenges Wikitext.txt"));) {
 			//Part 1: processing txt file
-			//the Short values will represent the number of occurrences
 			Map<Mission, Map<Modifier, Short>> stealthOccurrences = new EnumMap<>(getMissionClass());
 			Map<Mission, Map<Modifier, Short>> loudOccurrences = new EnumMap<>(getMissionClass());
 			Map<Mission, Short> stealthMissionOccurrences = new EnumMap<>(getMissionClass());
