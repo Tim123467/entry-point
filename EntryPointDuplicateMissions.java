@@ -35,6 +35,7 @@ public class EntryPointDuplicateMissions {
 				numOccurrences.put(m, (byte)0);
 			}
 			
+			//processes the txt file
 			outer: while (true) {
 				line = readFile.readLine();
 				if (line == null) {break;} //stops the loop when there's no more lines to read
