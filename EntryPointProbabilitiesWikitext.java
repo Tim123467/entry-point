@@ -38,7 +38,7 @@ public class EntryPointProbabilitiesWikitext {
 		
 		private final Color color;
 		
-		Modifier(Color color) {
+		private Modifier(Color color) {
 			this.color = color;
 		}
 		
