@@ -25,7 +25,7 @@ Both versions of this program are known to bug out on online IDEs, so instead I 
 2) Python: "EntryPointBlackDawnDateChecker.py". I recommend opening Anaconda Navigator (included in the Anaconda Distribution) and using Spyder to run this.
 3) If you have VS Code installed, it can be used as an alternative to Eclipse/Anaconda. I tried both versions in VS Code and the Python version ran without issues. Due to my lack of experience working with Java in VS Code, I could not figure out how to get any Java program to run in VS Code. Since the Python version worked in VS Code, if you can get Java programs to run in VS Code then I assume the Java version will work too (although this is just an assumption).
 
-# Daily challenges programs
+# Daily challenges programs without GUIs
 Tip: if you're using Google Colab, don't download the .py file. Instead, copy the code and paste it into a Google Colaboratory code block and run it.
 
 There are 6 different programs, 5 of which are available in both Java and Python. The output for the Java versions is produced in the console, while the output for the Python versions is produced either in a separate text file or in the console.
