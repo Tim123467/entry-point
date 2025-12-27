@@ -1,3 +1,6 @@
+# Daily Challenges GUI
+A graphical user interface that generates wikitext for updating daily challenges pages on the Entry Point Wiki. It is DailyChallengesGUI.java
+
 # Black Dawn date checker (no downloads required version)
 This version requires you to have a Google account (if you have a YouTube channel then you have a Google account). Your Google account can stay private, you do not need to share it.
 
