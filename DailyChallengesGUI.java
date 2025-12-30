@@ -21,7 +21,8 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		String output = "";
 		
 		for (int i = 0; i < array.length; i++) {
-			output += array[i].equals("ui") ? "UI" : array[i].equals("scrs") ? "SCRS" : (array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + " ");
+			output += array[i].equals("ui") ? "UI" : array[i].equals("scrs") ? "SCRS" :
+						(array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + " ");
 		}
 		
 		return output.trim();
@@ -42,12 +43,14 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		BLANK(null), MISPLACED_GEAR(Color.GREEN), NO_AEGIS_ARMOR(Color.GREEN), BOARDED_UP(Color.GREEN),
 		FOG(Color.GREEN), NO_SUPPRESSORS(Color.GREEN), NO_SAFECRACKING(Color.GREEN),
 		WEAPON_SCANNERS(Color.BLUE), NO_SCRAMBLER(Color.BLUE), BLOODLESS(Color.BLUE), UNSKILLED(Color.BLUE), SMALL_ARMS_ONLY(Color.BLUE),
-		CRIMINAL_ARSENAL(Color.BLUE), NO_HYBRID_CLASSES(Color.BLUE), CASCADE_ARSENAL(Color.BLUE), FLASHBANG_FRENZY(Color.BLUE), REINFORCED_DOORS(Color.BLUE),
-		HEAVY_BAGS(Color.BLUE), ARMERA_ARSENAL(Color.BLUE), NO_EQUIPMENT_BAGS(Color.BLUE), REINFORCED_LOCKS(Color.BLUE), GLASS_CANNON(Color.BLUE),
-		MANDATORY_HEADSHOTS(Color.BLUE), NO_INTERROGATION(Color.BLUE), EXTRA_CAMERAS(Color.BLUE), NO_HEAVY_ARMOR(Color.BLUE),
-		UNINTIMIDATING(Color.PURPLE), WEAKER_MEDKITS(Color.PURPLE), HIDDEN_UI(Color.PURPLE), FASTER_DETECTION(Color.PURPLE), REINFORCED_CAMERAS(Color.PURPLE),
-		AEGIS_ACADEMY(Color.PURPLE), FLASHBANG_REVENGE(Color.PURPLE), ONE_SHOT(Color.PURPLE), HIDDEN_DETECTION_BARS(Color.PURPLE),
-		NO_LOCKPICKS(Color.PURPLE), INEXPERIENCED(Color.PURPLE), FIFTEEN_MINUTES(Color.PURPLE), LESS_HEALTH(Color.PURPLE),
+		CRIMINAL_ARSENAL(Color.BLUE), NO_HYBRID_CLASSES(Color.BLUE), CASCADE_ARSENAL(Color.BLUE), FLASHBANG_FRENZY(Color.BLUE),
+		REINFORCED_DOORS(Color.BLUE), HEAVY_BAGS(Color.BLUE), ARMERA_ARSENAL(Color.BLUE), NO_EQUIPMENT_BAGS(Color.BLUE),
+		REINFORCED_LOCKS(Color.BLUE), GLASS_CANNON(Color.BLUE), MANDATORY_HEADSHOTS(Color.BLUE), NO_INTERROGATION(Color.BLUE),
+		EXTRA_CAMERAS(Color.BLUE), NO_HEAVY_ARMOR(Color.BLUE),
+		UNINTIMIDATING(Color.PURPLE), WEAKER_MEDKITS(Color.PURPLE), HIDDEN_UI(Color.PURPLE), FASTER_DETECTION(Color.PURPLE),
+		REINFORCED_CAMERAS(Color.PURPLE), AEGIS_ACADEMY(Color.PURPLE), FLASHBANG_REVENGE(Color.PURPLE), ONE_SHOT(Color.PURPLE),
+		HIDDEN_DETECTION_BARS(Color.PURPLE), NO_LOCKPICKS(Color.PURPLE), INEXPERIENCED(Color.PURPLE), FIFTEEN_MINUTES(Color.PURPLE),
+		LESS_HEALTH(Color.PURPLE),
 		NO_EXPLOSIVES(Color.RED), TAKEDOWN_LIMIT(Color.RED), SHIELD_SWARM(Color.RED), EXPLOSIVE_FLASHBANGS(Color.RED),
 		NO_KNOCKOUTS(Color.RED), NO_MOVING_BODIES(Color.RED), NO_DISGUISE(Color.RED), EXPLOSIVE_REVENGE(Color.RED);
 		
@@ -75,74 +78,83 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	private enum Mission {
 		BLANK(null, null),
 		THE_BLACKSITE(new Modifier[]{Modifier.BLANK, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.HIDDEN_UI, Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES},
+				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED,
+				Modifier.FIFTEEN_MINUTES},
 			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
 				Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL,
 				Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS,
 				Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT,
-				Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_FINANCIER(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.BLOODLESS, Modifier.UNSKILLED,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.HIDDEN_DETECTION_BARS,
-				Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.NO_MOVING_BODIES},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY,
-				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
-				Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON,
-				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
-				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM,
-				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
+				Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS,
+				Modifier.EXPLOSIVE_REVENGE}),
+		THE_FINANCIER(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.BLOODLESS,
+				Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+				Modifier.NO_MOVING_BODIES},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED,
+				Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
+				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT,
+				Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS,
+				Modifier.EXPLOSIVE_REVENGE}),
 		THE_DEPOSIT(new Modifier[]{Modifier.BLANK, Modifier.MISPLACED_GEAR, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
 				Modifier.WEAPON_SCANNERS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
 				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION,
 				Modifier.EXTRA_CAMERAS, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
-				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.NO_MOVING_BODIES},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS,
-				Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON,
-				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+				Modifier.NO_MOVING_BODIES},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.SMALL_ARMS_ONLY,
+				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
+				Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS,
+				Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI,
+				Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
+		THE_LAKEHOUSE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.UNSKILLED,
+				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.TAKEDOWN_LIMIT,
+				Modifier.NO_MOVING_BODIES},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED,
+				Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+				Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI,
 				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES,
 				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_LAKEHOUSE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
-				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING,
-				Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS,
-				Modifier.INEXPERIENCED, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY,
-				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
-				Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.GLASS_CANNON,
-				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.FLASHBANG_REVENGE,
-				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM,
-				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_WITHDRAWAL(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS,
-				Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY,
-				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
-				Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON,
-				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
-				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES,
-				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
+		THE_WITHDRAWAL(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
+				Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
+				Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.BOARDED_UP, Modifier.FOG, Modifier.UNSKILLED,
+				Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL,
+				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR,
+				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT,
+				Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS,
+				Modifier.EXPLOSIVE_REVENGE}),
 		THE_SCIENTIST(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
 				Modifier.CASCADE_ARSENAL, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION,
 				Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
 				Modifier.NO_KNOCKOUTS},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.ARMERA_ARSENAL,
-				Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS,
-				Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE,
-				Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM,
-				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_SCRS(new Modifier[]{Modifier.BLANK, Modifier.MISPLACED_GEAR, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.BLOODLESS,
-				Modifier.UNSKILLED, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.EXTRA_CAMERAS, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
-				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED, Modifier.TAKEDOWN_LIMIT},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS,
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY,
+				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
 				Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON,
 				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
 				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES,
 				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
+		THE_SCRS(new Modifier[]{Modifier.BLANK, Modifier.MISPLACED_GEAR, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING,
+				Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.EXTRA_CAMERAS, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION,
+				Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED,
+				Modifier.TAKEDOWN_LIMIT},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY,
+				Modifier.CRIMINAL_ARSENAL, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY,
+				Modifier.REINFORCED_DOORS, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS,
+				Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI,
+				Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
 		BLACK_DUSK(null,
 			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
 				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS,
@@ -150,49 +162,51 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
 				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES,
 				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_KILLHOUSE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
-				Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING,
-				Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES,
-				Modifier.NO_MOVING_BODIES},
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.FLASHBANG_FRENZY,
-				Modifier.REINFORCED_DOORS, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON,
-				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
-				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH, Modifier.SHIELD_SWARM,
-				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
-		THE_AUCTION(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.NO_HYBRID_CLASSES,
-				Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI,
-				Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED,
-				Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE},
+		THE_KILLHOUSE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.UNSKILLED,
+				Modifier.NO_HYBRID_CLASSES, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
+				Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.NO_MOVING_BODIES},
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.FOG, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES,
+				Modifier.FLASHBANG_FRENZY, Modifier.REINFORCED_DOORS, Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS,
+				Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI,
+				Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
+				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
+		THE_AUCTION(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
+				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT,
+				Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE},
 			null),
-		THE_GALA(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS, Modifier.UNSKILLED,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS,
-				Modifier.NO_MOVING_BODIES},
-			null),
-		THE_CACHE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
+		THE_GALA(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
 				Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
 				Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_MOVING_BODIES},
+			null),
+		THE_CACHE(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.NO_SCRAMBLER,
+				Modifier.BLOODLESS, Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS,
+				Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
 				Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES},
 			null),
-		THE_SETUP(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS,
-				Modifier.UNINTIMIDATING, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS,
-				Modifier.NO_LOCKPICKS, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE},
+		THE_SETUP(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SAFECRACKING, Modifier.NO_SCRAMBLER,
+				Modifier.BLOODLESS, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.REINFORCED_LOCKS, Modifier.UNINTIMIDATING, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
+				Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT,
+				Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE},
 			null),
-		THE_LOCKUP(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS,
-				Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION,
-				Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS, Modifier.INEXPERIENCED,
-				Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES},
+		THE_LOCKUP(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.BLOODLESS, Modifier.CASCADE_ARSENAL,
+				Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS, Modifier.REINFORCED_LOCKS, Modifier.UNINTIMIDATING, Modifier.HIDDEN_UI,
+				Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS, Modifier.HIDDEN_DETECTION_BARS, Modifier.NO_LOCKPICKS,
+				Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT, Modifier.NO_MOVING_BODIES},
 			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.UNSKILLED, Modifier.SMALL_ARMS_ONLY, Modifier.CRIMINAL_ARSENAL,
 				Modifier.FLASHBANG_FRENZY, Modifier.ARMERA_ARSENAL, Modifier.NO_EQUIPMENT_BAGS, Modifier.GLASS_CANNON,
 				Modifier.MANDATORY_HEADSHOTS, Modifier.NO_HEAVY_ARMOR, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY,
 				Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.LESS_HEALTH, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM,
 				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
 		THE_SCORE(null,
-			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.CRIMINAL_ARSENAL, Modifier.FLASHBANG_FRENZY, Modifier.NO_EQUIPMENT_BAGS,
-				Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS, Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI,
-				Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM,
-				Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE});
+			new Modifier[]{Modifier.BLANK, Modifier.NO_AEGIS_ARMOR, Modifier.CRIMINAL_ARSENAL, Modifier.FLASHBANG_FRENZY,
+				Modifier.NO_EQUIPMENT_BAGS, Modifier.REINFORCED_LOCKS, Modifier.GLASS_CANNON, Modifier.MANDATORY_HEADSHOTS,
+				Modifier.WEAKER_MEDKITS, Modifier.HIDDEN_UI, Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT,
+				Modifier.NO_EXPLOSIVES, Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE});
 		
 		private final Modifier[] stealthMods;
 		private final Modifier[] loudMods;
@@ -222,7 +236,9 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	
 	/** This subclass changes the functionality of the up and down buttons. */
 	private class CustomDateModel extends SpinnerDateModel {
-		private static final long serialVersionUID = Objects.hashCode(Integer.valueOf(416)); //removes the warning from using the default serialVersionUID
+		//removes the warning from using the default serialVersionUID
+		private static final long serialVersionUID = Objects.hashCode(Integer.valueOf(416));
+		
 		private Calendar cal;
 		
 		public CustomDateModel() {
@@ -410,7 +426,8 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		try {
 			switch (event.getActionCommand()) {
 			case "mission": //mission selected
-				for (AbstractButton b : Collections.list(bgTactic.getElements())) { //this part is needed to update radio buttons during method execution
+				//this part is needed to update radio buttons during method execution
+				for (AbstractButton b : Collections.list(bgTactic.getElements())) {
 					bgTactic.remove(b);
 				}
 				
@@ -479,7 +496,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 					
 					return;
 				}
-			case "tactic":
+			case "tactic": //radio button clicked
 				//enable mod1
 				cbbMod1.removeAllItems();
 				if (rbStealth.isSelected()) {
@@ -504,7 +521,8 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtDailyChallenges.setText(null);
 				
 				return;
-			case "mod1": //logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
+			case "mod1": //1st modifier selected
+				//logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
 				if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
 					//disable all components below mod1
 					cbbMod2.removeAllItems();
@@ -545,7 +563,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtDailyChallenges.setText(null);
 				
 				return;
-			case "mod2":
+			case "mod2": //2nd modifier selected
 				if (cbbMod2.getSelectedItem().equals(Modifier.BLANK)) {
 					//disable all components below mod2
 					cbbMod3.removeAllItems();
@@ -580,7 +598,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtDailyChallenges.setText(null);
 				
 				return;
-			case "generate":
+			case "generate": //3rd modifier selected, which should only be possible when all other components are selected
 				if (cbbMod3.getSelectedItem().equals(Modifier.BLANK)) {
 					//disable all components below mod3
 					txtTemplate.setText(null);
