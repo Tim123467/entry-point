@@ -72,6 +72,53 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			}
 			return titleCase(super.toString().replace('_', ' '));
 		}
+		
+		/**
+		 * Two modifiers are compatible if a daily challenge can have both modifiers at the same time.
+		 * Some assumptions are made about modifier incompatibility, so if they are wrong, then this method will need to be edited.
+		 * @param anotherModifier The modifier to check if it is compatible with this modifier.
+		 * @return True if both modifiers are compatible, false otherwise.
+		 */
+		boolean isCompatible(Object anotherModifier) {
+			if (this.equals(anotherModifier) || !(anotherModifier instanceof Modifier)) {
+				return false;
+			}
+			
+			//list of incompatible modifier combos; all combos listed below have not appeared together
+			ArrayList<Collection<Modifier>> incompatibleMods = new ArrayList<>(12);
+			incompatibleMods.add(EnumSet.of(Modifier.ARMERA_ARSENAL, Modifier.CASCADE_ARSENAL, Modifier.CRIMINAL_ARSENAL, Modifier.SMALL_ARMS_ONLY));
+			//Armera Arsenal would make Criminal Arsenal redundant, but both would override or be overridden by Cascade Arsenal
+			//Small Arms Only is assumed to be incompatible with the arsenal modifiers
+			incompatibleMods.add(EnumSet.of(Modifier.BLOODLESS, Modifier.NO_SUPPRESSORS));
+			//Bloodless & No Suppressors are assumed to be incompatible
+			incompatibleMods.add(EnumSet.of(Modifier.EXPLOSIVE_REVENGE, Modifier.FLASHBANG_REVENGE));
+			//Explosive Revenge & Flashbang Revenge are assumed to be incompatible
+			incompatibleMods.add(EnumSet.of(Modifier.GLASS_CANNON, Modifier.LESS_HEALTH));
+			//Glass Cannon & Less Health are assumed to be incompatible
+			incompatibleMods.add(EnumSet.of(Modifier.HIDDEN_DETECTION_BARS, Modifier.HIDDEN_UI));
+			//Hidden UI would make Hidden Detection Bars redundant
+			incompatibleMods.add(EnumSet.of(Modifier.NO_HYBRID_CLASSES, Modifier.INEXPERIENCED, Modifier.UNSKILLED));
+			//No Hybrid Classes is assumed to be incompatible since it hasn't appeared with those two modifiers
+			//Inexperienced & Unskilled would override each other
+			incompatibleMods.add(EnumSet.of(Modifier.NO_AEGIS_ARMOR, Modifier.NO_HEAVY_ARMOR));
+			//No Heavy Armor would make No Aegis Armor redundant
+			incompatibleMods.add(EnumSet.of(Modifier.NO_INTERROGATION, Modifier.UNINTIMIDATING));
+			//Unintimidating would make No Interrogation redundant
+			incompatibleMods.add(EnumSet.of(Modifier.NO_KNOCKOUTS, Modifier.NO_SUPPRESSORS));
+			//No Knockouts & No Suppressors are confirmed incompatible
+			incompatibleMods.add(EnumSet.of(Modifier.NO_LOCKPICKS, Modifier.REINFORCED_LOCKS));
+			//No Lockpicks would make Reinforced Locks redundant
+			incompatibleMods.add(EnumSet.of(Modifier.REINFORCED_DOORS, Modifier.REINFORCED_LOCKS));
+			//Reinforced Doors & Reinforced Locks would override each other
+			
+			for (Collection<Modifier> combo : incompatibleMods) {
+				if (combo.contains(this) && combo.contains((Modifier)anotherModifier)) {
+					return false;
+				}
+			}
+			
+			return true;
+		}
 	}
 	
 	/** The missions that can have daily challenges, in all caps. */
@@ -541,14 +588,14 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				if (rbStealth.isSelected()) {
 					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
 						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && !item.equals(cbbMod1.getSelectedItem()))) {
+								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
 							cbbMod2.addItem(item);
 						}
 					}
 				} else { //loud selected
 					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
 						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && !item.equals(cbbMod1.getSelectedItem()))) {
+								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
 							cbbMod2.addItem(item);
 						}
 					}
@@ -579,14 +626,16 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				if (rbStealth.isSelected()) {
 					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
 						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && !item.equals(cbbMod1.getSelectedItem()) && !item.equals(cbbMod2.getSelectedItem()))) {
+								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
+									&& item.isCompatible(cbbMod2.getSelectedItem()))) {
 							cbbMod3.addItem(item);
 						}
 					}
 				} else { //loud selected
 					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
 						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && !item.equals(cbbMod1.getSelectedItem()) && !item.equals(cbbMod2.getSelectedItem()))) {
+								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
+									&& item.isCompatible(cbbMod2.getSelectedItem()))) {
 							cbbMod3.addItem(item);
 						}
 					}
