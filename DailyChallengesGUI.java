@@ -75,7 +75,8 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		
 		/**
 		 * Two modifiers are compatible if a daily challenge can have both modifiers at the same time.
-		 * Some assumptions are made about modifier incompatibility, so if they are wrong, then this method will need to be edited.
+		 * Some assumptions are made about modifier incompatibility (listed in comments), so if they are wrong,
+		 * then this method will need to be edited.
 		 * @param anotherModifier The modifier to check if it is compatible with this modifier.
 		 * @return True if both modifiers are compatible, false otherwise.
 		 */
@@ -470,93 +471,107 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			return;
 		}
 		blockActions = true; //prevents unwanted recursion
-		try {
-			switch (event.getActionCommand()) {
-			case "mission": //mission selected
-				//this part is needed to update radio buttons during method execution
-				for (AbstractButton b : Collections.list(bgTactic.getElements())) {
-					bgTactic.remove(b);
-				}
+		
+		outer: switch (event.getActionCommand()) {
+		case "mission": //mission selected
+			//this part is needed to update radio buttons during method execution
+			for (AbstractButton b : Collections.list(bgTactic.getElements())) {
+				bgTactic.remove(b);
+			}
+			
+			mission: switch (cbbMission.getSelectedItem()) {
+			case Mission.BLANK:
+				//disable all components below mission
+				rbStealth.setSelected(false);
+				rbStealth.setEnabled(false);
 				
-				mission: switch (cbbMission.getSelectedItem()) {
-				case Mission.BLANK:
-					//disable all components below mission
-					rbStealth.setSelected(false);
-					rbStealth.setEnabled(false);
-					
-					rbLoud.setSelected(false);
-					rbLoud.setEnabled(false);
-					
-					cbbMod1.removeAllItems();
-					cbbMod1.setEnabled(false);
-					
-					cbbMod2.removeAllItems();
-					cbbMod2.setEnabled(false);
-					
-					cbbMod3.removeAllItems();
-					cbbMod3.setEnabled(false);
-					
-					txtTemplate.setText(null);
-					txtDailyChallenges.setText(null);
-					
-					return;
-				case Mission.THE_AUCTION, Mission.THE_GALA, Mission.THE_CACHE, Mission.THE_SETUP: //stealth only
-					//set & disable tactic
-					rbStealth.setSelected(true);
-					rbStealth.setEnabled(false);
-					
-					rbLoud.setSelected(false);
-					rbLoud.setEnabled(false);
-					break mission;
-				case Mission.THE_SCORE: //loud only
-					//set & disable tactic
-					rbStealth.setSelected(false);
-					rbStealth.setEnabled(false);
-					
-					rbLoud.setSelected(true);
-					rbLoud.setEnabled(false);
-					break mission;
-				default:
-					//enable tactic
-					rbStealth.setSelected(false);
-					rbStealth.setEnabled(true);
-					
-					rbLoud.setSelected(false);
-					rbLoud.setEnabled(true);
-					
-					//ensures both buttons cannot be pressed simultaneously
-					bgTactic.add(rbStealth);
-					bgTactic.add(rbLoud);
-					
-					//disable all components below tactic
-					cbbMod1.removeAllItems();
-					cbbMod1.setEnabled(false);
-					
-					cbbMod2.removeAllItems();
-					cbbMod2.setEnabled(false);
-					
-					cbbMod3.removeAllItems();
-					cbbMod3.setEnabled(false);
-					
-					txtTemplate.setText(null);
-					txtDailyChallenges.setText(null);
-					
-					return;
-				}
-			case "tactic": //radio button clicked
-				//enable mod1
+				rbLoud.setSelected(false);
+				rbLoud.setEnabled(false);
+				
 				cbbMod1.removeAllItems();
-				if (rbStealth.isSelected()) {
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
-						cbbMod1.addItem(item);
-					}
-				} else { //loud selected
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
-						cbbMod1.addItem(item);
-					}
-				}
-				cbbMod1.setEnabled(true);
+				cbbMod1.setEnabled(false);
 				
+				cbbMod2.removeAllItems();
+				cbbMod2.setEnabled(false);
+				
+				cbbMod3.removeAllItems();
+				cbbMod3.setEnabled(false);
+				
+				txtTemplate.setText(null);
+				txtDailyChallenges.setText(null);
+				
+				break outer;
+			case Mission.THE_AUCTION, Mission.THE_GALA, Mission.THE_CACHE, Mission.THE_SETUP: //stealth only
+				//set & disable tactic
+				rbStealth.setSelected(true);
+				rbStealth.setEnabled(false);
+				
+				rbLoud.setSelected(false);
+				rbLoud.setEnabled(false);
+				break mission; //falls through to case "tactic"
+			case Mission.THE_SCORE: //loud only
+				//set & disable tactic
+				rbStealth.setSelected(false);
+				rbStealth.setEnabled(false);
+				
+				rbLoud.setSelected(true);
+				rbLoud.setEnabled(false);
+				break mission; //falls through to case "tactic"
+			default:
+				//enable tactic
+				rbStealth.setSelected(false);
+				rbStealth.setEnabled(true);
+				
+				rbLoud.setSelected(false);
+				rbLoud.setEnabled(true);
+				
+				//ensures both buttons cannot be pressed simultaneously
+				bgTactic.add(rbStealth);
+				bgTactic.add(rbLoud);
+				
+				//disable all components below tactic
+				cbbMod1.removeAllItems();
+				cbbMod1.setEnabled(false);
+				
+				cbbMod2.removeAllItems();
+				cbbMod2.setEnabled(false);
+				
+				cbbMod3.removeAllItems();
+				cbbMod3.setEnabled(false);
+				
+				txtTemplate.setText(null);
+				txtDailyChallenges.setText(null);
+				
+				break outer;
+			}
+		case "tactic": //radio button clicked
+			//enable mod1
+			cbbMod1.removeAllItems();
+			if (rbStealth.isSelected()) {
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+					cbbMod1.addItem(item);
+				}
+			} else { //loud selected
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+					cbbMod1.addItem(item);
+				}
+			}
+			cbbMod1.setEnabled(true);
+			
+			//disable all components below mod1
+			cbbMod2.removeAllItems();
+			cbbMod2.setEnabled(false);
+			
+			cbbMod3.removeAllItems();
+			cbbMod3.setEnabled(false);
+			
+			txtTemplate.setText(null);
+			txtDailyChallenges.setText(null);
+			
+			break outer;
+		case "mod1": //1st modifier selected
+			//logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
+			if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod1
 				cbbMod2.removeAllItems();
 				cbbMod2.setEnabled(false);
@@ -567,41 +582,37 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				return;
-			case "mod1": //1st modifier selected
-				//logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
-				if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
-					//disable all components below mod1
-					cbbMod2.removeAllItems();
-					cbbMod2.setEnabled(false);
-					
-					cbbMod3.removeAllItems();
-					cbbMod3.setEnabled(false);
-					
-					txtTemplate.setText(null);
-					txtDailyChallenges.setText(null);
-					
-					return;
-				}
-				
-				cbbMod2.removeAllItems();
-				if (rbStealth.isSelected()) {
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
-						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
-							cbbMod2.addItem(item);
-						}
-					}
-				} else { //loud selected
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
-						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
-							cbbMod2.addItem(item);
-						}
+				break outer;
+			}
+			
+			cbbMod2.removeAllItems();
+			if (rbStealth.isSelected()) {
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+					if (item.equals(Modifier.BLANK) ||
+							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
+						cbbMod2.addItem(item);
 					}
 				}
-				cbbMod2.setEnabled(true);
-				
+			} else { //loud selected
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+					if (item.equals(Modifier.BLANK) ||
+							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
+						cbbMod2.addItem(item);
+					}
+				}
+			}
+			cbbMod2.setEnabled(true);
+			
+			//disable all components below mod2
+			cbbMod3.removeAllItems();
+			cbbMod3.setEnabled(false);
+			
+			txtTemplate.setText(null);
+			txtDailyChallenges.setText(null);
+			
+			break outer;
+		case "mod2": //2nd modifier selected
+			if (cbbMod2.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod2
 				cbbMod3.removeAllItems();
 				cbbMod3.setEnabled(false);
@@ -609,94 +620,83 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				return;
-			case "mod2": //2nd modifier selected
-				if (cbbMod2.getSelectedItem().equals(Modifier.BLANK)) {
-					//disable all components below mod2
-					cbbMod3.removeAllItems();
-					cbbMod3.setEnabled(false);
-					
-					txtTemplate.setText(null);
-					txtDailyChallenges.setText(null);
-					
-					return;
-				}
-				
-				cbbMod3.removeAllItems();
-				if (rbStealth.isSelected()) {
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
-						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
-									&& item.isCompatible(cbbMod2.getSelectedItem()))) {
-							cbbMod3.addItem(item);
-						}
-					}
-				} else { //loud selected
-					for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
-						if (item.equals(Modifier.BLANK) ||
-								(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
-									&& item.isCompatible(cbbMod2.getSelectedItem()))) {
-							cbbMod3.addItem(item);
-						}
+				break outer;
+			}
+			
+			cbbMod3.removeAllItems();
+			if (rbStealth.isSelected()) {
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+					if (item.equals(Modifier.BLANK) ||
+							(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
+								&& item.isCompatible(cbbMod2.getSelectedItem()))) {
+						cbbMod3.addItem(item);
 					}
 				}
-				cbbMod3.setEnabled(true);
-				
+			} else { //loud selected
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+					if (item.equals(Modifier.BLANK) ||
+							(item.getColor().compareTo(((Modifier)cbbMod2.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem())
+								&& item.isCompatible(cbbMod2.getSelectedItem()))) {
+						cbbMod3.addItem(item);
+					}
+				}
+			}
+			cbbMod3.setEnabled(true);
+			
+			//disable all components below mod3
+			txtTemplate.setText(null);
+			txtDailyChallenges.setText(null);
+			
+			break outer;
+		case "generate": //3rd modifier selected, which should only be possible when all other components are selected
+			if (cbbMod3.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod3
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				return;
-			case "generate": //3rd modifier selected, which should only be possible when all other components are selected
-				if (cbbMod3.getSelectedItem().equals(Modifier.BLANK)) {
-					//disable all components below mod3
-					txtTemplate.setText(null);
-					txtDailyChallenges.setText(null);
-					
-					return;
-				}
-				Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("America/Toronto"));
-				cal.setTime((Date)dateSpinner.getValue());
-				
-				txtTemplate.setText("<noinclude>\n"
-					+ "If you are updating the daily challenge, please change the following lines:\n"
-					+ "* The mission and tactic\n"
-					+ "** Example: The Deposit (Stealth)\n"
-					+ "** For expansion missions, include <nowiki>{{Robux}}</nowiki> before the title (without the stuff in the triangle brackets).\n"
-					+ "*** Example: {{Robux}} The Score (Loud)\n"
-					+ "* The 3 modifier names and their colors\n"
-					+ "* The 3 modifier descriptions (you only have to change the modifier name in the '''ModifierDescription''' template)\n"
-					+ "You can use the \"Preview\" button at the bottom of the editor to make sure everything has been changed correctly.\n"
-					+ "</noinclude>\n"
-					+ "<div style=\"text-align:center;\">The [[daily challenge]] changes in:<br /><span class=\"daily-countdown\" style=\"font-size:35px;\">\n"
-					+ "</span></div>\n"
-					+ "{| class=\"article-table\" style=\"margin-left:auto;margin-right:auto;\"\n"
-					+ "<!-- Change the mission here -->\n"
-					+ "! colspan=\"3\" style=\"text-align:center;\"|" + cbbMission.getSelectedItem() + " (" + (rbStealth.isSelected() ? "Stealth" : "Loud") + ")\n"
-					+ "|-\n"
-					+ "<!-- Change the modifier names here (and the colors to blue/green/purple/red) -->\n"
-					+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + "\">" + cbbMod1.getSelectedItem() + "</span>\n"
-					+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + "\">" + cbbMod2.getSelectedItem() + "</span>\n"
-					+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + "\">" + cbbMod3.getSelectedItem() + "</span>\n"
-					+ "|-\n"
-					+ "<!-- Change the modifier names in the templates here (insert the name without spaces, for Takedown Limit there is \"TakedownLimit\" for 4 and \"TakedownLimit6\" for 6 depending on the mission) -->\n"
-					+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod1.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod1.getSelectedItem().toString().replace(" ", "")) + "}}\n"
-					+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod2.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod2.getSelectedItem().toString().replace(" ", "")) + "}}\n"
-					+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod3.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod3.getSelectedItem().toString().replace(" ", "")) + "}}\n"
-					+ "|}");
-				txtDailyChallenges.setText("|-\n"
-					+ "!" + cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH) + "\n"
-					+ "|" + cbbMission.getSelectedItem() + "\n"
-					+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
-					+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
-					+ "<span class=challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + ">" + cbbMod2.getSelectedItem() + "</span>, "
-					+ "<span class=challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + ">" + cbbMod3.getSelectedItem() + "</span>");
-				
-				frame.pack(); //resizes the window
+				break outer;
 			}
-		} finally {
-			blockActions = false; //allows actionPerformed to be called again
+			Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("America/Toronto"));
+			cal.setTime((Date)dateSpinner.getValue());
+			
+			txtTemplate.setText("<noinclude>\n"
+				+ "If you are updating the daily challenge, please change the following lines:\n"
+				+ "* The mission and tactic\n"
+				+ "** Example: The Deposit (Stealth)\n"
+				+ "** For expansion missions, include <nowiki>{{Robux}}</nowiki> before the title (without the stuff in the triangle brackets).\n"
+				+ "*** Example: {{Robux}} The Score (Loud)\n"
+				+ "* The 3 modifier names and their colors\n"
+				+ "* The 3 modifier descriptions (you only have to change the modifier name in the '''ModifierDescription''' template)\n"
+				+ "You can use the \"Preview\" button at the bottom of the editor to make sure everything has been changed correctly.\n"
+				+ "</noinclude>\n"
+				+ "<div style=\"text-align:center;\">The [[daily challenge]] changes in:<br /><span class=\"daily-countdown\" style=\"font-size:35px;\">\n"
+				+ "</span></div>\n"
+				+ "{| class=\"article-table\" style=\"margin-left:auto;margin-right:auto;\"\n"
+				+ "<!-- Change the mission here -->\n"
+				+ "! colspan=\"3\" style=\"text-align:center;\"|" + cbbMission.getSelectedItem() + " (" + (rbStealth.isSelected() ? "Stealth" : "Loud") + ")\n"
+				+ "|-\n"
+				+ "<!-- Change the modifier names here (and the colors to blue/green/purple/red) -->\n"
+				+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + "\">" + cbbMod1.getSelectedItem() + "</span>\n"
+				+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + "\">" + cbbMod2.getSelectedItem() + "</span>\n"
+				+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + "\">" + cbbMod3.getSelectedItem() + "</span>\n"
+				+ "|-\n"
+				+ "<!-- Change the modifier names in the templates here (insert the name without spaces, for Takedown Limit there is \"TakedownLimit\" for 4 and \"TakedownLimit6\" for 6 depending on the mission) -->\n"
+				+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod1.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod1.getSelectedItem().toString().replace(" ", "")) + "}}\n"
+				+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod2.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod2.getSelectedItem().toString().replace(" ", "")) + "}}\n"
+				+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod3.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod3.getSelectedItem().toString().replace(" ", "")) + "}}\n"
+				+ "|}");
+			txtDailyChallenges.setText("|-\n"
+				+ "!" + cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH) + "\n"
+				+ "|" + cbbMission.getSelectedItem() + "\n"
+				+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
+				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
+				+ "<span class=challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + ">" + cbbMod2.getSelectedItem() + "</span>, "
+				+ "<span class=challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + ">" + cbbMod3.getSelectedItem() + "</span>");
+			
+			frame.pack(); //resizes the window
 		}
+		
+		blockActions = false; //allows actionPerformed to be called again
 	}
 	
 	public static void main(String[] args) {
