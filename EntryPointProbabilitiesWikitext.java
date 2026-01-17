@@ -89,13 +89,13 @@ public class EntryPointProbabilitiesWikitext {
 	 */
 	private static String titleCase(String input) {
 		String[] array = input.trim().toLowerCase().split(" ");
-		String output = "";
+		StringBuilder output = new StringBuilder(22);
 		
-		for (int i = 0; i < array.length; i++) {
-			output += array[i].equals("ui") ? "UI" : (array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + " ");
+		for (String s : array) {
+			output.append(s.equals("ui") ? "UI" : (s.substring(0, 1).toUpperCase() + s.substring(1) + " "));
 		}
 		
-		return output.trim();
+		return output.toString().trim();
 	}
 	
 	public static void main(String[] args) {
