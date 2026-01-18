@@ -479,7 +479,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				bgTactic.remove(b);
 			}
 			
-			mission: switch (cbbMission.getSelectedItem()) {
+			switch (cbbMission.getSelectedItem()) {
 			case Mission.BLANK:
 				//disable all components below mission
 				rbStealth.setSelected(false);
@@ -508,15 +508,15 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				
 				rbLoud.setSelected(false);
 				rbLoud.setEnabled(false);
-				break mission; //falls through to case "tactic"
-			case Mission.THE_SCORE: //loud only
+				break; //falls through to case "tactic"
+			case Mission.BLACK_DUSK, Mission.THE_SCORE: //loud only
 				//set & disable tactic
 				rbStealth.setSelected(false);
 				rbStealth.setEnabled(false);
 				
 				rbLoud.setSelected(true);
 				rbLoud.setEnabled(false);
-				break mission; //falls through to case "tactic"
+				break; //falls through to case "tactic"
 			default:
 				//enable tactic
 				rbStealth.setSelected(false);
@@ -568,7 +568,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			txtTemplate.setText(null);
 			txtDailyChallenges.setText(null);
 			
-			break outer;
+			break;
 		case "mod1": //1st modifier selected
 			//logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
 			if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
@@ -582,7 +582,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				break outer;
+				break;
 			}
 			
 			cbbMod2.removeAllItems();
@@ -610,7 +610,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			txtTemplate.setText(null);
 			txtDailyChallenges.setText(null);
 			
-			break outer;
+			break;
 		case "mod2": //2nd modifier selected
 			if (cbbMod2.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod2
@@ -620,7 +620,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				break outer;
+				break;
 			}
 			
 			cbbMod3.removeAllItems();
@@ -647,14 +647,14 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			txtTemplate.setText(null);
 			txtDailyChallenges.setText(null);
 			
-			break outer;
+			break;
 		case "generate": //3rd modifier selected, which should only be possible when all other components are selected
 			if (cbbMod3.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod3
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
-				break outer;
+				break;
 			}
 			Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("America/Toronto"));
 			cal.setTime((Date)dateSpinner.getValue());
