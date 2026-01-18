@@ -18,14 +18,14 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	 * @return The input string but in title case (with a built-in exception for Hidden UI and SCRS). */
 	private static String titleCase(String input) {
 		String[] array = input.trim().toLowerCase().split(" ");
-		String output = "";
+		StringBuilder output = new StringBuilder(22);
+
+        for (String s : array) {
+            output.append(s.equals("ui") ? "UI" : s.equals("scrs") ? "SCRS" :
+                    (s.substring(0, 1).toUpperCase() + s.substring(1) + " "));
+        }
 		
-		for (int i = 0; i < array.length; i++) {
-			output += array[i].equals("ui") ? "UI" : array[i].equals("scrs") ? "SCRS" :
-						(array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + " ");
-		}
-		
-		return output.trim();
+		return output.toString().trim();
 	}
 	
 	/** Modifier color. */
@@ -334,11 +334,11 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		difference += 1; //it's one off for some reason
 		remainder = (byte)(difference % 10);
 		
-		switch (remainder) {
-		case 0: return FREELANCE_HEISTS;
-		case 5: return NIGHT_HEISTS;
-		default: return FREE_MISSIONS;
-		}
+		return switch (remainder) {
+        	case 0 -> FREELANCE_HEISTS;
+        	case 5 -> NIGHT_HEISTS;
+        	default -> FREE_MISSIONS;
+		};
 	}
 	
 	public void run() {
@@ -348,7 +348,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		JPanel contentPane = new JPanel(layout);
 		GridBagConstraints remainder = new GridBagConstraints();
 		JLabel lblNote = new JLabel("Changing a component will reset every component below it."),
-			datePrompt = new JLabel("Select the date (in day/month/year format):"), missionPrompt = new JLabel("Select the mission:"),
+			datePrompt = new JLabel("Select the date (in year-month-day format):"), missionPrompt = new JLabel("Select the mission:"),
 			tacticPrompt = new JLabel("Select the tactic:"), mod1Prompt = new JLabel("Select modifier 1:"),
 			mod2Prompt = new JLabel("Select modifier 2:"), mod3Prompt = new JLabel("Select modifier 3:");
 		dateSpinner = new JSpinner(new CustomDateModel());
