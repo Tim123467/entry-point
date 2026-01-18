@@ -3,6 +3,7 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.List; //this is needed due to having imported java.awt.List, which I do not use
 
 public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListener {
 	private static JFrame frame;
@@ -86,7 +87,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			}
 			
 			//list of incompatible modifier combos; all combos listed below have not appeared together
-			ArrayList<Collection<Modifier>> incompatibleMods = new ArrayList<>(12);
+			List<Collection<Modifier>> incompatibleMods = new ArrayList<>(12);
 			incompatibleMods.add(EnumSet.of(Modifier.ARMERA_ARSENAL, Modifier.CASCADE_ARSENAL, Modifier.CRIMINAL_ARSENAL, Modifier.SMALL_ARMS_ONLY));
 			//Armera Arsenal would make Criminal Arsenal redundant, but both would override or be overridden by Cascade Arsenal
 			//Small Arms Only is assumed to be incompatible with the arsenal modifiers
@@ -285,7 +286,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	/** This subclass changes the functionality of the up and down buttons. */
 	private class CustomDateModel extends SpinnerDateModel {
 		//removes the warning from using the default serialVersionUID
-		private static final long serialVersionUID = Objects.hashCode(Integer.valueOf(416));
+		private static final long serialVersionUID = Objects.hashCode(416);
 		
 		private Calendar cal;
 		
@@ -432,13 +433,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	public void stateChanged(ChangeEvent event) {
 		blockActions = true; //prevents actionPerformed from being called during this method's execution
 		
-		//set list of available missions
-		cbbMission.removeAllItems();
-		for (Mission item : availableMissions()) {
-			cbbMission.addItem(item);
-		}
-		
-		//disable all components below
+		//disable all components below mission
 		for (AbstractButton b : Collections.list(bgTactic.getElements())) { //this part is needed to update radio buttons during method execution
 			bgTactic.remove(b);
 		}
@@ -460,6 +455,12 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		
 		txtTemplate.setText(null);
 		txtDailyChallenges.setText(null);
+		
+		//set list of available missions
+		cbbMission.removeAllItems();
+		for (Mission item : availableMissions()) {
+			cbbMission.addItem(item);
+		}
 		
 		blockActions = false; //allows actionPerformed to be called again
 	}
@@ -518,17 +519,6 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				rbLoud.setEnabled(false);
 				break; //falls through to case "tactic"
 			default:
-				//enable tactic
-				rbStealth.setSelected(false);
-				rbStealth.setEnabled(true);
-				
-				rbLoud.setSelected(false);
-				rbLoud.setEnabled(true);
-				
-				//ensures both buttons cannot be pressed simultaneously
-				bgTactic.add(rbStealth);
-				bgTactic.add(rbLoud);
-				
 				//disable all components below tactic
 				cbbMod1.removeAllItems();
 				cbbMod1.setEnabled(false);
@@ -542,22 +532,20 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				txtTemplate.setText(null);
 				txtDailyChallenges.setText(null);
 				
+				//enable tactic
+				rbStealth.setSelected(false);
+				rbStealth.setEnabled(true);
+				
+				rbLoud.setSelected(false);
+				rbLoud.setEnabled(true);
+				
+				//ensures both buttons cannot be pressed simultaneously
+				bgTactic.add(rbStealth);
+				bgTactic.add(rbLoud);
+				
 				break outer;
 			}
 		case "tactic": //radio button clicked
-			//enable mod1
-			cbbMod1.removeAllItems();
-			if (rbStealth.isSelected()) {
-				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
-					cbbMod1.addItem(item);
-				}
-			} else { //loud selected
-				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
-					cbbMod1.addItem(item);
-				}
-			}
-			cbbMod1.setEnabled(true);
-			
 			//disable all components below mod1
 			cbbMod2.removeAllItems();
 			cbbMod2.setEnabled(false);
@@ -568,40 +556,65 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			txtTemplate.setText(null);
 			txtDailyChallenges.setText(null);
 			
-			break;
-		case "mod1": //1st modifier selected
-			//logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods
-			if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
-				//disable all components below mod1
-				cbbMod2.removeAllItems();
-				cbbMod2.setEnabled(false);
-				
-				cbbMod3.removeAllItems();
-				cbbMod3.setEnabled(false);
-				
-				txtTemplate.setText(null);
-				txtDailyChallenges.setText(null);
-				
-				break;
-			}
+			List<Modifier> mod1Options = new ArrayList<>(30);
 			
-			cbbMod2.removeAllItems();
+			//fill & enable mod1
+			cbbMod1.removeAllItems();
+			
 			if (rbStealth.isSelected()) {
-				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
-					if (item.equals(Modifier.BLANK) ||
-							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
-						cbbMod2.addItem(item);
+				mod1Options.addAll(Arrays.asList(((Mission)cbbMission.getSelectedItem()).getStealthMods()));
+				mod1Options.remove(0); //temporarily remove blank
+				
+				//skip mod1s that aren't compatible with any mod3 or any mod2
+				verify: for (int i = 0; i < mod1Options.size(); i++) {
+					for (Modifier mod2 : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+						if (!mod2.equals(Modifier.BLANK) &&
+								mod2.getColor().compareTo(mod1Options.get(i).getColor()) >= 0 && mod2.isCompatible(mod1Options.get(i))) {
+							for (Modifier mod3 : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+								if (!mod3.equals(Modifier.BLANK) &&
+										mod3.getColor().compareTo(mod2.getColor()) >= 0 && mod3.isCompatible(mod1Options.get(i)) &&
+										mod3.isCompatible(mod2)) {
+									continue verify;
+								}
+							}
+						}
 					}
+					mod1Options.remove(mod1Options.get(i));
+					i--;
 				}
 			} else { //loud selected
-				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
-					if (item.equals(Modifier.BLANK) ||
-							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
-						cbbMod2.addItem(item);
+				mod1Options.addAll(Arrays.asList(((Mission)cbbMission.getSelectedItem()).getLoudMods()));
+				mod1Options.remove(0); //temporarily remove blank
+				
+				//skip mod1s that aren't compatible with any mod3 or any mod2
+				verify: for (int i = 0; i < mod1Options.size(); i++) {
+					for (Modifier mod2 : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+						if (!mod2.equals(Modifier.BLANK) &&
+								mod2.getColor().compareTo(mod1Options.get(i).getColor()) >= 0 && mod2.isCompatible(mod1Options.get(i))) {
+							for (Modifier mod3 : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+								if (!mod3.equals(Modifier.BLANK) &&
+										mod3.getColor().compareTo(mod2.getColor()) >= 0 && mod3.isCompatible(mod1Options.get(i)) &&
+										mod3.isCompatible(mod2)) {
+									continue verify;
+								}
+							}
+						}
 					}
+					mod1Options.remove(mod1Options.get(i));
+					i--;
 				}
 			}
-			cbbMod2.setEnabled(true);
+			
+			mod1Options.add(0, Modifier.BLANK);
+			for (Modifier item : mod1Options) {
+				cbbMod1.addItem(item);
+			}
+			cbbMod1.setEnabled(true);
+			
+			break;
+		case "mod1": //1st modifier selected
+			/* logic for adding items to cbbMod2 & cbbMod3: add blank, skip mods with easier difficulty colors, skip already-selected mods, and
+			* skip mod2s that aren't compatible with any mod3 */
 			
 			//disable all components below mod2
 			cbbMod3.removeAllItems();
@@ -610,15 +623,76 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			txtTemplate.setText(null);
 			txtDailyChallenges.setText(null);
 			
+			if (cbbMod1.getSelectedItem().equals(Modifier.BLANK)) {
+				//disable mod2
+				cbbMod2.removeAllItems();
+				cbbMod2.setEnabled(false);
+				
+				break;
+			}
+			
+			List<Modifier> mod2Options = new ArrayList<>(30);
+			
+			cbbMod2.removeAllItems();
+			
+			if (rbStealth.isSelected()) {
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+					if (!item.equals(Modifier.BLANK) &&
+							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
+						mod2Options.add(item);
+					}
+				}
+				
+				//skip mod2s that aren't compatible with any mod3
+				verify: for (int i = 0; i < mod2Options.size(); i++) {
+					for (Modifier mod3 : ((Mission)cbbMission.getSelectedItem()).getStealthMods()) {
+						if (!mod3.equals(Modifier.BLANK) &&
+								mod3.getColor().compareTo(mod2Options.get(i).getColor()) >= 0 && mod3.isCompatible(cbbMod1.getSelectedItem())
+								&& mod3.isCompatible(mod2Options.get(i))) {
+							continue verify;
+						}
+					}
+					mod2Options.remove(mod2Options.get(i));
+					i--;
+				}
+			} else { //loud selected
+				for (Modifier item : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+					if (!item.equals(Modifier.BLANK) &&
+							(item.getColor().compareTo(((Modifier)cbbMod1.getSelectedItem()).getColor()) >= 0 && item.isCompatible(cbbMod1.getSelectedItem()))) {
+						mod2Options.add(item);
+					}
+				}
+				
+				//skip mod2s that aren't compatible with any mod3
+				verify: for (int i = 0; i < mod2Options.size(); i++) {
+					for (Modifier mod3 : ((Mission)cbbMission.getSelectedItem()).getLoudMods()) {
+						if (!mod3.equals(Modifier.BLANK) &&
+								mod3.getColor().compareTo(mod2Options.get(i).getColor()) >= 0 && mod3.isCompatible(cbbMod1.getSelectedItem())
+								&& mod3.isCompatible(mod2Options.get(i))) {
+							continue verify;
+						}
+					}
+					mod2Options.remove(mod2Options.get(i));
+					i--;
+				}
+			}
+			
+			mod2Options.add(0, Modifier.BLANK);
+			for (Modifier item : mod2Options) {
+				cbbMod2.addItem(item);
+			}
+			cbbMod2.setEnabled(true);
+			
 			break;
 		case "mod2": //2nd modifier selected
+			//disable all components below mod3
+			txtTemplate.setText(null);
+			txtDailyChallenges.setText(null);
+			
 			if (cbbMod2.getSelectedItem().equals(Modifier.BLANK)) {
-				//disable all components below mod2
+				//disable mod3
 				cbbMod3.removeAllItems();
 				cbbMod3.setEnabled(false);
-				
-				txtTemplate.setText(null);
-				txtDailyChallenges.setText(null);
 				
 				break;
 			}
@@ -642,10 +716,6 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				}
 			}
 			cbbMod3.setEnabled(true);
-			
-			//disable all components below mod3
-			txtTemplate.setText(null);
-			txtDailyChallenges.setText(null);
 			
 			break;
 		case "generate": //3rd modifier selected, which should only be possible when all other components are selected
