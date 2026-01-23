@@ -1,6 +1,7 @@
 # Daily Challenges Wikitext Generator GUI
 A graphical user interface that generates wikitext for updating daily challenges pages on the Entry Point Wiki. It is DailyChallengesGUI.java
 * Known issue: typing while focused on a selection element only works when typing in rapid succession. This is how the Java Swing component works by default, so I don't want to spend a ton of effort to fix such a minor issue.
+* Known issue: pressing space bar exits out of the selection element. This is intended for accessibility purposes, although it's more inconvenient for those of us with a functional mouse.
 
 # Black Dawn date checker (no downloads required version)
 This version requires you to have a Google account (if you have a YouTube channel then you have a Google account). Your Google account can stay private, you do not need to share it.
