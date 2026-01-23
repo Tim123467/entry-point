@@ -742,7 +742,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				+ "<div style=\"text-align:center;\">The [[daily challenge]] changes in:<br /><span class=\"daily-countdown\" style=\"font-size:35px;\"></span></div>\n"
 				+ "{| class=\"article-table\" style=\"margin-left:auto;margin-right:auto;\"\n"
 				+ "<!-- Change the mission here -->\n"
-				+ "! colspan=\"3\" style=\"text-align:center;\"|" + cbbMission.getSelectedItem() + " (" + (rbStealth.isSelected() ? "Stealth" : "Loud") + ")\n"
+				+ "! colspan=\"3\" style=\"text-align:center;\"|" + (Arrays.asList(FREE_MISSIONS).contains(cbbMission.getSelectedItem()) ? "" : "{{Robux}} ") + cbbMission.getSelectedItem() + " (" + (rbStealth.isSelected() ? "Stealth" : "Loud") + ")\n"
 				+ "|-\n"
 				+ "<!-- Change the modifier names here (and the colors to blue/green/purple/red) -->\n"
 				+ "! style=\"text-align:center;\"|<span class=\"challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + "\">" + cbbMod1.getSelectedItem() + "</span>\n"
@@ -756,7 +756,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				+ "|}");
 			txtDailyChallenges.setText("|-\n"
 				+ "!" + cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH) + "\n" //java.util.Calendar months are 0-based
-				+ "|" + cbbMission.getSelectedItem() + "\n"
+				+ "|" + (Arrays.asList(FREE_MISSIONS).contains(cbbMission.getSelectedItem()) ? "" : "{{Robux}} ") + cbbMission.getSelectedItem() + "\n"
 				+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
 				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
 				+ "<span class=challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + ">" + cbbMod2.getSelectedItem() + "</span>, "
