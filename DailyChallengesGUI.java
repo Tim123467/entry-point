@@ -1,3 +1,5 @@
+package gui;
+
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
@@ -755,7 +757,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod3.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod3.getSelectedItem().toString().replace(" ", "")) + "}}\n"
 				+ "|}");
 			txtDailyChallenges.setText("|-\n"
-				+ "!" + cal.get(Calendar.YEAR) + "-" + cal.get(Calendar.MONTH) + "-" + cal.get(Calendar.DAY_OF_MONTH) + "\n"
+				+ "!" + cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1) + "-" + cal.get(Calendar.DAY_OF_MONTH) + "\n" //java.util.Calendar months are 0-based
 				+ "|" + cbbMission.getSelectedItem() + "\n"
 				+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
 				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
