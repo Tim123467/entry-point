@@ -493,7 +493,11 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		blockActions = false; //allows actionPerformed to be called again
 	}
 	
-	
+	/**
+	 * @param modNumber The modifier number (1, 2, or 3).
+	 * @return A string representing the takedown limit amount to include in Daily Challenges's source code, if the modifier is Takedown Limit.
+	 * An empty string otherwise.
+	 */
 	private static String takedownLimitNumber(int modNumber) {
 		switch (modNumber) {
 		case 1:
