@@ -348,11 +348,13 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		frame = new JFrame("EP Daily Challenges Wikitext Generator");
 		GridBagLayout layout = new GridBagLayout();
 		JPanel contentPane = new JPanel(layout);
-		GridBagConstraints remainder = new GridBagConstraints();
+		GridBagConstraints remainder = new GridBagConstraints(),
+			width2 = new GridBagConstraints();
 		JLabel lblNote = new JLabel("Changing a component will reset every component below it."),
 			datePrompt = new JLabel("Select the date (in year-month-day format):"), missionPrompt = new JLabel("Select the mission:"),
 			tacticPrompt = new JLabel("Select the tactic:"), mod1Prompt = new JLabel("Select modifier 1:"),
 			mod2Prompt = new JLabel("Select modifier 2:"), mod3Prompt = new JLabel("Select modifier 3:");
+		JLabel[] lblBreaks = new JLabel[6];
 		dateSpinner = new JSpinner(new CustomDateModel());
 		JSpinner.DateEditor dateEditor = new JSpinner.DateEditor(dateSpinner, "yyyy-MM-dd");
 		JButton btnPrevDate = new JButton("Previous Date"),
@@ -372,27 +374,34 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		
 		contentPane.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 		remainder.gridwidth = GridBagConstraints.REMAINDER;
+		width2.gridwidth = 2;
 		
 		//sets timezone and overrides default date formatting
 		dateEditor.getFormat().setTimeZone(TimeZone.getTimeZone("America/Toronto"));
 		dateSpinner.setEditor(dateEditor);
 		
+		for (int i = 0; i < 6; i++) {
+			lblBreaks[i] = new JLabel();
+		}
+		
 		contentPane.add(lblNote, remainder);
 		
 		contentPane.add(datePrompt);
 		dateSpinner.addChangeListener(this);
-		contentPane.add(dateSpinner);
+		contentPane.add(dateSpinner, width2);
 		btnPrevDate.setActionCommand("prevDate");
 		btnPrevDate.addActionListener(this);
 		contentPane.add(btnPrevDate);
 		btnNextDate.setActionCommand("nextDate");
 		btnNextDate.addActionListener(this);
-		contentPane.add(btnNextDate, remainder);
+		contentPane.add(btnNextDate);
+		contentPane.add(lblBreaks[0], remainder);
 		
 		contentPane.add(missionPrompt);
 		cbbMission.setActionCommand("mission");
 		cbbMission.addActionListener(this);
-		contentPane.add(cbbMission, remainder);
+		contentPane.add(cbbMission, width2);
+		contentPane.add(lblBreaks[1], remainder);
 		
 		contentPane.add(tacticPrompt);
 		
@@ -404,25 +413,29 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		rbLoud.setActionCommand("tactic");
 		rbLoud.addActionListener(this);
 		rbLoud.setEnabled(false);
-		contentPane.add(rbLoud, remainder);
+		contentPane.add(rbLoud);
+		contentPane.add(lblBreaks[2], remainder);
 		
 		contentPane.add(mod1Prompt);
 		cbbMod1.setActionCommand("mod1");
 		cbbMod1.addActionListener(this);
 		cbbMod1.setEnabled(false);
-		contentPane.add(cbbMod1, remainder);
+		contentPane.add(cbbMod1, width2);
+		contentPane.add(lblBreaks[3], remainder);
 		
 		contentPane.add(mod2Prompt);
 		cbbMod2.setActionCommand("mod2");
 		cbbMod2.addActionListener(this);
 		cbbMod2.setEnabled(false);
-		contentPane.add(cbbMod2, remainder);
+		contentPane.add(cbbMod2, width2);
+		contentPane.add(lblBreaks[4], remainder);
 		
 		contentPane.add(mod3Prompt);
 		cbbMod3.setActionCommand("generate");
 		cbbMod3.addActionListener(this);
 		cbbMod3.setEnabled(false);
-		contentPane.add(cbbMod3, remainder);
+		contentPane.add(cbbMod3, width2);
+		contentPane.add(lblBreaks[5], remainder);
 		
 		contentPane.add(lblTemplate, remainder);
 		txtTemplate.setEditable(false);
