@@ -262,6 +262,12 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		private final Modifier[] loudMods;
 		
 		private Mission(Modifier[] stealthMods, Modifier[] loudMods) {
+			if (!Objects.isNull(stealthMods)) {
+				Arrays.sort(stealthMods);
+			}
+			if (!Objects.isNull(loudMods)) {
+				Arrays.sort(loudMods);
+			}
 			this.stealthMods = stealthMods;
 			this.loudMods = loudMods;
 		}
