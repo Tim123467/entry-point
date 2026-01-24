@@ -493,6 +493,37 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		blockActions = false; //allows actionPerformed to be called again
 	}
 	
+	
+	private static String takedownLimitNumber(int modNumber) {
+		switch (modNumber) {
+		case 1:
+			if (!cbbMod1.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT)) {
+				return "";
+			}
+			if (cbbMission.getSelectedItem().equals(Mission.THE_SCRS)) {
+				return " (6)";
+			}
+			return " (4)";
+		case 2:
+			if (!cbbMod2.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT)) {
+				return "";
+			}
+			if (cbbMission.getSelectedItem().equals(Mission.THE_SCRS)) {
+				return " (6)";
+			}
+			return " (4)";
+		case 3:
+			if (!cbbMod3.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT)) {
+				return "";
+			}
+			if (cbbMission.getSelectedItem().equals(Mission.THE_SCRS)) {
+				return " (6)";
+			}
+			return " (4)";
+		default: throw new IllegalArgumentException();
+		}
+	}
+	
 	/** The method that runs when any other component's value changes (or in the case of a radio button, when it's clicked).
 	 * dateSpinner triggers the stateChanged method above. */
 	public void actionPerformed(ActionEvent event) {
@@ -795,9 +826,9 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				+ "!" + cal.get(Calendar.YEAR) + "-" + month + "-" + day + "\n"
 				+ "|" + (Arrays.asList(FREE_MISSIONS).contains(cbbMission.getSelectedItem()) ? "" : "{{Robux}} ") + cbbMission.getSelectedItem() + "\n"
 				+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
-				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
-				+ "<span class=challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + ">" + cbbMod2.getSelectedItem() + "</span>, "
-				+ "<span class=challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + ">" + cbbMod3.getSelectedItem() + "</span>");
+				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + takedownLimitNumber(1) + "</span>, "
+				+ "<span class=challenge-" + ((Modifier)cbbMod2.getSelectedItem()).getColor() + ">" + cbbMod2.getSelectedItem() + takedownLimitNumber(2) + "</span>, "
+				+ "<span class=challenge-" + ((Modifier)cbbMod3.getSelectedItem()).getColor() + ">" + cbbMod3.getSelectedItem() + takedownLimitNumber(3) + "</span>");
 			
 			frame.pack(); //resizes the window
 		}
