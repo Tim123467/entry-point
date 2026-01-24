@@ -730,6 +730,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			cal.setTime((Date)dateSpinner.getValue());
 			String month = cal.get(Calendar.MONTH) + 1 < 10 ? "0" + (cal.get(Calendar.MONTH) + 1) : (cal.get(Calendar.MONTH) + 1) + "",
 				day = cal.get(Calendar.DAY_OF_MONTH) < 10 ? "0" + cal.get(Calendar.DAY_OF_MONTH) : cal.get(Calendar.DAY_OF_MONTH) + "";
+			//The +1 is needed because java.util.Calendar months are 0-based
 			
 			txtTemplate.setText("<noinclude>\n"
 				+ "If you are updating the daily challenge, please change the following lines:\n"
@@ -757,7 +758,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				+ "| style=\"width: 33%;\" |{{ModifierDescription|" + (cbbMod3.getSelectedItem().equals(Modifier.TAKEDOWN_LIMIT) && cbbMission.getSelectedItem().equals(Mission.THE_SCRS) ? "TakedownLimit6" : cbbMod3.getSelectedItem().toString().replace(" ", "")) + "}}\n"
 				+ "|}");
 			txtDailyChallenges.setText("|-\n"
-				+ "!" + cal.get(Calendar.YEAR) + "-" + month + "-" + day + "\n" //java.util.Calendar months are 0-based
+				+ "!" + cal.get(Calendar.YEAR) + "-" + month + "-" + day + "\n"
 				+ "|" + (Arrays.asList(FREE_MISSIONS).contains(cbbMission.getSelectedItem()) ? "" : "{{Robux}} ") + cbbMission.getSelectedItem() + "\n"
 				+ "|" + (rbStealth.isSelected() ? "Stealth\n" : "Loud\n")
 				+ "|<span class=challenge-" + ((Modifier)cbbMod1.getSelectedItem()).getColor() + ">" + cbbMod1.getSelectedItem() + "</span>, "
