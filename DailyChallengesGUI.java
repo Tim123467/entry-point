@@ -41,19 +41,20 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	
 	/** All modifiers that can be picked for a daily challenge, in all caps and with spaces replaced with underscores. */
 	private enum Modifier {
-		BLANK(null), MISPLACED_GEAR(Color.GREEN), NO_AEGIS_ARMOR(Color.GREEN), BOARDED_UP(Color.GREEN),
-		FOG(Color.GREEN), NO_SUPPRESSORS(Color.GREEN), NO_SAFECRACKING(Color.GREEN),
-		WEAPON_SCANNERS(Color.BLUE), NO_SCRAMBLER(Color.BLUE), BLOODLESS(Color.BLUE), UNSKILLED(Color.BLUE), SMALL_ARMS_ONLY(Color.BLUE),
-		CRIMINAL_ARSENAL(Color.BLUE), NO_HYBRID_CLASSES(Color.BLUE), CASCADE_ARSENAL(Color.BLUE), FLASHBANG_FRENZY(Color.BLUE),
-		REINFORCED_DOORS(Color.BLUE), HEAVY_BAGS(Color.BLUE), ARMERA_ARSENAL(Color.BLUE), NO_EQUIPMENT_BAGS(Color.BLUE),
-		REINFORCED_LOCKS(Color.BLUE), GLASS_CANNON(Color.BLUE), MANDATORY_HEADSHOTS(Color.BLUE), NO_INTERROGATION(Color.BLUE),
-		EXTRA_CAMERAS(Color.BLUE), NO_HEAVY_ARMOR(Color.BLUE),
-		UNINTIMIDATING(Color.PURPLE), WEAKER_MEDKITS(Color.PURPLE), HIDDEN_UI(Color.PURPLE), FASTER_DETECTION(Color.PURPLE),
-		REINFORCED_CAMERAS(Color.PURPLE), AEGIS_ACADEMY(Color.PURPLE), FLASHBANG_REVENGE(Color.PURPLE), ONE_SHOT(Color.PURPLE),
-		HIDDEN_DETECTION_BARS(Color.PURPLE), NO_LOCKPICKS(Color.PURPLE), INEXPERIENCED(Color.PURPLE), FIFTEEN_MINUTES(Color.PURPLE),
-		LESS_HEALTH(Color.PURPLE),
-		NO_EXPLOSIVES(Color.RED), TAKEDOWN_LIMIT(Color.RED), SHIELD_SWARM(Color.RED), EXPLOSIVE_FLASHBANGS(Color.RED),
-		NO_KNOCKOUTS(Color.RED), NO_MOVING_BODIES(Color.RED), NO_DISGUISE(Color.RED), EXPLOSIVE_REVENGE(Color.RED);
+		BLANK(null),
+		BOARDED_UP(Color.GREEN), FOG(Color.GREEN), MISPLACED_GEAR(Color.GREEN), NO_AEGIS_ARMOR(Color.GREEN), NO_SAFECRACKING(Color.GREEN),
+		NO_SUPPRESSORS(Color.GREEN),
+		ARMERA_ARSENAL(Color.BLUE), BLOODLESS(Color.BLUE), CASCADE_ARSENAL(Color.BLUE), CRIMINAL_ARSENAL(Color.BLUE), EXTRA_CAMERAS(Color.BLUE),
+		FLASHBANG_FRENZY(Color.BLUE), GLASS_CANNON(Color.BLUE), HEAVY_BAGS(Color.BLUE), MANDATORY_HEADSHOTS(Color.BLUE),
+		NO_EQUIPMENT_BAGS(Color.BLUE), NO_HEAVY_ARMOR(Color.BLUE), NO_HYBRID_CLASSES(Color.BLUE), NO_INTERROGATION(Color.BLUE),
+		NO_SCRAMBLER(Color.BLUE), REINFORCED_DOORS(Color.BLUE), REINFORCED_LOCKS(Color.BLUE), SMALL_ARMS_ONLY(Color.BLUE), UNSKILLED(Color.BLUE),
+		WEAPON_SCANNERS(Color.BLUE),
+		AEGIS_ACADEMY(Color.PURPLE), FASTER_DETECTION(Color.PURPLE), FIFTEEN_MINUTES(Color.PURPLE), FLASHBANG_REVENGE(Color.PURPLE),
+		HIDDEN_DETECTION_BARS(Color.PURPLE), HIDDEN_UI(Color.PURPLE), INEXPERIENCED(Color.PURPLE), LESS_HEALTH(Color.PURPLE),
+		NO_LOCKPICKS(Color.PURPLE), ONE_SHOT(Color.PURPLE), REINFORCED_CAMERAS(Color.PURPLE), UNINTIMIDATING(Color.PURPLE),
+		WEAKER_MEDKITS(Color.PURPLE),
+		EXPLOSIVE_FLASHBANGS(Color.RED), EXPLOSIVE_REVENGE(Color.RED), NO_DISGUISE(Color.RED), NO_EXPLOSIVES(Color.RED), NO_KNOCKOUTS(Color.RED),
+		NO_MOVING_BODIES(Color.RED), SHIELD_SWARM(Color.RED), TAKEDOWN_LIMIT(Color.RED);
 		
 		private final Color color;
 		
@@ -354,6 +355,8 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			mod2Prompt = new JLabel("Select modifier 2:"), mod3Prompt = new JLabel("Select modifier 3:");
 		dateSpinner = new JSpinner(new CustomDateModel());
 		JSpinner.DateEditor dateEditor = new JSpinner.DateEditor(dateSpinner, "yyyy-MM-dd");
+		JButton btnPrevDate = new JButton("Previous Date"),
+			btnNextDate = new JButton("Next Date");
 		cbbMission = new JComboBox<>(availableMissions());
 		bgTactic = new ButtonGroup();
 		rbStealth = new JRadioButton("Stealth");
@@ -378,7 +381,13 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		
 		contentPane.add(datePrompt);
 		dateSpinner.addChangeListener(this);
-		contentPane.add(dateSpinner, remainder);
+		contentPane.add(dateSpinner);
+		btnPrevDate.setActionCommand("prevDate");
+		btnPrevDate.addActionListener(this);
+		contentPane.add(btnPrevDate);
+		btnNextDate.setActionCommand("nextDate");
+		btnNextDate.addActionListener(this);
+		contentPane.add(btnNextDate, remainder);
 		
 		contentPane.add(missionPrompt);
 		cbbMission.setActionCommand("mission");
@@ -474,6 +483,12 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		blockActions = true; //prevents unwanted recursion
 		
 		outer: switch (event.getActionCommand()) {
+		case "prevDate":
+			dateSpinner.setValue(dateSpinner.getPreviousValue());
+			break;
+		case "nextDate":
+			dateSpinner.setValue(dateSpinner.getNextValue());
+			break;
 		case "mission": //mission selected
 			//this part is needed to update radio buttons during method execution
 			for (AbstractButton b : Collections.list(bgTactic.getElements())) {
