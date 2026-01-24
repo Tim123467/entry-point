@@ -334,12 +334,11 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 		cal.set(Calendar.MILLISECOND, 0);
 		difference = cal.getTimeInMillis();
 		
-		cal.set(2021, 8, 10, 12, 0, 0); //noon of the first Freelance Heist daily challenge
+		cal.set(2021, Calendar.AUGUST, 10, 12, 0, 0); //noon of the first Freelance Heist daily challenge
 		cal.set(Calendar.MILLISECOND, 0);
 		difference -= cal.getTimeInMillis();
 		
 		difference = (long)(difference / (double)86400000 + 0.5); //convert to days
-		difference += 1; //it's one off for some reason
 		remainder = (byte)(difference % 10);
 		
 		return switch (remainder) {
