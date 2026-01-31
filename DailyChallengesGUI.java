@@ -222,7 +222,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 				Modifier.AEGIS_ACADEMY, Modifier.FLASHBANG_REVENGE, Modifier.ONE_SHOT, Modifier.INEXPERIENCED, Modifier.LESS_HEALTH,
 				Modifier.SHIELD_SWARM, Modifier.EXPLOSIVE_FLASHBANGS, Modifier.EXPLOSIVE_REVENGE}),
 		THE_AUCTION(new Modifier[]{Modifier.BLANK, Modifier.FOG, Modifier.NO_SUPPRESSORS, Modifier.NO_SCRAMBLER, Modifier.BLOODLESS,
-				Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
+				Modifier.UNSKILLED, Modifier.NO_HYBRID_CLASSES, Modifier.CASCADE_ARSENAL, Modifier.REINFORCED_DOORS, Modifier.HEAVY_BAGS,
 				Modifier.REINFORCED_LOCKS, Modifier.HIDDEN_UI, Modifier.FASTER_DETECTION, Modifier.REINFORCED_CAMERAS,
 				Modifier.HIDDEN_DETECTION_BARS, Modifier.INEXPERIENCED, Modifier.FIFTEEN_MINUTES, Modifier.TAKEDOWN_LIMIT,
 				Modifier.NO_MOVING_BODIES, Modifier.NO_DISGUISE},
