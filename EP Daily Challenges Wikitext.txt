@@ -7802,7 +7802,7 @@
 |<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-purple>No Lockpicks</span>
 |}
 ===September 2025===
-{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Upcoming Challenges" data-collapsetext="Hide Upcoming Challenges"
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
 !Date
 !Mission
 !Tactic
@@ -7887,4 +7887,719 @@
 |The Lakehouse
 |Loud
 |<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-09-17
+|The SCRS
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-09-18
+|{{Robux}} The Setup
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-red>Takedown Limit (4)</span>
+|-
+!2025-09-19
+|The Deposit
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Reinforced Cameras</span>, <span class=challenge-purple>Unintimidating</span>
+|-
+!2025-09-20
+|The Killhouse
+|Loud
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-09-21
+|The Scientist
+|Stealth
+|<span class=challenge-purple>Inexperienced</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-red>No Knockouts</span>
+|-
+!2025-09-22
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2025-09-23
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-09-24
+|The Lakehouse
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>No Interrogation</span>, <span class=challenge-purple>No Lockpicks</span>
+|-
+!2025-09-25
+|The Blacksite
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Glass Cannon</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-09-26
+|The SCRS
+|Stealth
+|<span class=challenge-green>Misplaced Gear</span>, <span class=challenge-green>Fog</span>, <span class=challenge-blue>Cascade Arsenal</span>
+|-
+!2025-09-27
+|The Financier
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-purple>One Shot</span>
+|-
+!2025-09-28
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-red>	Explosive Revenge</span>
+|-
+!2025-09-29
+|The Scientist
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Inexperienced</span>, <span class=challenge-red>No Knockouts</span>
+|-
+!2025-09-30
+|The Lakehouse
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>No Explosives</span>
+|}
+===October 2025===
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
+!Date
+!Mission
+!Tactic
+!Modifiers
+|-
+!2025-10-01
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-red>Takedown Limit (4)</span>
+|-
+!2025-10-02
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-purple>Aegis Academy</span>
+|-
+!2025-10-03
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-10-04
+|The Blacksite
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Unskilled</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-10-05
+|The Deposit
+|Loud
+|<span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-10-06
+|The Financier
+|Loud
+|<span class=challenge-blue>Criminal Arsenal</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-purple>Less Health</span>
+|-
+!2025-10-07
+|The SCRS
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Safecracking</span>, <span class=challenge-purple>No Lockpicks</span>
+|-
+!2025-10-08
+|{{Robux}} The Setup
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Unintimidating</span>, <span class=challenge-red>No Disguise</span>
+|-
+!2025-10-09
+|The Killhouse
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-green>Fog</span>, <span class=challenge-blue>Unskilled</span>
+|-
+!2025-10-10
+|The Lakehouse
+|Loud
+|<span class=challenge-purple>One Shot</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-10-11
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-10-12
+|The Scientist
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-blue>Criminal Arsenal</span>
+|-
+!2025-10-13
+|{{Robux}} The Auction
+|Stealth
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-red>No Disguise</span>
+|-
+!2025-10-14
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-red>Explosive Revenge</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-10-15
+|The SCRS
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-green>Misplaced Gear</span>, <span class=challenge-blue>Extra Cameras</span>
+|-
+!2025-10-16
+|The Deposit
+|Stealth
+|<span class=challenge-blue>No Interrogation</span>, <span class=challenge-purple>Reinforced Cameras</span>, <span class=challenge-purple>No Lockpicks</span>
+|-
+!2025-10-17
+|The Financier
+|Loud
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Less Health</span>, <span class=challenge-purple>Aegis Academy</span>
+|-
+!2025-10-18
+|{{Robux}} The Setup
+|Stealth
+|<span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Unintimidating</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2025-10-19
+|The Lakehouse
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-blue>No Interrogation</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-10-20
+|The Financier
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Unskilled</span>
+|-
+!2025-10-21
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2025-10-22
+|The Blacksite
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Criminal Arsenal</span>, <span class=challenge-purple>Weaker Medkits</span>
+|-
+!2025-10-23
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|-
+!2025-10-24
+|The Deposit
+|Loud
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Less Health</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2025-10-25
+|Black Dusk
+|Loud
+|<span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-purple>One Shot</span>
+|-
+!2025-10-26
+|The Scientist
+|Loud
+|<span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-red>Explosive Flashbangs</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-10-27
+|The SCRS
+|Loud
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2025-10-28
+|{{Robux}} The Setup
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Unintimidating</span>
+|-
+!2025-10-29
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Inexperienced</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2025-10-30
+|The Deposit
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-10-31
+|The Financier
+|Loud
+|<span class=challenge-green>Boarded Up</span>, <span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Armera Arsenal</span>
+|}
+===November 2025===
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
+!Date
+!Mission
+!Tactic
+!Modifiers
+|-
+!2025-11-01
+|The Withdrawal
+|Loud
+|<span class=challenge-blue>Criminal Arsenal</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-purple>One Shot</span>
+|-
+!2025-11-02
+|{{Robux}} The Auction
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-11-03
+|The Lakehouse
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-blue>No Interrogation</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2025-11-04
+|The Blacksite
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-11-05
+|The SCRS
+|Stealth
+|<span class=challenge-green>Misplaced Gear</span>, <span class=challenge-purple>Unintimidating</span>, <span class=challenge-red>Takedown Limit (6)</span>
+|-
+!2025-11-06
+|The Scientist
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|-
+!2025-11-07
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-11-08
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-blue>Unskilled</span>, <span class=challenge-blue>Reinforced Doors</span>
+|-
+!2025-11-09
+|The Lakehouse
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-purple>No Lockpicks</span>
+|-
+!2025-11-10
+|The Deposit
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-blue>Extra Cameras</span>
+|-
+!2025-11-11
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Small Arms Only</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-11-12
+|{{Robux}} The Gala
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2025-11-13
+|The Killhouse
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-green>Fog</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2025-11-14
+|The SCRS
+|Loud
+|<span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>Shield Swarm</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2025-11-15
+|The Financier
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-purple>Less Health</span>
+|-
+!2025-11-16
+|The Withdrawal
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Fifteen Minutes</span>
+|-
+!2025-11-17
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-blue>Mandatory Headshots</span>
+|-
+!2025-11-18
+|The SCRS
+|Loud
+|<span class=challenge-blue>Small Arms Only</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-purple>One Shot</span>
+|-
+!2025-11-19
+|The Lakehouse
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Less Health</span>
+|-
+!2025-11-20
+|The Scientist
+|Loud
+|<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>Inexperienced</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-11-21
+|The Killhouse
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Unintimidating</span>
+|-
+!2025-11-22
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>No Scrambler</span>
+|-
+!2025-11-23
+|The Deposit
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-blue>Weapon Scanners</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2025-11-24
+|The Financier
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-11-25
+|The Withdrawal
+|Loud
+|<span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-11-26
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-11-27
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-11-28
+|The SCRS
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-red>Takedown Limit (6)</span>
+|-
+!2025-11-29
+|The Financier
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-11-30
+|The Scientist
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-blue>Unskilled</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|}
+===December 2025===
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
+!Date
+!Mission
+!Tactic
+!Modifiers
+|-
+!2025-12-01
+|The Deposit
+|Stealth
+|<span class=challenge-blue>Weapon Scanners</span>, <span class=challenge-purple>Unintimidating</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2025-12-02
+|{{Robux}} The Gala
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Reinforced Doors</span>
+|-
+!2025-12-03
+|The Killhouse
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-12-04
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-blue>No Scrambler</span>, <span class=challenge-blue>No Hybrid Classes</span>
+|-
+!2025-12-05
+|Black Dusk
+|Loud
+|<span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-purple>Less Health</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-12-06
+|The Withdrawal
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-blue>Small Arms Only</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2025-12-07
+|{{Robux}} The Lockup
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>No Lockpicks</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2025-12-08
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>Flashbang Revenge</span>, <span class=challenge-purple>Aegis Academy</span>
+|-
+!2025-12-09
+|The Lakehouse
+|Loud
+|<span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-purple>One Shot</span>
+|-
+!2025-12-10
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Faster Detection</span>, <span class=challenge-purple>Inexperienced</span>
+|-
+!2025-12-11
+|The SCRS
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Small Arms Only</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-12-12
+|{{Robux}} The Gala
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|-
+!2025-12-13
+|The Scientist
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-12-14
+|The Deposit
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-red>No Explosives</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-12-15
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Fifteen Minutes</span>
+|-
+!2025-12-16
+|The Financier
+|Loud
+|<span class=challenge-green>Boarded Up</span>, <span class=challenge-blue>Glass Cannon</span>, <span class=challenge-blue>No Heavy Armor</span>
+|-
+!2025-12-17
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>Criminal Arsenal</span>, <span class=challenge-red>Shield Swarm</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2025-12-18
+|The Killhouse
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2025-12-19
+|The Scientist
+|Loud
+|<span class=challenge-blue>No Equipment Bags</span>, <span class=challenge-purple>Less Health</span>, <span class=challenge-red>Shield Swarm</span>
+|-
+!2025-12-20
+|The Financier
+|Loud
+|<span class=challenge-green>Boarded Up</span>, <span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2025-12-21
+|The Deposit
+|Loud
+|<span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2025-12-22
+|{{Robux}} The Auction
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2025-12-23
+|The SCRS
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-blue>Unskilled</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2025-12-24
+|The Lakehouse
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>No Lockpicks</span>, <span class=challenge-purple>Unintimidating</span>
+|-
+!2025-12-25
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2025-12-26
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Reinforced Cameras</span>, <span class=challenge-red>Takedown Limit (4)</span>
+|-
+!2025-12-27
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-12-28
+|The Lakehouse
+|Loud
+|<span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2025-12-29
+|The Killhouse
+|Loud
+|<span class=challenge-blue>No Hybrid Classes</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-blue>Reinforced Locks</span>
+|-
+!2025-12-30
+|The Deposit
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-green>Misplaced Gear</span>, <span class=challenge-blue>Heavy Bags</span>
+|-
+!2025-12-31
+|The Withdrawal
+|Stealth
+|<span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|}
+'''Daily Challenges''' from 2026 will be displayed here.
+
+===January 2026===
+{| class="fandom-table article-table mw-collapsible mw-collapsed" data-expandtext="Show Previous Challenges" data-collapsetext="Hide Previous Challenges"
+!Date
+!Mission
+!Tactic
+!Modifiers
+|-
+!2026-01-01
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|-
+!2026-01-02
+|The SCRS
+|Loud
+|<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-blue>Small Arms Only</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2026-01-03
+|The Financier
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Weaker Medkits</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2026-01-04
+|Black Dusk
+|Loud
+|<span class=challenge-purple>Aegis Academy</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-purple>Less Health</span>
+|-
+!2026-01-05
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2026-01-06
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2026-01-07
+|The Blacksite
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-purple>Weaker Medkits</span>
+|-
+!2026-01-08
+|The Lakehouse
+|Loud
+|<span class=challenge-green>Fog</span>, <span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-purple>Less Health</span>
+|-
+!2026-01-09
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Armera Arsenal</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2026-01-10
+|The SCRS
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-purple>No Lockpicks</span>
+|-
+!2026-01-11
+|{{Robux}} The Auction
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2026-01-12
+|The Killhouse
+|Loud
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-blue>Mandatory Headshots</span>, <span class=challenge-blue>Unskilled</span>
+|-
+!2026-01-13
+|The Financier
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-purple>Hidden UI</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2026-01-14
+|The Deposit
+|Stealth
+|<span class=challenge-green>Misplaced Gear</span>, <span class=challenge-blue>Weapon Scanners</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2026-01-15
+|The Scientist
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Reinforced Cameras</span>, <span class=challenge-purple>Fifteen Minutes</span>
+|-
+!2026-01-16
+|{{Robux}} The Score
+|Loud
+|<span class=challenge-blue>Glass Cannon</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-purple>Flashbang Revenge</span>
+|-
+!2026-01-17
+|The Deposit
+|Stealth
+|<span class=challenge-green>Misplaced Gear</span>, <span class=challenge-blue>Bloodless</span>, <span class=challenge-purple>Faster Detection</span>
+|-
+!2026-01-18
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-purple>Aegis Academy</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2026-01-19
+|The SCRS
+|Stealth
+|<span class=challenge-blue>No Hybrid Classes</span>, <span class=challenge-purple>No Lockpicks</span>, <span class=challenge-red>Takedown Limit (6)</span>
+|-
+!2026-01-20
+|The Blacksite
+|Loud
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>One Shot</span>, <span class=challenge-red>Explosive Revenge</span>
+|-
+!2026-01-21
+|{{Robux}} The Cache
+|Stealth
+|<span class=challenge-blue>No Scrambler</span>, <span class=challenge-purple>Hidden Detection Bars</span>, <span class=challenge-purple>Reinforced Cameras</span>
+|-
+!2026-01-22
+|The Lakehouse
+|Loud
+|<span class=challenge-green>Boarded Up</span>, <span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-purple>Weaker Medkits</span>
+|-
+!2026-01-23
+|The Withdrawal
+|Stealth
+|<span class=challenge-green>No Suppressors</span>, <span class=challenge-blue>Cascade Arsenal</span>, <span class=challenge-red>No Moving Bodies</span>
+|-
+!2026-01-24
+|The Financier
+|Stealth
+|<span class=challenge-green>No Safecracking</span>, <span class=challenge-green>Fog</span>, <span class=challenge-purple>Fifteen Minutes</span>
+|-
+!2026-01-25
+|The Killhouse
+|Loud
+|<span class=challenge-green>No Aegis Armor</span>, <span class=challenge-blue>Flashbang Frenzy</span>, <span class=challenge-blue>Glass Cannon</span>
+|-
+!2026-01-26
+|{{Robux}} The Setup
+|Stealth
+|<span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Unintimidating</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2026-01-27
+|The Killhouse
+|Loud
+|<span class=challenge-blue>Reinforced Doors</span>, <span class=challenge-purple>Less Health</span>, <span class=challenge-red>Explosive Flashbangs</span>
+|-
+!2026-01-28
+|The Deposit
+|Stealth
+|<span class=challenge-blue>Weapon Scanners</span>, <span class=challenge-purple>Fifteen Minutes</span>, <span class=challenge-purple>Hidden Detection Bars</span>
+|-
+!2026-01-29
+|Black Dusk
+|Loud
+|<span class=challenge-blue>Small Arms Only</span>, <span class=challenge-blue>No Heavy Armor</span>, <span class=challenge-red>No Explosives</span>
+|-
+!2026-01-30
+|The Blacksite
+|Stealth
+|<span class=challenge-blue>Reinforced Locks</span>, <span class=challenge-blue>Heavy Bags</span>, <span class=challenge-purple>Hidden UI</span>
+|-
+!2026-01-31
+|{{Robux}} The Auction
+|Stealth
+|<span class=challenge-green>Fog</span>, <span class=challenge-blue>Unskilled</span>, <span class=challenge-red>No Moving Bodies</span>
 |}
