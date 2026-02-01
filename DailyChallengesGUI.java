@@ -785,7 +785,12 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 			}
 			cbbMod3.setEnabled(true);
 			
-			break;
+			if (cbbMod3.getItemCount() > 2) {
+				break;
+			} else {
+				cbbMod3.removeItem(Modifier.BLANK);
+				//falls through to case "generate"
+			}
 		case "generate": //3rd modifier selected, which should only be possible when all other components are selected
 			if (cbbMod3.getSelectedItem().equals(Modifier.BLANK)) {
 				//disable all components below mod3
