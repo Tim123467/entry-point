@@ -527,11 +527,11 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	/** The method that runs when any other component's value changes (or in the case of a radio button, when it's clicked).
 	 * dateSpinner triggers the stateChanged method above. */
 	public void actionPerformed(ActionEvent event) {
-		Modifier[] allModOptions;
-
 		if (blockActions) {
 			return;
 		}
+		
+		Modifier[] allModOptions;
 		blockActions = true; //prevents unwanted recursion
 
 		outer: switch (event.getActionCommand()) {
