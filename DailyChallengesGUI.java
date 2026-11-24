@@ -353,8 +353,7 @@ public class DailyChallengesGUI implements Runnable, ActionListener, ChangeListe
 	public void run() {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		frame = new JFrame("EP Daily Challenges Wikitext Generator");
-		GridBagLayout layout = new GridBagLayout();
-		JPanel contentPane = new JPanel(layout);
+		JPanel contentPane = new JPanel(new GridBagLayout());
 		GridBagConstraints remainder = new GridBagConstraints(),
 				width2 = new GridBagConstraints();
 		JLabel lblNote = new JLabel("Changing a component will reset every component below it."),
